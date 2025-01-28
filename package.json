@@ -6,6 +6,7 @@
         "dev": "vite"
     },
     "devDependencies": {
+        "@rollup/plugin-inject": "^5.0.5",
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.4",
         "concurrently": "^9.0.1",
@@ -13,5 +14,11 @@
         "postcss": "^8.4.47",
         "tailwindcss": "^3.4.13",
         "vite": "^6.0"
+    },
+    "dependencies": {
+        "include-media": "^2.0.0",
+        "jquery": "^3.7.1",
+        "sass": "^1.83.4",
+        "swiper": "^11.2.1"
     }
 }
