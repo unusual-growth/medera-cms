@@ -1,0 +1,78 @@
+.library-card {
+    text-decoration: none;
+    border-radius: 16px;
+    background-color: $white;
+    display: flex;
+    flex-flow: column;
+    min-height: 340px;
+    position: relative;
+    @include media('<tablet') {
+        max-width: unset;
+    }
+
+    &.full {
+        min-height: 460px;
+        @include media('<large') {
+            min-height: 360px;
+        }
+    }
+    &.w-button {
+        min-height: 380px;
+    }
+    .date {
+        position: absolute;
+        top: rem(16);
+        left: rem(18);
+        background-color: $primary;
+        color: $white;
+        padding: rem(8) rem(12);
+        border-radius: .5em;
+        font-size: rem(14);
+    }
+    img {
+        border-radius: 16px 16px 0 0;
+        width: 100%;
+        height: auto;
+    }
+    > div {
+        display: flex;
+        padding: rem(12) rem(18) rem(24);
+        flex-flow: column wrap;
+        height: 100%;
+        justify-content: space-between;
+        row-gap: 8px;
+        @include media ('<tablet') {
+            align-items: center;
+        }
+        .heading {
+            color: #000;
+            font-size: 24px;
+            margin: 0;
+            $line-height: 1.2em;
+            line-height: $line-height;
+            // min-height: $line-height * 3;
+            // max-height: $line-height * 3;
+            @include lineClamp(3);
+        }
+        .desc {
+            align-self: stretch;
+            font-size: rem(16);
+            flex-grow: 1;
+            overflow: hidden;
+            margin-bottom: 18px;
+            p {
+                @include lineClamp(3);
+                margin: 0;
+                @include media('<large') {
+                    font-size: rem(14);
+                }
+            }
+
+        }
+        a {
+            margin-top: auto;
+            align-self: flex-start;
+            border-radius: 12px;
+        }
+    }
+}

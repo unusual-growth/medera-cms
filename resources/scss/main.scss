@@ -1,0 +1,8 @@
+// Import other SCSS files
+@import 'variables';
+
+// Your styles
+body {
+  background-color: $background-color;
+  color: $text-color;
+}

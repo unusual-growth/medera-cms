@@ -1,0 +1,327 @@
+
+@mixin constructFont($font-name, $font-weights, $font-format: 'ttf') {
+    @each $font-weight, $font-weight-value in $font-weights {
+        @font-face {
+            font-family: $font-name;
+            font-weight: $font-weight-value;
+            src: url("/assets/fonts/" + "#{$font-name}" + "-" + "#{$font-weight}" + "." + "#{$font-format}");
+        }
+    }
+}
+
+//! Burada pek emin olamıyorum altan. cartlardan vsden bir düşünmek lazım.
+@mixin constructTextColor($text-colors) {
+    @each $text-color-name, $text-color-value in $text-colors {
+        .text-#{$text-color-name} {
+            color: $text-color-value;
+        }
+    }
+}
+
+@mixin constructHiglight($highlightTypes, $highlightColors, $highlight-sizes) {
+    .highlight {
+        @each $highlightType in $highlightTypes {
+            @each $highlightColorName, $highlightColorValue in $highlightColors {
+                &-#{$highlightType}-#{$highlightColorName} {
+                    span {
+                        @if $highlightType == 'color' {
+                            //!TODO: use extend
+                            color: $highlightColorValue !important;
+                        }
+                        @else if $highlightType == 'bgcolor' {
+                            padding: rem(2px) rem(3px);
+                            background-color: $highlightColorValue !important;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+        @each $highlightSizeName, $highlightSizeValue in $highlight-sizes {
+            &-size-#{$highlightSizeName} {
+                span {
+                    font-size: $highlightSizeValue;
+                }
+            }
+        }
+    }
+}
+
+@mixin constructFontSize($font-sizes) {
+    @each $font-size-name, $font-size-value in $font-sizes {
+        %font-size-#{$font-size-name} { //to be extended in other classes will be used in the html
+            font-size: $font-size-value;
+        }
+    }
+}
+
+@mixin constructFontWeight($font-weights) {
+    @each $font-weight-name, $font-weight-value in $font-weights {
+        %font-weight-#{$font-weight-name} { //to be extended in other classes will be used in the html
+            font-weight: $font-weight-value;
+        }
+    }
+}
+
+@mixin constructBorderRadius($border-radius) {
+    @each $border-radius-name, $border-radius-value in $border-radius {
+        %border-radius-#{$border-radius-name} { //to be extended in other classes will be used in the html
+            border-radius: $border-radius-value;
+        }
+    }
+}
+
+@mixin constructBase($base) {
+
+}
+
+@mixin constructContainer($containerWidths) {
+    .container {
+        margin: auto;
+        width: 100%;
+        position: relative;
+    }
+    @each $containerWidthName, $containerWidthValue in $containerWidths {
+        .container.#{$containerWidthName} {
+            max-width: $containerWidthValue;
+        }
+    }
+    .container.full-1440 {
+        @include media('>full-1440') {
+            max-width: map-get($map: $containerWidths, $key: "xxlarge");
+        }
+        .contentpadding1140 {
+            @include media('>cont-xlarge', '<=full-1440') {
+                $pad: calc(calc(min(100vw, rem(1440px)) - rem(1140px)) / 2);
+                &:nth-child(odd) {
+                    padding-right: rem(76px);
+                    padding-left: $pad;
+                }
+                &:nth-child(even) {
+                    padding-left: rem(48px);
+                    padding-right: $pad;
+                }
+            }
+            @include media('<cont-xlarge') {
+                padding: rem(0) 2.5%;
+            }
+            @include media('<large') {
+                padding: rem(16px) 2.5%;
+            }
+            @include media('<tablet') {
+                padding: rem(16px) 20px;
+            }
+            // padding: inherit calc(calc(min(100vw, rem(1440px)) - rem(1140px)) / 2);
+        }
+    }
+    .container {
+        &.xlarge {
+            @include media('>full-1440') {
+                max-width: map-get($map: $containerWidths, $key: "xxlarge");
+            }
+            @include media('<=cont-xlarge') {
+                padding: 0 2.5%;
+            }
+        }
+        &.xlarge, &.medium {
+            @include media('<tablet') {
+                padding: 0 20px;
+            }
+        }
+    }
+
+}
+
+@mixin constructPadding($count: 5, $increments: 2.5, $unit: '%') {
+    @for $i from 1 through $count {
+        .p-#{$i} {
+            padding: ($i * $increments)+#{$unit};
+        }
+        .p-h-#{$i} {
+            padding-left: ($i * $increments)+#{$unit};
+            padding-right: ($i * $increments)+#{$unit};
+        }
+        .p-v-#{$i} {
+            padding-top: ($i * $increments)+#{$unit};
+            padding-bottom: ($i * $increments)+#{$unit};
+        }
+        .p-b-#{$i} {
+            padding-bottom: ($i * $increments)+#{$unit};
+        }
+    }
+}
+
+
+@mixin createPropertyClasses ($props, $propkind: '') {
+    @each $prop, $data in $props {
+        @if(map-get($map: $data, $key: 'hassub')) {
+            @include createPropertyClasses($props: map-get($map: $data, $key: 'subvalues'), $propkind: $prop);
+        } @else {
+                @if(map-get($map: $data, $key: 'isincremental')) {
+                    $baseval: map-get($map: $data, $key: 'basevalue');
+                    $increment: map-get($map: $data, $key: 'increment');
+                    $i: 0;
+                    @each $var in map-get($map: $data, $key: 'variation') {
+                        @if($propkind != '') {
+                            .#{$propkind}-#{$prop}-#{$var} {
+                                #{$propkind}-#{$prop}: $baseval + ($increment * $i) map-get($map: $data, $key: 'important');
+                            }
+                        }
+                        @else {
+                            .#{$prop}-#{$var} {
+                                #{$prop}: $baseval + ($increment * $i) map-get($map: $data, $key: 'important');
+                            }
+                        }
+                        $i: $i + 1;
+                    }
+                }
+                @else {
+                    @each $name, $val in map-get($map: $data, $key: 'variation') {
+                        @if($propkind != '') {
+                            .#{$propkind}-#{$prop}-#{$name} {
+                                #{$prop}: $val map-get($map: $data, $key: 'important');
+                            }
+                        }
+                        @else {
+                            .#{$prop}-#{$name} {
+                                #{$prop}: $val map-get($map: $data, $key: 'important');
+                            }
+                        }
+                    }
+                }
+        }
+
+
+
+    }
+}
+@mixin constructResponsiveColumns($breakpoints, $breakpoints-short){
+    [class*="col-"] {
+        float: left;
+        position: relative;
+        min-height: 1px;
+        // padding-left: 15px;
+        // padding-right: 15px;
+        width: 100%;
+    }
+    // SCSS'i kaşarım ettim adlı çalışmam :*
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        $bp: map-get($map: $breakpoints-short, $key: $breakpoint);
+        @for $i from 12 through 1 {
+            .col-#{$bp}-#{$i} {
+                @include media(">" + $breakpoint-value) {
+                    $width: (100% / 12) * $i;
+                    // width: $width;
+                    max-width: $width;
+                    flex: $i $i;
+                    &.bootstrap {
+                        flex: 0 0 $width;
+                    }
+                    &.sep {
+                        $count: math.floor(12 / $i); // 412 / $i;
+                        @if $i <= 6{
+                            &:not(:nth-child(#{$count}n)) {
+                                border-right: 1px solid rgba($color: #000000, $alpha: .3);
+                            }
+                            &:nth-child(#{$count}n) {
+                                border-right: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .col--6 {
+            $i: 6;
+            $width: (100% / 12) * $i;
+            // width: $width;
+            max-width: $width;
+            flex: $i $i;
+            &.bootstrap {
+                flex: 0 0 $width;
+            }
+            &.sep {
+                $count: math.floor(12 / $i); // 412 / $i;
+                @if $i <= 6{
+                    &:not(:nth-child(#{$count}n)) {
+                        border-right: 1px solid rgba($color: #000000, $alpha: .3);
+                    }
+                    &:nth-child(#{$count}n) {
+                        border-right: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin constructFlexGapClasses($rows, $cols){
+    @each $row-value in $rows {
+        .row-gap-#{$row-value} {
+            row-gap: rem($row-value);
+        }
+    }
+    @each $col-value in $cols {
+        .col-gap-#{$col-value} {
+            column-gap: rem($col-value);
+            @include media('<=large') {
+                column-gap: rem($col-value / 2.5);
+            }
+            @include media('<=tablet') {
+                column-gap: rem($col-value / 4);
+            }
+        }
+    }
+}
+
+@mixin positionOnCircle($degree, $x-pos: 1, $y-pos: 1, $x-offset: 0%, $y-offset: 0%) {
+    top: calc(100% - ($y-pos * math.sin($degree) * 50% + 50%) + $y-offset);
+    left: calc(100% - ($x-pos * math.cos($degree) * 50% + 50%) + $x-offset);
+}
+
+@mixin flex($wrap: wrap) {
+    display: flex;
+    flex-flow: row $wrap;
+}
+
+@mixin allCenterFlex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin centerColumn() {
+    @include allCenterFlex();
+    flex-flow: column;
+}
+
+@mixin socials($socials) {
+    a.social {
+        display: block;
+        @each $name, $icon in $socials {
+            &.#{$name} {
+                border-radius: rem(48px);
+                border: 1px solid $primary;
+                padding: 8px 14px;
+                width: min-content !important;
+                &::before {
+                    content: '';
+                    width: rem(12px);
+                    height: rem(12px);
+                    background-image: asset($icon, "util/icons/");
+                    background-position: center;
+                    background-size: auto 100%;
+                    background-repeat: no-repeat;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@mixin lineClamp($lineCount) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lineCount;
+    overflow: hidden;
+}

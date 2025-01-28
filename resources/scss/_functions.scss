@@ -1,0 +1,29 @@
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+@function mobile_rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($html-mobile-font-size)}rem;
+}
+
+@function spring-wobbly($t) {
+    $multiplier: 12;
+    $t-num: to-number($t);
+    $sin: math.sin($multiplier * $t-num);
+    $cos: math.cos($multiplier * $t-num);
+
+    @return -0.5 * math.pow(math.$e, -6 * $t-num) * (-2 * math.pow(math.$e, 6 * $t-num) + $sin + 2 * $cos);
+  }
+@function lerp($a, $b, $p) {
+    @return $a + $p * ($b - $a);
+}
+
+@function asset($fileName, $folder: "util/") {
+    @return url("/assets/img/" + $folder + $fileName);
+}
+
+@function color($colorName) {
+    @return var(--color-#{$colorName});
+}

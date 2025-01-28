@@ -1,0 +1,18 @@
+// All Font Faces
+// $font-name:'SpaceGrotesk';
+
+$font-name:'MyCabin';
+$font-weights: (
+    'Light': 300,
+    'Regular': 400,
+    'Medium': 500,
+    'SemiBold': 600,
+    'Bold': 700
+    );
+
+// @include constructFont($font-name, $font-weights);
+// @include constructFontSize($font-size-variations);
+
+.italic{
+    font-style: italic;
+}

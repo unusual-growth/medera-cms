@@ -1,0 +1,92 @@
+footer{
+    background-color: $footer-gray;
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
+    .socials {
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: rem(14px);
+        row-gap: rem(18px);
+        a {
+            padding: 10px 14px;
+            border: 1px solid $detailcolor;
+            display: inline-flex;
+            border-radius: 48px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+  .footer-top{
+    display: flex;
+    width: 100%;
+    margin: 36px auto;
+    // gap: 16px 32px;
+    flex-flow: row wrap;
+    @include media('<cont-xlarge') {
+        column-gap: 16px;
+    }
+    @include media('<=tablet') {
+        flex-flow: column;
+    }
+    .socials-column {
+        @include media('>tablet') {
+            display: none;
+        }
+    }
+    .title {
+        // font-weight: 600;
+        @include media('<=tablet') {
+            font-size: 24px;
+            margin-bottom: .5em !important;
+            & ~ p {
+                font-size: 18px;
+            }
+        }
+    }
+  }
+  .footer-bottom{
+    background-color: $footer-dark-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .bottom-left{
+      width: rem(570px);
+    }
+    .menu{
+      width: rem(570px);
+      display: flex;
+      justify-content: flex-end;
+      ul{
+        list-style: none;
+        padding: 0;
+        display: flex;
+        li{
+          margin-left: rem(36px);
+          a{
+            color: $detailcolor;
+            &:hover{
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+  .newsletter {
+    .custom-submit {
+        // border: 1px solid #35b98b;
+        // border-radius: 0 8px 8px 0;
+        // height: 100%;
+        // border-radius: 0 8px 8px 0;
+        // height: 100%;
+        // line-height: 1;
+        // padding: 17px 42px;
+    }
+  }
+  .newsletter-column {
+    @include media('<=tablet') {
+        display: none;
+    }
+  }
+}

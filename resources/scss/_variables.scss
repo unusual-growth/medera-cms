@@ -1,0 +1,194 @@
+
+// include media breakpoints
+$html-font-size: 16px;
+$breakpoints: (
+    // phone: 320px,//
+    mobile: 576px,
+    tablet: 768px,//
+    large: 991px,
+    desktop: 1024px, //
+    cont-xlarge: 1140px,
+    x-large: 1320px,
+    full-1440: 1440px,
+    xx-large: 1500px,
+);
+
+$breakpoints-short: (
+    // phone: 'xxs',
+    mobile: 'xs',
+    tablet: 'sm', //
+    large: 'md',
+    desktop: 'lg',//
+    x-large: 'xl',
+    xx-large: 'xxl'
+);
+
+
+// TODO add lists
+
+$containerWidths : (
+    "small": rem(540px),
+    "medium": rem(750px),
+    "large": rem(960px),
+    "xlarge": rem(1140px),
+    "xxlarge": rem(1320px),
+    "full-1440": min(100vw, (1440px)),
+    "full": 100vw,
+);
+
+
+$base-border-radius: 8px;
+$base-border-width: 1px;
+$border-width-variation: ('standart', 'tick', 'bold');
+$border-radius-variation: ('standart', 'smooth', 'oval');
+
+$bg-colors: (
+
+    "main-gray": $main-gray,
+);
+
+$size-variations: (
+    '50': 50%, // half width
+    '100': 100%, // full width
+);
+$align-items-variations: (
+    'center': center,
+    'start': start,
+    'end': end,
+    // 'baseline': baseline,
+    'stretch': stretch,
+);
+$justify-content-variations: (
+    'center': center,
+    'start': start,
+    'end': end,
+    'space-between': space-between,
+    'space-around': space-around,
+    'space-evenly': space-evenly,
+);
+$justify-self-variations: (
+    'center': center,
+    'start': start,
+    'end': end,
+    'stretch': stretch,
+);
+$text-align-variations: (
+    'center': center,
+    // 'start': start,
+    // 'end': end,
+    'justify': justify,
+    // 'left': left,
+    // 'right': right,
+    // 'match-parent': match-parent
+);
+$font-size-variations: (
+    "14": rem(14px),
+    "16": rem(16px),
+    "18": rem(18px),
+    "20": rem(20px),
+    "24": rem(24px),
+    "28": rem(24px),
+    "32": rem(32px),
+    "36": rem(36px),
+    "48": rem(48px),
+    "64": rem(64px),
+);
+$font-weight-variations: (
+    "300": 300,
+    "400": 400,
+    "500": 500,
+    "600": 600,
+    "700": 700,
+);
+
+$text-colors: (
+    "detailcolor": $detailcolor,
+    "primary": $primary,
+    "white": $white,
+);
+
+$social-icons: (
+    "linkedin": 'linkedin.svg',
+    "facebook": 'facebook.svg',
+    "instagram": 'instagram.svg',
+);
+
+$properties: (
+    "border" : (
+        "hassub": true,
+        "subvalues":(
+            "radius": (
+                "isincremental": true,
+                "basevalue": 8px,
+                "increment": 8px,
+                "hassub": false,
+                "variation": $border-radius-variation
+            ),
+            "width": (
+                "isincremental": true,
+                "basevalue": 1px,
+                "increment": 1px,
+                "hassub": false,
+                "variation": $border-width-variation
+            )
+        )
+    ),
+    "color": (
+        "hassub": false,
+        "isincremental": false,
+        "important" : !important,
+        "variation": $text-colors
+    ),
+    "background": (
+        "hassub": false,
+        "isincremental": false,
+        "variation": $bg-colors,
+    ),
+    "width": (
+        "hassub": false,
+        "isincremental": false,
+        "variation": $size-variations,
+    ),
+    "height": (
+        "hassub": false,
+        "isincremental": false,
+        "variation": $size-variations,
+    ),
+    "align-items": (
+        "hassub": false,
+        "isincremental": false,
+        "variation": $align-items-variations,
+    ),
+    "text-align": (
+        "hassub": false,
+        "isincremental": false,
+        "variation": $align-items-variations,
+    ),
+    "justify-content": (
+        "hassub": false,
+        "isincremental": false,
+        "variation": $justify-content-variations,
+    ),
+    // "justify-self": (
+    //     "hassub": false,
+    //     "isincremental": false,
+    //     "variation": $justify-self-variations,
+    // ),
+    // "border-color" : (
+    //     "hassub": false,
+    //     "isincremental": false,
+    //     "variation": $border-colors,
+    // ),
+    "font-size": (
+        "hassub": false,
+        "isincremental": false,
+        "variation": $font-size-variations,
+    ),
+    "font-weight": (
+        "hassub": false,
+        "isincremental": false,
+        "variation": $font-weight-variations,
+    ),
+);
+
+$basic-transition: linear all 0.3s;

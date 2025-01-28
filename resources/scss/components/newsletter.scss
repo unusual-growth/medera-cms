@@ -1,0 +1,42 @@
+form.newsletter {
+    padding: 0;
+    align-items: flex-end;
+    max-width: 483px;
+    margin: 0;
+    .main-input-group {
+        width: 100%;
+        align-items: start;
+        [class*="col-"] {
+            &:last-child {
+                flex: 1;
+            }
+        }
+    }
+    input[type="email"] {
+        margin: 0;
+        width: 100%;
+        border-radius: 8px 0 0 8px;
+        &.error {
+            outline-color: $error !important;
+        }
+    }
+
+    button[type="submit"] {
+        line-height: 1;
+        padding: 16px 32px;
+        font-size: 16px;
+        border-radius: 0 8px 8px 0;
+        line-height: 1.5;
+        outline: false;
+        height: 100%;
+        text-transform: uppercase;
+        border-radius: 0 8px 8px 0;
+        line-height: 1.5;
+        &[subscribed] {
+            background-color: $detailcolor;
+            outline-color: $detailcolor;
+            color: $white;
+            box-shadow: none;
+        }
+    }
+}
