@@ -18,4 +18,32 @@ class HomepageRepository extends ModuleRepository
     {
         $this->model = $model;
     }
+    public function getHomepage()
+    {
+        if (filled($homepage = $this->theOnlyOne())) {
+            return $homepage;
+        }
+
+        return $this->generate();
+    }
+
+    private function theOnlyOne()
+    {
+        return $this->model
+            ->newQuery()
+            ->withoutGlobalScope(MustBePublished::class)
+            ->orderBy('id')
+            ->take(1)
+            ->get()
+            ->first();
+    }
+    private function generate()
+    {
+        return app(HomepageRepository::class)->create([
+            'title' => [
+                config('translatable.locale') => config('app.name'),
+            ],
+            'published' => true,
+        ]);
+    }
 }

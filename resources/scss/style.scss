@@ -3,6 +3,7 @@
 @use "sass:math";
 
 @import "../../node_modules/include-media/dist/include-media";
+@import '../../node_modules/swiper/swiper-bundle';
 
 @import "./functions";
 @import "./mixins";
@@ -23,5 +24,6 @@
 @import "./components/library";
 @import "./components/faq";
 @import "./components/hero";
+@import "./components/hero-slider";
 @import "./components/home-hero";
 

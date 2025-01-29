@@ -22,7 +22,8 @@ class PageHomeDisplayController extends Controller
     {
         LaravelLocalization::setRouteName('home');
         $item = $this->homepageRepository->getHomepage();
-        dd($item);
+        FacadesView::share('item', $item);
+        return View('pages.homepage', ['item' => $item]);
 
         // if (TwillAppSettings::get('homepage.homepage.page')->isNotEmpty()) {
         //     /** @var \App\Models\Page $frontPage */
