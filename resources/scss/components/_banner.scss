@@ -1,0 +1,51 @@
+.banner {
+    > div:first-of-type {
+        background: linear-gradient(270deg, #847c80 0%, #d9b3a8 100%);
+        border-radius: 20px;
+    }
+    p {
+        color: $white;
+        max-width: 700px;
+        text-align: center;
+        font-size: rem(42px);
+        font-weight: 500;
+        line-height: 49.35px;
+        span {
+            font-weight: 700;
+        }
+    }
+}
+.pills-banner {
+    background-image: url("/dummy-img/pills.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    @include media('>full-1440'){
+        max-width:1440px;
+        margin:auto;
+    }
+    .row {
+        padding: 120px 0;
+        justify-content: center;
+        gap: 52px;
+    }
+    p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width:246px;
+        min-width:162px;
+        line-height: 28.2px;
+        text-align: center;
+        font-size: rem(24px);
+        color: $primary;
+        font-weight: 700;
+        box-shadow: 0px 4px 8.9px -5px $primary;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 15px;
+        border-radius: 16px;
+        margin:0;
+        height:100%;
+    }
+}

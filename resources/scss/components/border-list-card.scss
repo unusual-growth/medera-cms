@@ -1,0 +1,33 @@
+.border-list-card {
+    .__fab-card {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        > div:first-of-type,
+        > div:last-of-type{
+            background-color:$artichoke-lighten-3;
+        }
+        > div {
+            border: 1px solid $artichoke;
+            border-radius: 18px;
+            text-align: center;
+            display: flex;
+            width:32%;
+            >div{
+                max-width:70%;
+                margin:auto;
+                padding:20px 0;
+                img {
+                    display: unset;
+                }
+                h3 {
+                    margin:0;
+                    color: $secondary;
+                    font-size: rem(24px);
+                    font-weight: 500;
+                    line-height: 28.2px;
+                }
+            }
+        }
+    }
+}

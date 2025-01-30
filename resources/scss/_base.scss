@@ -91,7 +91,7 @@ h2 {
     font-size: 36px;
     font-weight: 700;
     line-height: normal;
-    color:$primary;
+    margin-bottom:24px !important;
     @include media('<tablet') {
         font-size: rem(30px);
     }
@@ -338,6 +338,10 @@ img {
 
 .gap-30{gap:30px};
 
+
+.bold{
+    font-weight:700;
+}
 .swiper {
     [class*='swiper-button'] {
         font-size: rem(32px) !important;

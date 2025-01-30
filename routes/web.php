@@ -35,6 +35,11 @@ Route::group([
     // Route::get(LaravelLocalization::transRoute('routes.employerService'), [EmployerServiceDisplayController::class, 'show'])->name('employerService');
     // Route::get(LaravelLocalization::transRoute('routes.success'), [PageDisplayController::class, 'success'])->name('success');
 });
+
+
 Route::get('/for-all-beings', function () {
     return view('for-all-beings');
+});
+Route::get('/drcaps', function () {
+    return view('drcaps');
 });

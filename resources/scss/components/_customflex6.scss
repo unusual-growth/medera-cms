@@ -54,6 +54,10 @@
             }
             p {
                 color: $white;
+                // max-width:90%;
+                // @include media('<large'){
+                //     max-width:100%;
+                // }
                 &.custom-flex6 {
                     color: $white;
                 }
