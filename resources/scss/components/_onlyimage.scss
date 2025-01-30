@@ -1,0 +1,10 @@
+.onlyimage{
+    img{
+        margin:auto;
+        width:100%;
+        @include media('>full-1440'){
+            max-width:1440px;
+            max-height:752px;
+        }
+    }
+}

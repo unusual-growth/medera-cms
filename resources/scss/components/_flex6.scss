@@ -1,17 +1,22 @@
 .flex6 {
     .heading {
-        font-size: rem(36px);
+        font-size: rem(42px);
         margin: 0 0 1em 0;
-        line-height: 1.2;
-        @include media('<tablet') {
+        line-height: 49.35px;
+        font-weight:500;
+        @include media("<tablet") {
             font-size: rem(30px);
+        }
+        &.butyera{
+            font-weight:700;
+            font-size:rem(36px)
         }
     }
     p {
-        font-size: rem(20px);
-        line-height: 1.6;
+        font-size: rem(18px);
         margin: 0 0 1.8em 0;
-        color:$secondary;
+        color: $secondary;
+        max-width:90%;
     }
     [class*="col-"]:not(.row) {
         display: flex;
@@ -19,36 +24,34 @@
         justify-content: center;
     }
     img {
-        @include media('<cont-xlarge'){
-            // max-width: unset;
+        @include media("<cont-xlarge") {
             object-fit: cover;
-            // height: 100%;
         }
     }
-    @include media('>full-1440'){
-        .row{
+    @include media(">full-1440") {
+        .row {
             column-gap: 64px;
         }
     }
     .row {
-        $gap: 34px;
-        $mobile_gap: 24px;
+        gap: 34px;
         &:not(:first-child) {
-            margin-top: rem($gap);
-            @include media('<tablet'){
-                margin-top: rem(($mobile_gap));
+            margin-top: rem(34px);
+            @include media("<tablet") {
+                margin-top: rem(24px);
             }
         }
         &:not(:last-child) {
-            margin-bottom: rem($gap);
-            @include media('<tablet'){
-                margin-bottom: em(($mobile_gap));
+            margin-bottom: rem(34px);
+            @include media("<tablet") {
+                margin-bottom: em(24px);
             }
         }
-        @include media('<=tablet'){
+        @include media("<=tablet") {
             &.mob-rev {
                 flex-flow: column-reverse;
             }
         }
     }
+
 }
