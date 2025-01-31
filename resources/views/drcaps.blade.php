@@ -62,7 +62,7 @@
         <div class="container xlarge">
             <div class="row justify-space-between">
                 <div class="col-md-5">
-                    <h2><span>DRcaps®</span>: The Best for Intestinal Butyrates</h2>
+                    <h2><strong>DRcaps®:</strong> The Best for Intestinal Butyrates </h2>
                     <p>Renowned for its resistance to stomach acid, DRcaps® protects sensitive components and ensures their
                         safe delivery to the intestines. Explore the exceptional features of DRcaps® with Medera
                         Nutrition—the world’s first and only producer to encapsulate a 568-milligram dose of all-natural
@@ -131,7 +131,7 @@
                 </picture>
             </div>
             <div class="col-md-5">
-                <h2><span>DRcaps®</span>: The Best for Intestinal Butyrates</h2>
+                <h2><strong>DRcaps®</strong> The Best for Intestinal Butyrates</h2>
                 <p>Renowned for its resistance to stomach acid, DRcaps® protects sensitive components and ensures their
                     safe delivery to the intestines. Explore the exceptional features of DRcaps® with Medera
                     Nutrition—the world’s first and only producer to encapsulate a 568-milligram dose of all-natural
