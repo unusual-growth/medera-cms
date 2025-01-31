@@ -6,7 +6,7 @@
         <div class="container xlarge">
             <div class="row">
                 <div class="col-md-6">
-                    <h2 class="heading">With Medera, The Secret to Healthy Living Lies in the Gut </h2>
+                    <h2>With Medera, The Secret to Healthy Living Lies in the Gut </h2>
                     <p>The gut is more than just a part of the digestive system—it plays a crucial role in the overall
                         health of both humans and animals. As home to a substantial portion of the body's immune cells and
                         microbiome, the gut serves as a vital communication hub between the body and the brain. A strong gut
@@ -40,7 +40,7 @@
             </div>
             <div class="journey-content height-500 dusky-blush-gradient col-sm-7">
                 <div>
-                    <h3 class="heading">Touch Lives with Medera Nutrition</h3>
+                    <h3>Touch Lives with Medera Nutrition</h3>
                     <p>At Medera Nutrition, we have elevated butyrate—the cornerstone of gut health—by enriching it with
                         essential minerals like calcium, magnesium, sodium and potassium. Backed by scientific research, our
                         innovative nutritional formulations are designed to benefit all living
@@ -65,7 +65,7 @@
         <div class="container xlarge journey-container">
             <div class="journey-content height-380 soft-cloud-gradient col-sm-6">
                 <div>
-                    <h3 class="heading">Touch Lives with Medera Nutrition</h3>
+                    <h3>Touch Lives with Medera Nutrition</h3>
                     <p>The key to a healthy life starts with a strong gut. At Medera Nutrition, we are pioneering a new era
                         in gut health with our all-natural, vegan intestinal butyrates, completely free from chemicals.
                         Designed for both humans and animals, our butyrates empower our partners to provide innovative and
@@ -94,7 +94,7 @@
                     </picture>
                 </div>
                 <div class="col-md-5">
-                    <h2 class="heading zigzag">No Supply Shortage with a high volume Production Capacity</h2>
+                    <h2>No Supply Shortage with a high volume Production Capacity</h2>
                     <p>As a pioneer in gut health innovation, Medera Nutrition is your trusted partner in advancing digestive health. We carefully craft our vegan products into unique formulations designed to balance the gut microbiome and strengthen the digestive system. Take a step toward excellence in gut health with our clinically proven and scientifically validated ingredients.</p>
                 </div>
             </div>
@@ -107,16 +107,16 @@
         <div class="container xlarge">
             <div class="row">
                 <div class="col-md-4">
-                    <h2 class="heading butyera">Explore our nature-inspired gut supplements.</h2>
+                    <h2>Explore our nature-inspired gut supplements.</h2>
                     <p>Our supplements, specifically designed for gut health, comprise 95% butyric acid and a 5% mineral
                         blend. This unique formula supports the natural balance of gut microbiomes, boosting overall
                         well-being. </p>
                 </div>
                 <div class="col-md-8">
                     <picture>
-                        <source srcset="{{ asset('/dummy-img/butyera.png') }}" media="(min-width: 1024px)">
-                        <source srcset="{{ asset('/dummy-img/butyera.png') }}" media="(min-width: 768px)">
-                        <img src="{{ asset('/dummy-img/butyera.png') }}" alt="Açıklama metni">
+                        <source srcset="{{ asset('/dummy-img/test.png') }}" media="(min-width: 1024px)">
+                        <source srcset="{{ asset('/dummy-img/test.png') }}" media="(min-width: 768px)">
+                        <img src="{{ asset('/dummy-img/test.png') }}" alt="Açıklama metni">
                     </picture>
                 </div>
             </div>
@@ -132,7 +132,7 @@ BURAYA SLİDER GELECEK
         <div class="container xlarge">
             <div class="row justify-space-between">
                 <div class="col-md-5">
-                    <h2 class="heading __s9">Experience the Power of Nature and R&D in Every Package</h2>
+                    <h2>Experience the Power of Nature and R&D in Every Package</h2>
                     <p>At Medera Nutrition, we provide supplements designed to support and balance the gut microbiome of
                         both humans and animals, available in a range of packaging options tailored to our partners' needs.
                         With sleek, modern designs for packages, bags, bottles, and capsules that embody your brand's
@@ -205,7 +205,7 @@ BURAYA SLİDER GELECEK
         <div class="container xlarge">
             <div class="row justify-space-between">
                 <div class="col-md-5">
-                    <h2 class="heading __s9">Protecting Both You and the Environment</h2>
+                    <h2>Protecting Both You and the Environment</h2>
                     <p>Partnering with Medera Nutrition in intestinal butyrates allows you to promote the digestive health
                         of both humans and animals while honoring your commitment to the environment. As a partner dedicated
                         to both gut health and environmental stewardship, we are working together to create a healthier
@@ -267,7 +267,7 @@ BURAYA SLİDER GELECEK
         <div class="container xlarge">
             <div class="row justify-space-between">
                 <div class="col-md-5">
-                    <h2 class="heading">Bring Life to the Gut with Medera Nutrition</h2>
+                    <h2>Bring Life to the Gut with Medera Nutrition</h2>
                     <p>Would you like to empower your customers' digestive systems and offer them the key to a healthier
                         life? At Medera Nutrition, our intestinal ButyEra, formulated from untouched natural raw materials
                         through 5 years of R&D, help you enhance your customers' quality of life.  </p>
@@ -343,7 +343,7 @@ BURAYA SLİDER GELECEK
         <div class="container xlarge">
             <div class="row justify-space-between">
                 <div class="col-md-5">
-                    <h2 class="heading __s9">All Your Gut Health Questions are Addressed at Medera!</h2>
+                    <h2>All Your Gut Health Questions are Addressed at Medera!</h2>
                     <p>With our ButyEra for humans and animals, developed by a team of skilled and dedicated professionals, we are leading a new era in gut health. In a world where healthy, vibrant living is a lasting priority, Medera Nutrition helps you stand out in the growing gut health market as your trusted partner.
                         <br/><br/>
                         By offering effective solutions that align with your customers’ focus on gut health, we provide you with a competitive edge.

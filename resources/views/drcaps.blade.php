@@ -5,7 +5,7 @@
         <div class="container xlarge">
             <div class="row">
                 <div class="col-md-6">
-                    <h2 class="heading">A Powerful Shield for Your Butyrates: <span class="bold">DRcaps®</span></h2>
+                    <h2>A Powerful Shield for Your Butyrates: <strong>DRcaps®</strong></h2>
                     <p>Acid-sensitive active ingredients require advanced formulation technology to protect them from harsh
                         physiological conditions. According to the World Health Organization, the effectiveness of
                         acid-based products—beneficial live microorganisms for health—relies on proper dosage and
@@ -60,9 +60,9 @@
     {{-- SEC 3 --}}
     <section class="flex6">
         <div class="container xlarge">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2 class="heading"><span>DRcaps®</span>: The Best for Intestinal Butyrates</h2>
+            <div class="row justify-space-between">
+                <div class="col-md-5">
+                    <h2><span>DRcaps®</span>: The Best for Intestinal Butyrates</h2>
                     <p>Renowned for its resistance to stomach acid, DRcaps® protects sensitive components and ensures their
                         safe delivery to the intestines. Explore the exceptional features of DRcaps® with Medera
                         Nutrition—the world’s first and only producer to encapsulate a 568-milligram dose of all-natural
@@ -114,6 +114,91 @@
                         <p>{{ $type['description'] }}</p>
                     </div>
                 @endforeach
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- SEC 5 --}}
+<section class="flex6">
+    <div class="container xlarge">
+        <div class="row">
+            <div class="col-md-6 bg-coating">
+                <picture>
+                    <source srcset="{{ asset('/dummy-img/intestinal.png') }}" media="(min-width: 1024px)">
+                    <source srcset="{{ asset('/dummy-img/intestinal.png') }}" media="(min-width: 768px)">
+                    <img src="{{ asset('/dummy-img/intestinal.png') }}" alt="Açıklama metni">
+                </picture>
+            </div>
+            <div class="col-md-5">
+                <h2><span>DRcaps®</span>: The Best for Intestinal Butyrates</h2>
+                <p>Renowned for its resistance to stomach acid, DRcaps® protects sensitive components and ensures their
+                    safe delivery to the intestines. Explore the exceptional features of DRcaps® with Medera
+                    Nutrition—the world’s first and only producer to encapsulate a 568-milligram dose of all-natural
+                    ButyEra, specifically designed to support human health.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  {{-- SEC 6 --}}
+  @php
+  $packagingTypes = [
+      [
+          'icon' => '/dummy-img/fab-icon.svg',
+          'title' => 'Target-Oriented',
+          'description' =>
+              'Thanks to its resistance to stomach acid, DRcaps®  delivers precise and targeted absorption by working directly in the intestines.',
+      ],
+      [
+          'icon' => '/dummy-img/fab-icon.svg',
+          'title' => 'Rapid Effect',
+          'description' =>
+              'Its resistance to stomach acid shortens the time needed for effectiveness.',
+      ],
+      [
+          'icon' => '/dummy-img/fab-icon.svg',
+          'title' => 'Competitive Advantage',
+          'description' =>
+              'Differentiates your products from competitors, providing a distinct competitive advantage. ',
+      ],
+  ];
+@endphp
+<section class="list-card">
+  <div class="container xlarge">
+      <div class="row">
+          <div class="fab-card three">
+              @foreach ($packagingTypes as $type)
+                  <div>
+                      <img src="{{ $type['icon'] }}" alt="{{ $type['title'] }}" />
+                      <h3>{{ $type['title'] }}</h3>
+                      <p>{{ $type['description'] }}</p>
+                  </div>
+              @endforeach
+          </div>
+      </div>
+  </div>
+</section>
+
+
+ {{-- SEC 7 --}}
+<section class="flex6">
+    <div class="container xlarge">
+        <div class="row">
+            <div class="col-md-5"> 
+                <h2>Experience Next-Generation DRcaps® Technology in Butyrates</h2>
+                <p>DRcaps® provides exceptional resistance to stomach acid and features an advanced capsule design that securely transports butyrates from the stomach to the intestines. This innovative technology ensures that active ingredients are released and absorbed precisely according to intestinal pH conditions.
+                    <br/><br/>
+                    Partner with Medera Nutrition to maximize the effectiveness of ButyEra for humans with DRcaps®, building trust and confidence among your customers.
+                </p>
+            </div>
+
+            <div class="col-md-7">
+                <picture>
+                    <source srcset="{{ asset('/dummy-img/next-generation.png') }}" media="(min-width: 1024px)">
+                    <source srcset="{{ asset('/dummy-img/next-generation.png') }}" media="(min-width: 768px)">
+                    <img src="{{ asset('/dummy-img/next-generation.png') }}" alt="Açıklama metni">
+                </picture>
             </div>
         </div>
     </div>

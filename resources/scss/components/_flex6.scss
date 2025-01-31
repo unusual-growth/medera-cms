@@ -1,33 +1,5 @@
 .flex6 {
-    .heading {
-        font-size: rem(42px);
-        margin: 0;
-        line-height: 49.35px;
-        font-weight:500;
-        @include media("<tablet") {
-            font-size: rem(30px);
-            max-width:100%;
-        }
-        &.butyera{
-            font-weight:700;
-            font-size:rem(36px);
-            line-height: 42.3px;
-            color:$primary;
-        }
-        &.__s9{
-            font-size: rem(36px);
-            line-height: 42.3px;
-            color:$secondary;
-        }
-        &.zigzag{
-            font-size:rem(36px);
-            color:$peach;
-        }
-    }
     p {
-        font-size: rem(18px);
-        margin: 0;
-        color: $secondary;
         max-width:90%;
         @include media("<tablet") {
             max-width:100%;

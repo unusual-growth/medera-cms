@@ -74,136 +74,146 @@ section {
 }
 
 h1 {
-    font-size: rem(48px);
-    font-weight: 400;
-    line-height: 55px;
     color:$white;
-    // @include media('<mobile') {
-    //     font-size: rem(36px);
-    // }
-    span{
-        font-weight: 400;
+	font-size: rem(48px);
+	font-weight: 400;
+	line-height: 56.4px;
+	letter-spacing: -0.02em;
+    margin:0;
+    strong{
+        font-weight: 700; 
     }
 }
 
 h2 {
-    color: $primary;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom:24px !important;
-    @include media('<tablet') {
-        font-size: rem(30px);
+    color:$primary;
+	font-size: 42px;
+	font-weight: 400;
+	line-height: 49px;
+	letter-spacing: -0.02em;
+    margin:0;
+    strong{
+        font-weight: 700; 
     }
 }
-h5 {
-    font-size: rem(20px);
+h3{
+    color:$peach;
+	font-size: rem(36px);
+	font-weight: 400;
+	line-height: 42px;
+	letter-spacing: -0.02em;
+    margin:0;
+    strong{
+        font-weight: 700; 
+    }
 }
 p {
-    font-size: rem(18px);
-    font-weight: 400;
-    line-height: 21.15px;
     color:$secondary;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 21px;
+	letter-spacing: -0.02em;
 }
-a {
-    cursor: pointer;
-    text-decoration: none;
-    color: $detailcolor;
-    &:hover {
-        color: $primary;
-    }
-    &.arrowed {
-        font-size: rem(16px);
-        font-weight: 700;
-        letter-spacing: 0.16px;
-        background-color: $white;
-        color: $detailcolor;
-        display: flex;
-        width: max-content;
-        flex-flow: row nowrap;
-        align-items: stretch;
-        justify-content: center;
-        border-radius: 12px;
-        align-self: start;
-        text-transform: uppercase;
-        transition: all 0.4s ease-out;
-        &.detail-color {
-            background-color: $detailcolor;
-            color: $white;
-        }
-        span {
-            padding: rem(12px) rem(16px);
-        }
 
-        div {
-            position: relative;
-            width: rem(42px);
-            // height: rem(42px);
-            border-radius: 12px;
-            background-color: $teritary;
-            overflow: hidden;
-            &::before, &::after {
-                content: '';
-                background-image: asset('arrow.svg');
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                top: 0;
-                transition: all 0.4s ease-out;
-                width: 100%;
-                height: 100%;
-                display: block;
-                position: absolute;
-            }
-            &::before {
-                right: 100%;
-            }
-            &::after {
-                right: 0;
-            }
-        }
-        &:hover {
+// a {
+//     cursor: pointer;
+//     text-decoration: none;
+//     color: $detailcolor;
+//     &:hover {
+//         color: $primary;
+//     }
+//     &.arrowed {
+//         font-size: rem(16px);
+//         font-weight: 700;
+//         letter-spacing: 0.16px;
+//         background-color: $white;
+//         color: $detailcolor;
+//         display: flex;
+//         width: max-content;
+//         flex-flow: row nowrap;
+//         align-items: stretch;
+//         justify-content: center;
+//         border-radius: 12px;
+//         align-self: start;
+//         text-transform: uppercase;
+//         transition: all 0.4s ease-out;
+//         &.detail-color {
+//             background-color: $detailcolor;
+//             color: $white;
+//         }
+//         span {
+//             padding: rem(12px) rem(16px);
+//         }
 
-            background-color: $detailcolor;;
-            color: $white;
+//         div {
+//             position: relative;
+//             width: rem(42px);
+//             // height: rem(42px);
+//             border-radius: 12px;
+//             background-color: $teritary;
+//             overflow: hidden;
+//             &::before, &::after {
+//                 content: '';
+//                 background-image: asset('arrow.svg');
+//                 background-position: center;
+//                 background-repeat: no-repeat;
+//                 background-size: cover;
+//                 top: 0;
+//                 transition: all 0.4s ease-out;
+//                 width: 100%;
+//                 height: 100%;
+//                 display: block;
+//                 position: absolute;
+//             }
+//             &::before {
+//                 right: 100%;
+//             }
+//             &::after {
+//                 right: 0;
+//             }
+//         }
+//         &:hover {
 
-            box-shadow: 0px 4px 24px 0px #3e507696;
+//             background-color: $detailcolor;;
+//             color: $white;
 
-            &.detail-color {
-                background-color: $white;
-                color: $detailcolor;
-                box-shadow: 0px 4px 24px 0px rgba($color: #349773, $alpha: .55);
-            }
-            div {
-                &::before {
-                    right: 0%;
-                }
-                &::after {
-                    right: -100%;
-                }
-            }
-        }
-    }
-    &.blue-block {
-        border-radius: 12px;
-        background: $detailcolor;
-        padding: 0.75em 2em;
-        color: #FFF;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    .go-back-home {
-        width: min(326px, 85vw);
-    }
-}
-button {
-    font-family: 'Cabin', sans-serif !important;
-    border: none;
-}
+//             box-shadow: 0px 4px 24px 0px #3e507696;
+
+//             &.detail-color {
+//                 background-color: $white;
+//                 color: $detailcolor;
+//                 box-shadow: 0px 4px 24px 0px rgba($color: #349773, $alpha: .55);
+//             }
+//             div {
+//                 &::before {
+//                     right: 0%;
+//                 }
+//                 &::after {
+//                     right: -100%;
+//                 }
+//             }
+//         }
+//     }
+//     &.blue-block {
+//         border-radius: 12px;
+//         background: $detailcolor;
+//         padding: 0.75em 2em;
+//         color: #FFF;
+//         font-size: 18px;
+//         font-style: normal;
+//         font-weight: 500;
+//         line-height: normal;
+//         text-transform: uppercase;
+//         text-align: center;
+//     }
+//     .go-back-home {
+//         width: min(326px, 85vw);
+//     }
+// }
+// button {
+//     font-family: 'Cabin', sans-serif !important;
+//     border: none;
+// }
 img {
     display: block;
     max-width: 100%;
@@ -337,7 +347,6 @@ img {
 }
 
 .gap-30{gap:30px};
-
 
 .bold{
     font-weight:700;
