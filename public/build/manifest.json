@@ -1,0 +1,13 @@
+{
+  "resources/js/app.js": {
+    "file": "app-D3d4kX1m.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/scss/style.scss": {
+    "file": "style-BD4icJGq.css",
+    "src": "resources/scss/style.scss",
+    "isEntry": true
+  }
+}
