@@ -46,3 +46,9 @@ Route::get('/drcaps', function () {
 Route::get('/for-humans', function () {
     return view('for-humans');
 });
+Route::get('/sustainability', function () {
+    return view('sustainability');
+});
+Route::get('/packaging', function () {
+    return view('packaging');
+});

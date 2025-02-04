@@ -39,14 +39,19 @@ $secondary_tone_4: #d9dbdd;
 $forest-lighten-1: #8ba9a1;
 
 .preset-color {
-    &-secondary {
+    &-white {
         h1,h2,h3,h4 {
-            color: $secondary;
+            color: $white;
         }
     }
     &-primary {
         h1,h2,h3,h4,p {
             color: $primary;
+        }
+    }
+    &-secondary {
+        h1,h2,h3,h4 {
+            color: $secondary;
         }
     }
     &-peach {
@@ -60,6 +65,3 @@ $forest-lighten-1: #8ba9a1;
     --color-primary: #35b98b;
 }
 
-// .color-white {
-//     color: white !important;
-// }

@@ -1,81 +1,67 @@
 @extends('site.layouts.master')
 
 @section('content')
-    {{-- SEC 1  --}}
- {{-- resources/views/components/gut-health-section.blade.php --}}
-{{-- <section class="gut-health-section">
-    <div class="container xlarge">
-        <div class="row content-wrapper">
-            <div class="col-md-6 text-content">
-                <h2>
-                    <strong>4-in-1 Formula:<br/></strong>
-                    Supporting Gut Health with Unique Components
-                </h2>
-                
-                <p>
-                    Our ButyEra are specially designed for gut health and are 
-                    available in four distinct formulations, each featuring a 
-                    unique component. By combining calcium, potassium, 
-                    sodium, and magnesium, we deliver an innovative approach 
-                    to improving gut health and adding value to human well-being.
-                </p>
-
-                <div class="info-box">
-                    <p>
-                        Our products contain no artificial coloring, 
-                        flavoring, animal-derived ingredients, or 
-                        genetically modified nutrients.
-                    </p>
+    {{--  HERO METNİ HİZALA--}}
+    <section class="hero butyrate">
+        <div class="container full-1440">
+            <div class="row gap-30 justify-space-between">
+                <div class="col-md-6 flex-center">
+                    <div class="content">
+                        <h1><strong>ButyEra for Humans</strong> by Medera Nutrition</h1>
+                        <p>We are expanding our reach with high-quality butyrates for human gut health, developed through
+                            over five years of dedicated R&D. Our ButyEra, composed of 95% pure butyrate and 5% binding
+                            components, have demonstrated scientifically proven efficacy through rigorous research and
+                            testing. They support gut health and empower individuals to enhance their quality of life.</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-md-6 product-content">
-                <img src="/dummy-img/sise.png" alt="Butyrate Supplement Bottle" class="product-image">
-                <div class="capsule-info">
-                    <p>
-                        Each capsule includes 568 mg of components and 174 mg of other fatty acids.
-                    </p>
+                <div class="col-md-6 image">
+                    <picture>
+                        <source srcset="{{ asset('/dummy-img/for-humans-hero.png') }}" media="(min-width: 1024px)">
+                        <source srcset="{{ asset('/dummy-img/for-humans-hero.png') }}" media="(min-width: 768px)">
+                        <img src="{{ asset('/dummy-img/for-humans-hero.png') }}" alt="Açıklama metni">
+                    </picture>
                 </div>
             </div>
         </div>
-    </div>
-</section> --}}
-{{-- resources/views/components/gut-health-section.blade.php --}}
-<section class="gut-health-section">
-    <div class="container xlarge">
-        <div class="row content-wrapper">
-            <div class="col-md-6 text-content">
-                <h2>
-                    <strong>4-in-1 Formula:<br/></strong>
-                    Supporting Gut Health with Unique Components
-                </h2>
-                
-                <p>
-                    Our ButyEra are specially designed for gut health and are 
-                    available in four distinct formulations, each featuring a 
-                    unique component. By combining calcium, potassium, 
-                    sodium, and magnesium, we deliver an innovative approach 
-                    to improving gut health and adding value to human well-being.
-                </p>
+    </section>
 
-                <div class="info-box preset-color-primary">
+{{-- SEC 1 --}}
+    <section class="gut-health-section">
+        <div class="container xlarge">
+            <div class="row content-wrapper">
+                <div class="col-md-6 text-content">
+                    <h2>
+                        <strong>4-in-1 Formula:<br /></strong>
+                        Supporting Gut Health with Unique Components
+                    </h2>
+
                     <p>
-                        Our products contain no artificial coloring, flavoring, animal-derived ingredients, or genetically modified nutrients.
+                        Our ButyEra are specially designed for gut health and are
+                        available in four distinct formulations, each featuring a
+                        unique component. By combining calcium, potassium,
+                        sodium, and magnesium, we deliver an innovative approach
+                        to improving gut health and adding value to human well-being.
                     </p>
+
+                    <div class="info-box preset-color-primary">
+                        <p>
+                            Our products contain no artificial coloring, flavoring, animal-derived ingredients, or
+                            genetically modified nutrients.
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class=" col-md-6 product-content">
-                <img src="/dummy-img/sise.png" alt="Butyrate Supplement Bottle" class="product-image">
-                <div class="capsule-info">
-                    <p>
-                        Each capsule includes 568 mg of components and 174 mg of other fatty acids.
-                    </p>
+                <div class=" col-md-6 product-content">
+                    <img src="/dummy-img/sise.png" alt="Butyrate Supplement Bottle" class="product-image">
+                    <div class="capsule-info">
+                        <p>
+                            Each capsule includes 568 mg of components and 174 mg of other fatty acids.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 

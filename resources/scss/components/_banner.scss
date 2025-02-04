@@ -50,25 +50,64 @@
     }
 }
 .go-to-form {
-    .row{
-        >div:first-of-type{
+    .row {
+        > div:first-of-type {
             background: linear-gradient(270deg, #f6ece9 0%, #d8e2e0 100%);
             border-radius: 20px;
             h4 {
                 line-height: 28.2px;
                 max-width: 510px;
-                margin-bottom:24px;
+                margin-bottom: 24px;
             }
             width: 100%;
             display: flex;
             flex-flow: column;
             justify-content: center;
             align-items: center;
-            
             margin: auto;
             text-align: center;
             padding: 44px 0;
         }
     }
-
+}
+.bags {
+    .row{
+        > div{
+            width:100%;
+            background-image: url("/dummy-img/cubes.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            padding:58px 0;
+            border-radius:20px;
+            h4{
+                max-width: 640px;
+                margin: auto;
+            
+            }
+        }
+    }
+}
+.plant-based{
+    .row {
+        > div:first-of-type {
+            background: linear-gradient(270deg, #f6ece9 0%, #d8e2e0 100%);
+            border-radius: 20px;
+            h3 {
+                color:$primary;
+                line-height: 42.2px;
+                max-width: 729px;
+                margin-bottom: 24px;
+            }
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            text-align: center;
+            padding: 44px 0;
+        }
+    }
 }

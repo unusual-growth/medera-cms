@@ -72,7 +72,15 @@ section {
         }
     }
 }
-
+picture{
+    // width:max-content;
+    @include media('<large'){
+        width:100%;
+    }
+    img{
+        width:100%;
+    }
+}
 h1 {
     color:$white;
 	font-size: rem(48px);
