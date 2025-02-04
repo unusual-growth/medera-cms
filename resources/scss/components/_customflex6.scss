@@ -18,6 +18,15 @@
     .journey-content {
         background: linear-gradient(270deg, #847c80 0%, #d9b3a8 100%);
         border-radius: 50px;
+        &.bg-light{
+            background: linear-gradient(270deg, #F6ECE9 0%, #D8E2E0 100%);
+            h3{
+                color:$primary;
+            }
+            p{
+                color:$secondary;
+            }
+        }
         &.height-500{
             height:31.25em;
         }

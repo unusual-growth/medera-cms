@@ -43,3 +43,6 @@ Route::get('/for-all-beings', function () {
 Route::get('/drcaps', function () {
     return view('drcaps');
 });
+Route::get('/for-humans', function () {
+    return view('for-humans');
+});
