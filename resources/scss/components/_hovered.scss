@@ -5,7 +5,9 @@
         justify-content: space-between;
         width: 100%;
         cursor: pointer;
-        
+        @include media('<tablet'){
+            flex-flow: column;
+        }
         .card {
             width: 30%;
             border-radius: 16px;
@@ -13,7 +15,12 @@
             height: 184px;
             overflow: hidden;
             transition: height 0.5s ease;
-            
+            @include media('<tablet'){
+                width:100%;
+                &:not(:last-of-type){
+                    margin-bottom:20px;
+                }
+            }
             .card-content {
                 display: flex;
                 flex-direction: column;

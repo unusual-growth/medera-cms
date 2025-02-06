@@ -1,0 +1,54 @@
+.slider-section {
+    .content {
+        align-self: center;
+        border: 1px solid $peach;
+        border-radius: 20px;
+        padding: 80px 10px;
+        @include media('<tablet'){
+            padding:20px 20px;
+        }
+        .swiper-slide {
+            div {
+                max-width: 460px;
+                margin: auto;
+                @include media('<tablet'){
+                    p{
+                        margin-bottom:40px;
+                    }
+                }
+            }
+        }
+    }
+    img {
+        width: 100%;
+    }
+}
+
+.swiper-pagination {
+    &-container {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 86%;
+        @include media('<tablet'){
+            width:91%;
+        }
+    }
+    &-custom {
+        width:max-content;
+        color:$peach;
+    }
+}
+
+.custom-next-button {
+    color: $peach;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #a48d83;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

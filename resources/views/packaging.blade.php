@@ -390,4 +390,7 @@ $packagingTypes = [
         </div>
     </div>
 </section>
+
+{{-- SEC 17  --}}
+Buraya bir section gelecek
 @endsection
