@@ -1,0 +1,26 @@
+.benefitgrid {
+    .benefits {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        .__items {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            img {
+                max-width: 60;
+                max-height: 60px;
+            }
+            h2 {
+                display: flex;
+                flex-flow: column;
+                text-align: center;
+            }
+            &:not(:last-of-type) {
+                border-right: 1px solid $primary;
+            }
+        }
+    }
+
+}

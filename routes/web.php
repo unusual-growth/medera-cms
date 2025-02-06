@@ -43,3 +43,12 @@ Route::get('/for-all-beings', function () {
 Route::get('/drcaps', function () {
     return view('drcaps');
 });
+Route::get('/for-humans', function () {
+    return view('for-humans');
+});
+Route::get('/sustainability', function () {
+    return view('sustainability');
+});
+Route::get('/packaging', function () {
+    return view('packaging');
+});

@@ -1,0 +1,72 @@
+
+
+.gut-health-section {
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        @include media('<tablet'){
+            flex-flow: column;
+        }
+    }
+
+    .text-content {
+        h2 {
+            margin-bottom: 1.5rem;
+        }
+        p {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .info-box {
+        border: 1px solid $primary_tone_4;
+        border-radius: 20px;
+        position: relative;
+        z-index: 1;
+        margin-right: -50px;
+        top:40px;
+        p {
+            margin: 60px auto;
+            text-align: center;
+            max-width:488px;
+        }
+    }
+
+    .product-content {
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        img{
+            z-index: 2;
+        }
+        .capsule-info {
+            background: linear-gradient(270deg, #F6ECE9 0%, #D8E2E0 100%);
+            padding: 20px;
+            border-radius: 12px;
+            position: relative;
+            top:-63px;
+            z-index: 0;
+            p {
+                margin:31px 0;
+                text-align: center;
+            }
+        }
+    }
+
+ 
+
+    @media (max-width: 768px) {
+        .info-box {
+            margin-right: 0;
+            margin-bottom: -30px;
+        }
+
+        .capsule-info {
+            margin-left: 0;
+            margin-top: -30px;
+        }
+    }
+}

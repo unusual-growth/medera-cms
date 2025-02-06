@@ -1,0 +1,62 @@
+
+.hovered {
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        cursor: pointer;
+        
+        .card {
+            width: 30%;
+            border-radius: 16px;
+            border: 1px solid $artichoke;
+            height: 184px;
+            overflow: hidden;
+            transition: height 0.5s ease;
+            
+            .card-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: start;
+                text-align: center;
+                padding-top: 24px;
+                
+                h3 {
+                    margin-top: 10px;
+                }
+                
+                svg {
+                    transition: transform 0.5s ease;
+                    margin-top: 15px;
+                }
+                
+                p {
+                    max-width: 242px;
+                    opacity: 0;
+                    transform: translateY(-20px);
+                    transition: all 0.5s ease;
+                    height: 0;
+                    margin: 0;
+                }
+            }
+            
+            &:hover {
+                height: 277px;
+                
+                .card-content {
+                    p {
+                        opacity: 1;
+                        transform: translateY(10px);
+                        height: auto;
+                        margin-top: 15px;
+                    }
+                    
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}
