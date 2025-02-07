@@ -50,6 +50,11 @@ Route::get('/for-humans', function () {
 Route::get('/sustainability', function () {
     return view('sustainability');
 });
+
 Route::get('/packaging', function () {
     return view('packaging');
+});
+
+Route::get('/shipping', function () {
+    return view('shipping');
 });

@@ -3,6 +3,14 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         width: 100%;
+        @include media('<large'){
+            grid-template-columns: repeat(2, 2fr); 
+            gap:20px;
+            row-gap: 40px;
+        }
+        @include media('<tablet'){
+            grid-template-columns: repeat(1, 4fr); 
+        }
         .__items {
             display: flex;
             flex-flow: column;
@@ -19,6 +27,9 @@
             }
             &:not(:last-of-type) {
                 border-right: 1px solid $primary;
+                @include media('<large'){
+                    border-right: unset;
+                }
             }
         }
     }
