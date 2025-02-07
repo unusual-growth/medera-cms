@@ -12,6 +12,8 @@ return [
      */
     'locales' => [
         'en',
+        'nl',
+        'tr'
     ],
 
     /*
@@ -108,4 +110,5 @@ return [
     |
      */
     'to_array_always_loads_translations' => true,
+
 ];

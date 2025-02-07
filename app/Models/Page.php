@@ -10,13 +10,14 @@ use A17\Twill\Models\Behaviors\HasFiles;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
+use App\Models\Behaviours\HasLocalizedRoute;
 use A17\Twill\Models\Model;
 use App\Repositories\PageRepository;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
 
 class Page extends Model implements Sortable
 {
-    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasRevisions, HasPosition, HasMetadata;
+    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasRevisions, HasPosition, HasMetadata, HasLocalizedRoute;
     public \Illuminate\Contracts\Foundation\Application|array|\Illuminate\Config\Repository|\Illuminate\Foundation\Application $metadataFallbacks = [];
 
     protected $fillable = [
@@ -35,6 +36,23 @@ class Page extends Model implements Sortable
 
     public $slugAttributes = [
         'title',
+    ];
+
+    public $mediasParams = [
+        'library-image' => [
+            'default' => [
+                [
+                    'name' => 'default',
+                    'ratio' => 2880 / 800,
+                ],
+            ],
+            'thumbnail' => [
+                [
+                    'name' => 'default',
+                    'ratio' => 730 / 440,
+                ],
+            ]
+        ],
     ];
     public function __construct()
     {
