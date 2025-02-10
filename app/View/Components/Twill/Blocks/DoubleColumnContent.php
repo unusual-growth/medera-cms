@@ -1,10 +1,9 @@
 <?php
 
-namespace App\View\Components\Twill\Blocks\Double\Column;
+namespace App\View\Components\Twill\Blocks;
 
 use A17\Twill\Models\Block;
 use A17\Twill\Services\Forms\Fields\Checkbox;
-use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Fields\Medias;
 use A17\Twill\Services\Forms\Fields\Radios;
 use A17\Twill\Services\Forms\Fields\Wysiwyg;
@@ -14,7 +13,7 @@ use A17\Twill\Services\Forms\Options;
 use A17\Twill\View\Components\Blocks\TwillBlockComponent;
 use Illuminate\Contracts\View\View;
 
-class Content extends TwillBlockComponent
+class DoubleColumnContent extends TwillBlockComponent
 {
     public function render(): View
     {
