@@ -16,7 +16,7 @@ class PageDisplayController extends Controller
     use SetsMetadata;
 
      public function show(Page $page): View|RedirectResponse
-   {
+     {
         if (!$page) {
             abort(404);
         }
