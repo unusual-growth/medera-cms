@@ -13,11 +13,11 @@ use A17\Twill\Services\Forms\Options;
 use A17\Twill\View\Components\Blocks\TwillBlockComponent;
 use Illuminate\Contracts\View\View;
 
-class DoubleColumnContent extends TwillBlockComponent
+class Doublecolumncontent extends TwillBlockComponent
 {
     public function render(): View
     {
-        return view('components.twill.blocks.double.column.content');
+        return view('components.twill.blocks.doublecolumncontent');
     }
 
     public function getForm(): Form
