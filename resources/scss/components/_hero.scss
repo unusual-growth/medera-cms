@@ -323,14 +323,23 @@
 
 
 .hero{
-  &.butyrate{
-    background: linear-gradient(270deg, #847C80 0%, #B2C6C1 100%);
     padding:0 !important;
     .content{
-      max-width: 460px;
-      p{
-        color:$white;
-      }
+        max-width: 460px;
+        h1, h2, p{
+            color:$white;
+        }
     }
-  }
+    img {
+        border-radius: 0 !important;
+    }
+    &.forest-to-gray{
+        background: linear-gradient(270deg, #847C80 0%, #B2C6C1 100%);
+    }
+    &.peach-to-gray{
+        background: linear-gradient(270deg, #847C80 0%, #D9B3A8 100%);
+    }
+    &.dark-forest-to-gray {
+        background: linear-gradient(270deg, #434A57 0%, #658D82 100%);
+    }
 }
