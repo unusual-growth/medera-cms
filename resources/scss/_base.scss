@@ -161,7 +161,9 @@ a {
 img {
     display: block;
     max-width: 100%;
-    height: auto;
+    // I commented out the following line because it was overriding inline html height values.
+    // height: auto;
+
 }
 
 .iti {
