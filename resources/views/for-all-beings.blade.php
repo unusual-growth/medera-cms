@@ -5,8 +5,8 @@
     <section class="flex6">
         <div class="container xlarge">
             <div class="row">
-                <div class="col-md-6">
-                    <h2>With Medera, The Secret to Healthy Living Lies in the Gut </h2>
+                <div class="col-sm-6">
+                    <h2><strong>With Medera</strong>, The Secret to Healthy Living Lies in the Gut </h2>
                     <p>The gut is more than just a part of the digestive system—it plays a crucial role in the overall
                         health of both humans and animals. As home to a substantial portion of the body's immune cells and
                         microbiome, the gut serves as a vital communication hub between the body and the brain. A strong gut
@@ -16,7 +16,7 @@
                         help establish your reputation as a leader in gut health.</p>
                 </div>
 
-                <div class="col-md-6 bg-coating">
+                <div class="col-sm-6 bg-coating">
                     <picture>
                         <source srcset="{{ asset('/dummy-img/forallbeings-flex6.png') }}" media="(min-width: 1024px)">
                         <source srcset="{{ asset('/dummy-img/forallbeings-flex6.png') }}" media="(min-width: 768px)">
@@ -35,7 +35,7 @@
                 <picture>
                     <source srcset="{{ asset('/dummy-img/for-all-beign-customflex6.png') }}" media="(min-width: 1024px)">
                     <source srcset="{{ asset('/dummy-img/for-all-beign-customflex6.png') }}" media="(min-width: 768px)">
-                    <img src="{{ asset('/dummy-img/for-all-beign-customflex6.png') }}" alt="Açıklama metni">
+                    <img class="transform-left-center" src="{{ asset('/dummy-img/for-all-beign-customflex6.png') }}" alt="Açıklama metni">
                 </picture>
             </div>
             <div class="journey-content height-500 dusky-blush-gradient col-sm-7">
@@ -63,7 +63,7 @@
     {{-- <x-allbeings.opposite-customflex6 /> --}}
     <section class="journey-section">
         <div class="container xlarge journey-container">
-            <div class="journey-content height-380 soft-cloud-gradient col-sm-6">
+            <div class="journey-content z-index-1 height-380 soft-cloud-gradient col-sm-6">
                 <div>
                     <h3>Touch Lives with Medera Nutrition</h3>
                     <p>The key to a healthy life starts with a strong gut. At Medera Nutrition, we are pioneering a new era
@@ -76,7 +76,7 @@
                 <picture>
                     <source srcset="{{ asset('/dummy-img/zigzag1.png') }}" media="(min-width: 1024px)">
                     <source srcset="{{ asset('/dummy-img/zigzag1.png') }}" media="(min-width: 768px)">
-                    <img src="{{ asset('/dummy-img/zigzag1.png') }}" alt="Açıklama metni">
+                    <img class="transform-right-center" src="{{ asset('/dummy-img/zigzag1.png') }}" alt="Açıklama metni">
                 </picture>
             </div>
         </div>
@@ -312,14 +312,14 @@ BURAYA SLİDER GELECEK
             ],
         ];
     @endphp
-    <section class="list-card">
+    <section class="list-card preset-color-peach">
         <div class="container xlarge">
             <div class="row">
                 <div class="fab-card">
                     @foreach ($packagingTypes as $type)
                         <div>
                             <img src="{{ $type['icon'] }}" alt="{{ $type['title'] }}" />
-                            <h3 class="color-peach">{{ $type['title'] }}</h3>
+                            <h3> {{ $type['title'] }}</h3>
                             <p>{{ $type['description'] }}</p>
                         </div>
                     @endforeach
@@ -332,7 +332,9 @@ BURAYA SLİDER GELECEK
     <section class="banner">
         <div class="container xlarge">
             <div class="row justify-content-center">
-                <p>Ready to improve your gut health? <span>BUTYERA is the key!</span></p>
+                <div class="improveyourguthealth">
+                    <h3>Ready to improve your gut health? <span>BUTYERA is the key!</span></h3>
+                </div>
             </div>
         </div>
     </section>

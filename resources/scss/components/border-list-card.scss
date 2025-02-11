@@ -3,10 +3,6 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        > div:first-of-type,
-        > div:last-of-type{
-            background-color:$artichoke-lighten-3;
-        }
         > div {
             border: 1px solid $artichoke;
             border-radius: 18px;
