@@ -239,4 +239,59 @@
             </div>
         </div>
     </section>
+
+
+    {{-- circle card in homepage --}}
+    @php
+        $circleCard = [
+            [
+                'img' => '/dummy-img/circle-img.png',
+                'title' => 'Manufacturer of all-natural butyrate',
+                'text-bg-color' => 'peach_darken_1',
+                'class' => 'peach_lighten_3',
+            ],
+            [
+                'img' => '/dummy-img/circle-img.png',
+                'title' => 'Expert R&D competence',
+                'text-bg-color' => 'forest_darken_1',
+                'class' => 'forest_lighten_3',
+            ],
+            [
+                'img' => '/dummy-img/circle-img.png',
+                'title' => 'High volume production capacity',
+                'text-bg-color' => 'cinereous_darken_1',
+                'class' => 'cinereous_lighten_3',
+            ],
+            [
+                'img' => '/dummy-img/circle-img.png',
+                'title' => 'Fastest delivery promised',
+                'color' => 'aegean_darken_1',
+                'class' => 'aegean_lighten_3',
+            ],
+        ];
+    @endphp
+    <section class="circle-card">
+        <div class="container xlarge">
+            <div class="heading">
+                <h2>MEDERA <br />
+                    <strong>Your ultimate butyrate partner</strong>
+                </h2>
+                <p>Medera is ushering in a new era in gut health by revolutionizing gut health. As the only company in the
+                    world
+                    which produces butyrate without using any chemical materials, Medera’s high volume production capacity
+                    and
+                    fast delivery times are setting a new standard for the industry.</p>
+            </div>
+        </div>
+        <div class="container xlarge">
+            <div class="cards">
+                @foreach ($circleCard as $card)
+                        <div class="card {{ $card['class'] }}">
+                            <img src="{{ $card['img'] }}" alt="{{ $card['img'] }}" />
+                            <p>{{ $card['title'] }}</p>
+                        </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 @endsection

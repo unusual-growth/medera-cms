@@ -3,6 +3,7 @@
         max-width:90%;
         @include media("<tablet") {
             max-width:100%;
+            margin-bottom:0;
         }
     }
     [class*="col-"]:not(.row) {
@@ -11,6 +12,7 @@
         justify-content: start;
     }
     img {
+        border-radius:20px;
         @include media("<cont-xlarge") {
             object-fit: cover;
         }
@@ -34,7 +36,8 @@
                 margin-bottom: em(24px);
             }
         }
-        @include media("<=tablet") {
+        @include media("<tablet") {
+            gap:24px;
             &.mob-rev {
                 flex-flow: column-reverse;
             }

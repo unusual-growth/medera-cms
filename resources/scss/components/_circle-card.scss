@@ -1,0 +1,67 @@
+$colors: (
+    1: $peach_darken_1,
+    2: $forest_darken_1,
+    3: $cinereous_darken_1,
+    4: $aegean_darken_1
+);
+
+.circle-card {
+    .heading{
+        max-width:50%;
+        @include media('<large'){
+            max-width:100%;
+            // text-align: center;
+        }
+        p{
+            max-width:80%;
+            @include media('<large'){
+                max-width:100%;
+            }
+        }
+    }
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        @include media('<cont-xlarge'){
+            row-gap: 54px;
+        }
+        @include media('<large'){
+            justify-content: space-around;
+            
+        }
+        .card {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: start;
+            width:280px;
+            border-radius: 20px;
+            position:relative;
+            height:316px;
+            img {
+                padding-top:20px;
+                max-width: 232px;
+                border-radius:50%;
+            }
+            @include media('<mobile'){
+                width:100%;
+                
+            }
+            @for $i from 1 through length($colors) {
+                &:nth-child(#{$i}) p {
+                    background-color: map-get($colors, $i);
+                    text-align: center;
+                    border-radius:50px;
+                    color:$white;
+                    max-width:215px;
+                    padding:14px;
+                    position:absolute;
+                    margin:0;
+                    bottom:-10%;
+                }
+            }
+        }
+    }
+}

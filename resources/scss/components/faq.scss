@@ -56,10 +56,12 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    // .answer-content {
-    //     padding: 16px 20px;
-    //     color: #4b5563;
-    //     line-height: 1.6;
-    // }
+    .answer-content {
+        p{
+          &:first-of-type{
+            color:$primary;
+          }
+        }
+    }
   }
 }

@@ -1,0 +1,29 @@
+.success-section {
+    background: linear-gradient(270deg, #847c80 0%, #d9b3a8 100%);
+    // height: calc(100vh- $headerHeight);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > div {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            margin-top:20px;
+            line-height: 55px;
+            text-align: center;
+        }
+        p{
+            color:$white;
+        }
+        a{
+            color:$white;
+            border:1px solid $white;
+            border-radius: 20px;
+            padding: 0 46px;
+            margin-top:40px;
+        }
+    }
+}

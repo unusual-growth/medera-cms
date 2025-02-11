@@ -57,3 +57,10 @@ Route::get('/packaging', function () {
 Route::get('/shipping', function () {
     return view('shipping');
 });
+
+Route::get('/success', function () {
+    return view('success');
+});
+Route::get('/404', function () {
+    return view('404');
+});

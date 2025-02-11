@@ -7,33 +7,20 @@
 }
 html {
     scroll-behavior: smooth;
-    // padding-top: rem(116px);
-    font-size: $html-font-size;
-
+    font-size: 16px;
     font-family: 'Maven Pro', sans-serif !important;
-    color: $detailcolor;
-    // TODO: ???????
     @include media('>2000px') {
         font-size: 18px;
     }
     @include media('<mobile') {
         font-size: 14px;
     }
-    // @include media('<mobile') {
-    //     padding-top: 48px;
-    // }
 }
+
 body {
     margin: 0;
-    line-height: 1.5em;
-}
-[data-background-image] {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 section {
-    // margin: rem(32px) 0;
     &:not(.no-padding) {
         padding: rem(52px) 0;
         &.narrow {
@@ -61,19 +48,13 @@ section {
     &:last-of-type {
         margin-bottom: 0;
     }
-    // &:not(.no-margin) {
-    //     margin: rem(64px) 0;
-    // }
     @include media('<tablet') {
-        // margin: rem(16px) 0;
-        // padding: rem(16px) 0;
         &:not(.no-padding) {
             padding: rem(16px) 0;
         }
     }
 }
 picture{
-    // width:max-content;
     @include media('<large'){
         width:100%;
     }
@@ -91,6 +72,10 @@ h1 {
     strong{
         font-weight: 700; 
     }
+    @include media('<tablet'){
+        font-size:rem(30px);
+        line-height: 35.25px
+    }
 }
 
 h2 {
@@ -100,8 +85,13 @@ h2 {
 	line-height: 49px;
 	letter-spacing: -0.02em;
     margin:0;
+    line-height: 28.2px
     strong{
         font-weight: 700; 
+    }
+    @include media('<tablet'){
+        font-size:rem(24px);
+        line-height:28.2px;
     }
 }
 h3{
@@ -114,6 +104,9 @@ h3{
     strong{
         font-weight: 700; 
     }
+    @include media('<tablet'){
+        font-size:rem(20px);
+    }
 }
 h4{
     color:$primary;
@@ -125,6 +118,10 @@ h4{
     strong{
         font-weight: 700; 
     }
+    @include media('<tablet'){
+        font-size:rem(18px);
+        line-height: 21.15px;
+    }
 }
 p {
     color:$secondary;
@@ -132,6 +129,9 @@ p {
 	font-weight: 400;
 	line-height: 21px;
 	letter-spacing: -0.02em;
+    @include media('<tablet'){
+        font-size:rem(14px);
+    }
 }
 a {
     color: $primary;
@@ -141,116 +141,16 @@ a {
     letter-spacing: 1px;
     text-transform: uppercase;
     width: max-content;
-    border: 1px solid $forest-lighten-1;
+    border: 1px solid $forest_lighten_1;
     border-radius: 20px;
     padding: 4px 12px;
     text-decoration: none;
     transition: all 0.5s;
     &:hover {
         color: $white;
-        background-color: $forest-lighten-1;
+        background-color: $forest_lighten_1;
     }
 }
-
-// a {
-//     cursor: pointer;
-//     text-decoration: none;
-//     color: $detailcolor;
-//     &:hover {
-//         color: $primary;
-//     }
-//     &.arrowed {
-//         font-size: rem(16px);
-//         font-weight: 700;
-//         letter-spacing: 0.16px;
-//         background-color: $white;
-//         color: $detailcolor;
-//         display: flex;
-//         width: max-content;
-//         flex-flow: row nowrap;
-//         align-items: stretch;
-//         justify-content: center;
-//         border-radius: 12px;
-//         align-self: start;
-//         text-transform: uppercase;
-//         transition: all 0.4s ease-out;
-//         &.detail-color {
-//             background-color: $detailcolor;
-//             color: $white;
-//         }
-//         span {
-//             padding: rem(12px) rem(16px);
-//         }
-
-//         div {
-//             position: relative;
-//             width: rem(42px);
-//             // height: rem(42px);
-//             border-radius: 12px;
-//             background-color: $teritary;
-//             overflow: hidden;
-//             &::before, &::after {
-//                 content: '';
-//                 background-image: asset('arrow.svg');
-//                 background-position: center;
-//                 background-repeat: no-repeat;
-//                 background-size: cover;
-//                 top: 0;
-//                 transition: all 0.4s ease-out;
-//                 width: 100%;
-//                 height: 100%;
-//                 display: block;
-//                 position: absolute;
-//             }
-//             &::before {
-//                 right: 100%;
-//             }
-//             &::after {
-//                 right: 0;
-//             }
-//         }
-//         &:hover {
-
-//             background-color: $detailcolor;;
-//             color: $white;
-
-//             box-shadow: 0px 4px 24px 0px #3e507696;
-
-//             &.detail-color {
-//                 background-color: $white;
-//                 color: $detailcolor;
-//                 box-shadow: 0px 4px 24px 0px rgba($color: #349773, $alpha: .55);
-//             }
-//             div {
-//                 &::before {
-//                     right: 0%;
-//                 }
-//                 &::after {
-//                     right: -100%;
-//                 }
-//             }
-//         }
-//     }
-//     &.blue-block {
-//         border-radius: 12px;
-//         background: $detailcolor;
-//         padding: 0.75em 2em;
-//         color: #FFF;
-//         font-size: 18px;
-//         font-style: normal;
-//         font-weight: 500;
-//         line-height: normal;
-//         text-transform: uppercase;
-//         text-align: center;
-//     }
-//     .go-back-home {
-//         width: min(326px, 85vw);
-//     }
-// }
-// button {
-//     font-family: 'Cabin', sans-serif !important;
-//     border: none;
-// }
 img {
     display: block;
     max-width: 100%;
@@ -730,60 +630,60 @@ textarea {
 .no-bottom-padding {
     padding-bottom: 0 !important;
 }
-section.success {
-    overflow: hidden;
-    min-height: calc(100dvh - 65px);
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    padding: 32px 20px !important;
-    .tick {
-        border-radius: 24px;
-        background: #35B98B;
-        box-shadow: 4px 4px 49px 0px rgba(99, 201, 164, 0.66);
-        padding: 42px 28px;
-        position: relative;
-        width: min-content;
-        margin-bottom: 48px;
-        // margin: 0 auto;
-        .dots {
-            min-width: 134vw;
-            min-height: 100vh;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -41%);
-            z-index: -1;
-        }
-    }
-    .content {
-        // margin:0 auto;
-        max-width: max-content;
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        h1 {
-            margin: auto;
-            margin-bottom: .25em;
-            text-align: center;
-        }
-        p {
-            max-width: 460px;
-            text-align: center;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 30px; /* 166.667% */
-            margin: auto;
-            margin-bottom: 2.5em;
-        }
-        a {
-            margin: auto;
-        }
-    }
-}
+// section.success {
+//     overflow: hidden;
+//     min-height: calc(100dvh - 65px);
+//     height: 100%;
+//     display: flex;
+//     flex-flow: column;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 32px 20px !important;
+//     .tick {
+//         border-radius: 24px;
+//         background: #35B98B;
+//         box-shadow: 4px 4px 49px 0px rgba(99, 201, 164, 0.66);
+//         padding: 42px 28px;
+//         position: relative;
+//         width: min-content;
+//         margin-bottom: 48px;
+//         // margin: 0 auto;
+//         .dots {
+//             min-width: 134vw;
+//             min-height: 100vh;
+//             position: absolute;
+//             top: 50%;
+//             left: 50%;
+//             transform: translate(-50%, -41%);
+//             z-index: -1;
+//         }
+//     }
+//     .content {
+//         // margin:0 auto;
+//         max-width: max-content;
+//         display: flex;
+//         flex-flow: column;
+//         justify-content: center;
+//         align-items: center;
+//         h1 {
+//             margin: auto;
+//             margin-bottom: .25em;
+//             text-align: center;
+//         }
+//         p {
+//             max-width: 460px;
+//             text-align: center;
+//             font-size: 18px;
+//             font-weight: 400;
+//             line-height: 30px; /* 166.667% */
+//             margin: auto;
+//             margin-bottom: 2.5em;
+//         }
+//         a {
+//             margin: auto;
+//         }
+//     }
+// }
 
 @keyframes customclick {
     0% {
