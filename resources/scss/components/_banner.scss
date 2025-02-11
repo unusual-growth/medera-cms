@@ -131,6 +131,13 @@
                     color:$primary;
                 }
             }
+            &.improveyourguthealth{
+                background: linear-gradient(270deg, #847c80 0%, #d9b3a8 100%);
+                h3{
+                    color:$white;
+                    max-width:650px;
+                }
+            }
 
         }
     }

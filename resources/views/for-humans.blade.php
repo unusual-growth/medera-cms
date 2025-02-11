@@ -570,10 +570,10 @@ updatePagination(mainSlider);
     </section>
 
     {{-- SEC 14 Banner --}}
-    <section class="go-to-form">
+    <section class="banner">
         <div class="container xlarge">
             <div class="row">
-                <div>
+                <div class="go-to-form">
                     <h4>Contact us to request a free sample
                         and experience the quality firsthand.</h4>
                     <a href="#">contact us</a>
