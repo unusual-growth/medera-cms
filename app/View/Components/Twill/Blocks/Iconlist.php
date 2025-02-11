@@ -30,6 +30,10 @@ class Iconlist extends TwillBlockComponent
                 Options::make([
                     Option::make('preset1', 'Heading peach'),
                     Option::make('preset2', 'Heading green '),
+                    Option::make('preset3', label: 'Heading green - No text'),
+                    Option::make('preset4', label: 'Heading green - With Border'),
+                    Option::make('preset5', label: 'Heading green - With Border - Show Text on Hover'),
+
                 ])
             )->label('Preset')
             ->required()
