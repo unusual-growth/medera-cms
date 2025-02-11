@@ -28,7 +28,7 @@ class Banner extends TwillBlockComponent
                 ->label('Background')
                 ->options([
                     'forest-to-gray' => 'Forest (Greenish-blue) to Gray Gradient',
-                    'peach-gray' => 'Peach to Gray Gradient',
+                    'peach-to-gray' => 'Peach to Gray Gradient',
                     'dark-forest-to-gray' => 'Dark-Forest (Greenish-blue) to Gray Gradient',
                 ])
                 ->default('forest-to-gray'),

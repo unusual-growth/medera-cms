@@ -3,6 +3,7 @@
 namespace App\View\Components\Twill\Blocks;
 
 use A17\Twill\Models\Block;
+use A17\Twill\Services\Forms\Fields\Checkbox;
 use A17\Twill\Services\Forms\Fields\Wysiwyg;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Services\Forms\Fields\Input;
@@ -42,6 +43,9 @@ class Featureheadlineswithsphericalimages extends TwillBlockComponent
     public function getForm(): Form
     {
         return Form::make([
+            Checkbox::make()
+                ->name('has_section_content')
+                ->label('Does this banner have section content?'),
             Wysiwyg::make()
                 ->name('section_content')
                 ->label('Section Content')
@@ -52,7 +56,7 @@ class Featureheadlineswithsphericalimages extends TwillBlockComponent
                     'underline',
                 ])
                 ->translatable()
-                ->placeholder('Add your content here'),
+                ->placeholder('Add your content here')->connectedTo('has_section_content', true),
             InlineRepeater::make()
                 ->name('features')
                 ->label('Feature Headlines with Spherical Images')

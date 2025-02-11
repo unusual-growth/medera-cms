@@ -1,7 +1,7 @@
 
     {{-- circle card in homepage --}}
     <section class="circle-card">
-        @if($translatedInput('section_content'))
+        @if($input('has_section_content') && $translatedInput('section_content'))
             <div class="container xlarge">
                 <div class="heading">
                     {!! $translatedInput('section_content') !!}
