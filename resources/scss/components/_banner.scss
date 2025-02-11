@@ -96,6 +96,13 @@
                     max-width:650px;
                 }
             }
+            &.customize{
+                background: linear-gradient(270deg, #f6ece9 0%, #d8e2e0 100%);
+                h3{
+                    max-width:670px;
+                    color:$primary;
+                }
+            }
          
         }
     }

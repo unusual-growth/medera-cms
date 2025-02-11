@@ -326,10 +326,10 @@
     </section>
 
     {{-- SEC 14  --}}
-    <section class="plant-based">
+    <section class="banner">
         <div class="container xlarge">
             <div class="row">
-                <div>
+                <div class="customize">
                     <h3>Customize your order with a White Label and align your butyrates with your brand.</h3>
                 </div>
             </div>
