@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use A17\Twill\Facades\TwillAppSettings;
+use App\Models\Page;
 use App\Repositories\HomepageRepository;
 use CwsDigital\TwillMetadata\Traits\SetsMetadata;
 use Illuminate\Contracts\View\View;
@@ -18,7 +19,7 @@ class PageHomeDisplayController extends Controller
     )
     {
     }
-    public function show(): View
+    public function show(Page $page): View
     {
         LaravelLocalization::setRouteName('home');
         $item = $this->homepageRepository->getHomepage();

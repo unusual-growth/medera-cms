@@ -1,19 +1,47 @@
-.banner {
-    > div:first-of-type {
-        background: linear-gradient(270deg, #847c80 0%, #d9b3a8 100%);
-        border-radius: 20px;
-    }
-    p {
-        color: $white;
-        max-width: 700px;
-        text-align: center;
-        font-size: rem(42px);
-        font-weight: 500;
-        line-height: 49.35px;
-        span {
-            font-weight: 700;
+@mixin createBannerSystem($name, $bg, $color) {
+    &.#{$name} {
+        > .container {
+            background-image: var(--desktop-image, $bg);
+            border-radius: 20px;
+            @include media('>=tablet', '<=desktop') {
+                background-image: var(--tablet-image ,var(--desktop-image, $bg));
+            }
+            @include media('<tablet') {
+                background-image: var(--mobile-image, var(--tabket-image ,var(--desktop-image, $bg)));
+            }
+        }
+        h2, h3, h4, h5, h6, p {
+            color: $color;
         }
     }
+}
+
+.banner {
+    $line-height: 1.5em;
+    letter-spacing: -0.72px;
+    line-height: 1.5em;
+    font-size: 36px;
+    h2, h3, h4, h5, h6, p {
+        width: 100%;
+        max-width: 700px;
+        text-align: center;
+        font-weight: 400;
+        letter-spacing: inherit;
+        font-size: inherit;
+    }
+    a {
+        margin-top: 24px;
+    }
+    // !!TODO mobile
+    .container {
+        background-size: cover;
+        > div {
+            min-height: 200px;
+            padding: $line-height * 2 24px;
+        }
+    }
+    @include createBannerSystem('peach-gray', linear-gradient(270deg, #847c80 0%, #d9b3a8 100%), $white);
+    @include createBannerSystem('forest-peach ', linear-gradient(270deg, #f6ece9 0%, #d8e2e0 100%), $primary);
 }
 .pills-banner {
     background-image: url("/dummy-img/pills.png");
@@ -84,7 +112,7 @@
             h4{
                 max-width: 640px;
                 margin: auto;
-            
+
             }
         }
     }
