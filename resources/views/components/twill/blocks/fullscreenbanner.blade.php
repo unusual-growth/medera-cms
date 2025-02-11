@@ -1,4 +1,6 @@
-<div>
-  <h2>{{ $input('title') }}</h2>
-  {!! $input('text') !!}
+@php
+      $image = TwillImage::make($block, 'banner_image')->crop('default')->width(592)->toArray();
+@endphp
+<div class="onlyimage">
+  {!! TwillImage::render($image, []) !!}
 </div>
