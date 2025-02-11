@@ -121,7 +121,7 @@
                                 itemtype="https://schema.org/Answer">
                                 <div class="answer-content" itemprop="text">
                                     {{-- DUMMY CONTENT  --}}
-                                    <p class="preset-color-primary">The Energy Source for Your Gut:<br />Calcium Butyrate
+                                    <p>The Energy Source for Your Gut:<br /><strong>Calcium Butyrate</strong>
                                     </p>
                                     <p>{!! $faq['answer'] !!}</p>
                                 </div>
@@ -167,12 +167,14 @@
     </script>
 
     {{-- SEC 3 Banner --}}
-    <section class="go-to-form">
+    <section class="banner ">
         <div class="container xlarge">
             <div class="row">
-                <div>
+                <div class="go-to-form">
+                    <div>
                     <h4>Complete the form today and position yourself as the trusted choice for gut health solutions.</h4>
                     <a href="#">request</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -230,7 +232,7 @@
             ],
         ];
     @endphp
-    <section class="list-card">
+    <section class="list-card preset-color-peach">
         <div class="container xlarge">
             <div class="row">
                 <div class="fab-card">
@@ -528,7 +530,7 @@ updatePagination(mainSlider);
                 <div class="cards">
                     @foreach ($hovered as $card)
                         <div class="card">
-                            <div class="card-content">
+                            <div class="__content">
                                 <img src="{{ $card['icon'] }}" />
                                 <h3>{{ $card['title'] }}</h3>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"

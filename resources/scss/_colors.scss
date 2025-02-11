@@ -36,7 +36,35 @@ $secondary_tone_2: #8eaaad;
 $secondary_tone_3: #b4b7bc;
 $secondary_tone_4: #d9dbdd;
 
-$forest-lighten-1: #8ba9a1;
+$forest_lighten_1: #8ba9a1;
+$forest_lighten_3: #D8E2E0;
+.forest_lighten_3{
+    background-color:$forest_lighten_3;
+}
+$forest_darken_1:#658D82;
+
+$peach_darken_1:#D9B3A8;
+$peach_lighten_3:#F6ECE9;
+.peach_lighten_3{
+    background-color:$peach_lighten_3;
+}
+
+$cinereous_darken_1:#B09A91;
+$cinereous_lighten_3:#EBE6E4;
+.cinereous_lighten_3{
+    background-color:$cinereous_lighten_3;
+}
+
+$artichoke_lighten_3:#E7EDE6;
+
+
+$aegean_darken_1: #517995;
+$aegean_lighten_3:#D3DEE4;
+.aegean_lighten_3{
+    background-color: $aegean_lighten_3;
+}
+
+
 
 .preset-color {
     &-white {

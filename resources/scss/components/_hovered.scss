@@ -21,14 +21,14 @@
                     margin-bottom:20px;
                 }
             }
-            .card-content {
+            .__content {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: start;
                 text-align: center;
                 padding-top: 24px;
-                
+                    background-color:$artichoke_lighten_3;
                 h3 {
                     margin-top: 10px;
                 }
@@ -50,8 +50,8 @@
             
             &:hover {
                 height: 277px;
-                
-                .card-content {
+                .__content {
+                    background-color:$white;
                     p {
                         opacity: 1;
                         transform: translateY(10px);

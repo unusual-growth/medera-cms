@@ -1,0 +1,38 @@
+.error-section{
+    background-image:url('/dummy-img/404.png');
+    height:100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include media('<tablet'){
+        background-image:unset;
+        background: linear-gradient(270deg, #25587A 0%, #B09A91 100%);
+    }
+    > div {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        height:100%;
+        h1 {
+            font-size:rem(200px);
+        }
+        h2{
+            color:$white;
+            padding:100px 0 15px 0;
+        }
+        p{
+            color:$white;
+            @include media('<tablet'){
+                font-size: rem(18px);
+            }
+        }
+        a{
+            color:$white;
+            border:1px solid $white;
+            border-radius: 20px;
+            padding: 0 46px;
+            margin-top:40px;
+        }
+    }
+}
