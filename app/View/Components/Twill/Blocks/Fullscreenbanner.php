@@ -19,27 +19,50 @@ class Fullscreenbanner extends TwillBlockComponent
     {
         return Form::make([
             Medias::make()
-                ->name('banner_image')
-                ->label('Image')
-                ->required()
+                ->name('desktop_image')
+                ->label('Banner Image')
                 ->max(1)
+                ->fieldNote('This image will be displayed behind the content in desktop devices, on the right column.'),
+            Medias::make()
+                ->name('tablet_image')
+                ->label('Banner Image')
+
+                ->max(1)
+                ->fieldNote('This image will be displayed behind the content in tablet devices on the right column.'),
+            Medias::make()
+                ->name('mobile_image')
+                ->label('Background Image')
+                ->max(1)
+                ->fieldNote('This image will be displayed behind the content in mobile devices, under the text.'),
         ]);
     }
 
     public static function getCrops(): array
     {
         return [
-            'banner_image' => [
+            'desktop_image' => [
                 'default' => [
                     [
                         'name' => 'default',
                         'ratio' => 0,
-                        'minValues' => [
-                            'width' => 1440,
-                            'height' => 7523,
-                        ],
                     ],
-                ]
+                ],
+            ],
+            'tablet_image' => [
+                'default' => [
+                    [
+                        'name' => 'default',
+                        'ratio' => 0,
+                    ],
+                ],
+            ],
+            'mobile_image' => [
+                'default' => [
+                    [
+                        'name' => 'default',
+                        'ratio' => 0,
+                    ],
+                ],
             ]
         ];
     }
