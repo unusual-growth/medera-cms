@@ -2,22 +2,41 @@
 
 namespace App\View\Components\Twill\Blocks;
 
-use A17\Twill\Services\Blocks\Block;
+use A17\Twill\Models\Block;
+use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Fields\Medias;
+use A17\Twill\Services\Forms\Fields\Wysiwyg;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\View\Components\Blocks\TwillBlockComponent;
 use Illuminate\Contracts\View\View;
 
-class Fullscreenbanner extends TwillBlockComponent
+class Sectioncontentwithsingleimage extends TwillBlockComponent
 {
     public function render(): View
     {
-        return view('components.twill.blocks.fullscreenbanner');
+        return view('components.twill.blocks.sectioncontentwithsingleimage');
     }
 
     public function getForm(): Form
     {
         return Form::make([
+            Wysiwyg::make()->name('title')
+                ->translatable()
+                ->toolbarOptions(toolbarOptions: [
+                    ['header' => [1, 2, 3, false]],
+                    'strong',
+                    'italic',
+                    'underline',
+                    'link'
+                ])->allowSource(true),
+            Wysiwyg::make()->name('text')
+                ->translatable()
+                ->toolbarOptions(toolbarOptions: [
+                    'strong',
+                    'italic',
+                    'underline',
+                    'link'
+                ])->allowSource(true),
             Medias::make()
                 ->name('desktop_image')
                 ->label('Banner Image')
@@ -69,6 +88,6 @@ class Fullscreenbanner extends TwillBlockComponent
 
     public static function getBlockTitle(?Block $block = null): string
     {
-        return "Full Screen Banner";
+        return "Section Content With Single Image";
     }
 }
