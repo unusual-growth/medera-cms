@@ -35,7 +35,8 @@
                 <picture>
                     <source srcset="{{ asset('/dummy-img/for-all-beign-customflex6.png') }}" media="(min-width: 1024px)">
                     <source srcset="{{ asset('/dummy-img/for-all-beign-customflex6.png') }}" media="(min-width: 768px)">
-                    <img class="transform-left-center" src="{{ asset('/dummy-img/for-all-beign-customflex6.png') }}" alt="Açıklama metni">
+                    <img class="transform-left-center" src="{{ asset('/dummy-img/for-all-beign-customflex6.png') }}"
+                        alt="Açıklama metni">
                 </picture>
             </div>
             <div class="journey-content height-500 dusky-blush-gradient col-sm-7">
@@ -95,7 +96,10 @@
                 </div>
                 <div class="col-md-5">
                     <h2>No Supply Shortage with a high volume Production Capacity</h2>
-                    <p>As a pioneer in gut health innovation, Medera Nutrition is your trusted partner in advancing digestive health. We carefully craft our vegan products into unique formulations designed to balance the gut microbiome and strengthen the digestive system. Take a step toward excellence in gut health with our clinically proven and scientifically validated ingredients.</p>
+                    <p>As a pioneer in gut health innovation, Medera Nutrition is your trusted partner in advancing
+                        digestive health. We carefully craft our vegan products into unique formulations designed to balance
+                        the gut microbiome and strengthen the digestive system. Take a step toward excellence in gut health
+                        with our clinically proven and scientifically validated ingredients.</p>
                 </div>
             </div>
         </div>
@@ -103,29 +107,34 @@
 
     {{-- SEC 6 --}}
     {{-- <x-allbeings.butyera-flex6 /> --}}
-    <section class="flex6">
+    <section class="section-content-with-single-image">
         <div class="container xlarge">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2>Explore our nature-inspired gut supplements.</h2>
-                    <p>Our supplements, specifically designed for gut health, comprise 95% butyric acid and a 5% mineral
-                        blend. This unique formula supports the natural balance of gut microbiomes, boosting overall
-                        well-being. </p>
-                </div>
-                <div class="col-md-8">
-                    <picture>
-                        <source srcset="{{ asset('/dummy-img/test.png') }}" media="(min-width: 1024px)">
-                        <source srcset="{{ asset('/dummy-img/test.png') }}" media="(min-width: 768px)">
-                        <img src="{{ asset('/dummy-img/test.png') }}" alt="Açıklama metni">
-                    </picture>
-                </div>
+            <div class="row flex-column gap-30">
+                    <div class="content flex-center col-md-12">
+                        <div class="col-md-6">
+                            <h2>Explore our nature-inspired gut supplements.</h2>
+                            <p>Our supplements, specifically designed for gut health, comprise 95% butyric acid and a 5%
+                                mineral
+                                blend. This unique formula supports the natural balance of gut microbiomes, boosting overall
+                                well-being. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-8 image">
+                            <picture>
+                                <source srcset="{{ asset('/dummy-img/test.png') }}" media="(min-width: 1024px)">
+                                <source srcset="{{ asset('/dummy-img/test.png') }}" media="(min-width: 768px)">
+                                <img src="{{ asset('/dummy-img/test.png') }}" alt="Açıklama metni">
+                            </picture>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
 
     {{-- SEC 7 SLIDER --}}
 
-BURAYA SLİDER GELECEK
+    BURAYA SLİDER GELECEK
 
     {{-- SEC 8 --}}
     <section class="flex6 ">
@@ -196,7 +205,7 @@ BURAYA SLİDER GELECEK
         </div>
     </section>
 
-   {{-- SEC 10 --}}
+    {{-- SEC 10 --}}
     BURAYA FORM GELECEK
 
 
@@ -346,12 +355,18 @@ BURAYA SLİDER GELECEK
             <div class="row justify-space-between">
                 <div class="col-md-5">
                     <h2>All Your Gut Health Questions are Addressed at Medera!</h2>
-                    <p>With our ButyEra for humans and animals, developed by a team of skilled and dedicated professionals, we are leading a new era in gut health. In a world where healthy, vibrant living is a lasting priority, Medera Nutrition helps you stand out in the growing gut health market as your trusted partner.
-                        <br/><br/>
-                        By offering effective solutions that align with your customers’ focus on gut health, we provide you with a competitive edge.
-                        <br/><br/>
-                        Partner with Medera Nutrition today to increase customer satisfaction in gut health and set new standards for excellence in the industry.
-                      </p>
+                    <p>With our ButyEra for humans and animals, developed by a team of skilled and dedicated professionals,
+                        we are leading a new era in gut health. In a world where healthy, vibrant living is a lasting
+                        priority, Medera Nutrition helps you stand out in the growing gut health market as your trusted
+                        partner.
+                        <br /><br />
+                        By offering effective solutions that align with your customers’ focus on gut health, we provide you
+                        with a competitive edge.
+                        <br /><br />
+                        Partner with Medera Nutrition today to increase customer satisfaction in gut health and set new
+                        standards for excellence in the industry.
+
+                    </p>
                 </div>
                 <div class="col-md-6">
                     <picture>
@@ -363,5 +378,4 @@ BURAYA SLİDER GELECEK
             </div>
         </div>
     </section>
-
 @endsection

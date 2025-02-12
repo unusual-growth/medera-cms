@@ -12,9 +12,6 @@ html {
     @include media('>2000px') {
         font-size: 18px;
     }
-    @include media('<mobile') {
-        font-size: 14px;
-    }
 }
 
 body {
@@ -30,7 +27,7 @@ section {
             padding: rem(48px) 0;
         }
         @include media('<tablet') {
-            padding: rem(32px) 0;
+            padding: 1.6rem 0;
         }
     }
     &.margin {
@@ -92,7 +89,6 @@ h2 {
 	line-height: 49px;
 	letter-spacing: -0.02em;
     margin:0;
-    line-height: 28.2px
     strong{
         font-weight: 700;
     }
@@ -113,6 +109,7 @@ h3{
     }
     @include media('<tablet'){
         font-size:rem(20px);
+        line-height: 21.15px;
     }
 }
 h4{
@@ -150,7 +147,7 @@ a {
     width: max-content;
     border: 1px solid $forest_lighten_1;
     border-radius: 20px;
-    padding: 4px 12px;
+    padding: 14px 22px;
     text-decoration: none;
     transition: all 0.5s;
     &:hover {
@@ -289,17 +286,18 @@ img {
 }
 
 .gap-30{gap:30px};
+.gap-24{gap:24px};
 
 .bold{
     font-weight:700;
 }
 .swiper {
     [class*='swiper-button'] {
-        font-size: rem(32px) !important;
+        font-size: 1.4rem !important;
         &::after {
             content: '' !important;
-            width: 1em;
-            height: 1em;
+            // width: 1em;
+            // height: 1em;
             display: block;
             font-size: inherit;
         }
@@ -611,6 +609,10 @@ button{
     @include media('<tablet') {
         display: none;
     }
+}
+
+.m-auto{
+    margin:auto;
 }
 
 select {

@@ -43,6 +43,7 @@
     @include createBannerSystem('peach-gray', linear-gradient(270deg, #847c80 0%, #d9b3a8 100%), $white);
     @include createBannerSystem('forest-peach ', linear-gradient(270deg, #f6ece9 0%, #d8e2e0 100%), $primary);
 }
+
 .pills-banner {
     background-image: url("/dummy-img/pills.png");
     background-position: center;
@@ -78,6 +79,11 @@
     }
 }
 .banner {
+    @include media('<tablet'){
+        .container{
+            padding:0;
+        }
+    }
     .row {
         > div:first-of-type {
             border-radius: 20px;
@@ -89,6 +95,9 @@
             margin: auto;
             text-align: center;
             padding: 44px 0;
+            @include media('<tablet'){
+                padding: 24px 0;
+            }
             h4 {
                 line-height: 28.2px;
                 max-width: 510px;
