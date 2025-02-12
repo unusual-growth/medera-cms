@@ -17,19 +17,21 @@
         ],
     ];
     # Bir kod yazdım ama inşallah küfür yemem
-    function setUpPicture($block, &$arr, $setMediaNull = false, $i = 0) {
-        if ($i > array_key_last($arr)) {
-            return $arr;
+    if (!function_exists('setUpPicture')) {
+        function setUpPicture($block, &$arr, $setMediaNull = false, $i = 0) {
+            if ($i > array_key_last($arr)) {
+                return $arr;
+            }
+            if ($setMediaNull) {
+                $arr[$i]['media'] = null;
+            }
+            if (!$block->hasImage($arr[$i]['key'])) {
+                unset($arr[$i]);
+                return  setUpPicture($block, $arr, true, $i + 1);
+            }
+            $arr[$i]['src'] = $block->image($arr[$i]['key']);
+            return setUpPicture($block, $arr, false, $i + 1);
         }
-        if ($setMediaNull) {
-            $arr[$i]['media'] = null;
-        }
-        if (!$block->hasImage($arr[$i]['key'])) {
-            unset($arr[$i]);
-            return  setUpPicture($block, $arr, true, $i + 1);
-        }
-        $arr[$i]['src'] = $block->image($arr[$i]['key']);
-        return setUpPicture($block, $arr, false, $i + 1);
     }
     $picture_hierarchy = setUpPicture($block, $picture_hierarchy);
 @endphp
