@@ -400,6 +400,19 @@
         </div>
     </section>
 
+    <section class="double-crossed-colums-with-content">
+        <div class="container xlarge">
+            <div class="row gap-30">
+                <div class="col-md-6 left-bubble">
+                    <h4>Committed to quality, reliability, and sustainability, Medera Nutrition focuses on exceeding its partners' expectations. </h4>
+                </div>
+                <div class="col-md-7 right-bubble">
+                    <h4>Committed to quality, reliability, and sustainability, Medera Nutrition focuses on exceeding its partners' expectations. </h4>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section></section>
     {{-- SEC 17  --}}
     {{-- <section class="double-crossed-columns-with-content">
         <div class="container xlarge">
