@@ -1,0 +1,12 @@
+.section-content-with-single-image{
+    .content{
+        text-align: center;
+    }
+    [class*=col-] {
+        float: unset;
+    }
+    .image{
+        margin-top:24px;
+        margin:auto;
+    }
+}

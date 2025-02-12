@@ -43,6 +43,8 @@ $forest_lighten_3: #D8E2E0;
 $forest_darken_1:#658D82;
 
 $peach_darken_1:#D9B3A8;
+$peach_darken_2:#9C786E;
+
 $peach_lighten_3:#F6ECE9;
 .peach_lighten_3{
     background-color:$peach_lighten_3;
@@ -84,6 +86,11 @@ $aegean_lighten_3:#D3DEE4;
     &-peach {
         h1,h2,h3,h4 {
             color: $peach;
+        }
+        &-darken-2{
+            h1,h2,h3,h4,p{
+                color:$peach_darken_2 !important;
+            }
         }
     }
 }

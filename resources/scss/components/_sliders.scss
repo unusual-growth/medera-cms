@@ -42,12 +42,12 @@
 
 .custom-next-button {
     color: $peach;
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #a48d83;
+    border: 1px solid $peach;
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.3s ease;

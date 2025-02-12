@@ -99,7 +99,7 @@
             <div class="row">
                 <h2> Secret heroes of gut health </h2>
             </div>
-            <div class="row gap-30">
+            <div class="row gap-24">
                 <div class="col-md-6">
                     <picture>
                         <source srcset="{{ asset('/dummy-img/faq1.png') }}" media="(min-width: 1024px)">
@@ -185,7 +185,7 @@
     <section class="flex6 preset-color-peach">
         <div class="container xlarge">
             <div class="row justify-space-between">
-                <div class="col-md-5">
+                <div class="mobile-w col-md-5">
                     <h2> An All-Natural Solution for Gut Health: <strong>ButyEra</strong> </h2>
                     <p>At Medera Nutrition, we are pioneering a new era in gut health with our ButyEra —key supporters of
                         the digestive system, which plays a crucial role in overall human health. Our all-natural, vegan
@@ -233,14 +233,14 @@
             ],
         ];
     @endphp
-    <section class="list-card preset-color-peach">
+    <section class="list-card preset-color-peach-darken-2">
         <div class="container xlarge">
             <div class="row">
                 <div class="fab-card">
                     @foreach ($packagingTypes as $type)
                         <div>
                             <img src="{{ $type['icon'] }}" alt="{{ $type['title'] }}" />
-                            <h3 class="color-peach">{{ $type['title'] }}</h3>
+                            <h3>{{ $type['title'] }}</h3>
                             <p>{{ $type['description'] }}</p>
                         </div>
                     @endforeach

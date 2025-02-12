@@ -37,6 +37,10 @@
             }
         }
         @include media("<tablet") {
+            .mobile-w{
+                max-width: 94%;
+                margin: auto;
+            }
             gap:24px;
             &.mob-rev {
                 flex-flow: column-reverse;

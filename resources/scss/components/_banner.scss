@@ -1,20 +1,4 @@
-// .banner {
-//     > div:first-of-type {
-//         background: linear-gradient(270deg, #847c80 0%, #d9b3a8 100%);
-//         border-radius: 20px;
-//     }
-//     p {
-//         color: $white;
-//         max-width: 700px;
-//         text-align: center;
-//         font-size: rem(42px);
-//         font-weight: 500;
-//         line-height: 49.35px;
-//         span {
-//             font-weight: 700;
-//         }
-//     }
-// }
+
 .pills-banner {
     background-image: url("/dummy-img/pills.png");
     background-position: center;
@@ -50,6 +34,11 @@
     }
 }
 .banner {
+    @include media('<tablet'){
+        .container{
+            padding:0;
+        }
+    }
     .row {
         > div:first-of-type {
             border-radius: 20px;
@@ -61,6 +50,9 @@
             margin: auto;
             text-align: center;
             padding: 44px 0;
+            @include media('<tablet'){
+                padding: 24px 0;
+            }
             h4 {
                 line-height: 28.2px;
                 max-width: 510px;

@@ -4,6 +4,9 @@
   h2 {
     margin: auto;
     padding-bottom: 48px;
+    @include media('<tablet'){
+      padding-bottom: 24px;
+    }
   }
   .faq-item {
     margin-bottom: 16px;
