@@ -36,6 +36,11 @@ class AppServiceProvider extends ServiceProvider
             ->title(title:__('backend.page'))
             ->forModule('pages')
         );
+        TwillNavigation::addLink(
+            NavigationLink::make()
+            ->title("FAQs")
+            ->forModule('faqs')
+        );
         TwillAppSettings::registerSettingsGroups(
             SettingsGroup::make()->name('homepage')->label('Homepage'),
             SettingsGroup::make()

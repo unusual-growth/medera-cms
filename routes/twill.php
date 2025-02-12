@@ -8,3 +8,5 @@ use A17\Twill\Facades\TwillRoutes;
 // TwillRoutes::singleton('homepage');
 // TwillRoutes::singleton('drcap');
 TwillRoutes::module('pages');
+
+TwillRoutes::module('faqs');
