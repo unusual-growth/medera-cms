@@ -17,11 +17,12 @@ class Faq extends Model implements Sortable
         'title',
         'answer',
         'position',
+        'excerpt'
     ];
 
     public $translatedAttributes = [
         'title',
         'answer',
+        'excerpt'
     ];
-
 }

@@ -26,3 +26,12 @@ window._swiperKeyboard = Keyboard;
 window._swiperCreativeEffect= EffectCreative;
 window._swiperEffectFade= EffectFade;
 window._swiperFreeMode = FreeMode;
+
+$(document).ready(function(){
+    $('.faq-listing .item h4').on('click',function(){
+      if(!$(this).hasClass('active')){
+        $('.faq-listing .item').removeClass('active');
+        $(this.closest('.item')).addClass('active');
+      }
+    });
+})

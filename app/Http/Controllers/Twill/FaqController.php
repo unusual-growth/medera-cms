@@ -27,6 +27,7 @@ class FaqController extends BaseModuleController
     {
         return new Form([
             Input::make()->name('title')->label('Question')->translatable(),
+            Input::make()->name('excerpt')->label('Excerpt')->note('Short summary used in featured places.')->translatable(),
             Input::make()->name('answer')->label('Answer')->translatable()
         ]);
     }
@@ -41,6 +42,9 @@ class FaqController extends BaseModuleController
 
         $form->add(
             Input::make()->name('title')->label('Question')->translatable(),
+        );
+        $form->add(
+            Input::make()->name('excerpt')->label('Excerpt')->note('Short summary used in featured places.')->translatable()
         );
         $form->add(
             Input::make()->name('answer')->label('Answer')->translatable()
