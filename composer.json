@@ -13,8 +13,15 @@
         "jenssegers/agent": "^2.6",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
-        "mcamara/laravel-localization": "^2.2"
+        "mcamara/laravel-localization": "^2.2",
+        "unusualify/laravel-form": "*"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/unusualify/laravel-form"
+        }
+    ],
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "friendsofphp/php-cs-fixer": "^3.68",
@@ -72,6 +79,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
