@@ -4,6 +4,7 @@
     'success' => 'success',
     'articles' => 'library',
     'article' => 'library/{article}',
+    'blog_category' => 'library/category/{category}',
     'page' => '{page}',
     'companyEstablishments' => 'company-establishment',
     'companyEstablishment' => 'company-establishment/{page}',

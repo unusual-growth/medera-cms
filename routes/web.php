@@ -3,10 +3,12 @@
 use App\Http\Controllers\PageDisplayController;
 use App\Http\Controllers\PageHomeDisplayController;
 use App\Http\Controllers\ArticleDisplayController;
+use App\Http\Controllers\BlogCategoryDisplayController;
 use App\Http\Controllers\CompanyEstablishmentDisplayController;
 use App\Http\Controllers\EmployerServiceDisplayController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\SitemapController;
+use App\Models\BlogCategory;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -52,6 +54,7 @@ Route::group([
     // Route::get('/', [\App\Http\Controllers\PageHomeDisplayController::class, 'show'])->name('frontend.home');
     // Route::get(LaravelLocalization::transRoute('routes.success'), [PageDisplayController::class, 'success'])->name('success');
     Route::get(LaravelLocalization::transRoute('routes.articles'), [ArticleDisplayController::class, 'index'])->name('articles');
+    Route::get(LaravelLocalization::transRoute('routes.blog_category'), [ArticleDisplayController::class, 'index'])->name('blog_category');
     Route::get(LaravelLocalization::transRoute('routes.article'), [ArticleDisplayController::class, 'show'])->name('article');
     Route::get(LaravelLocalization::transRoute('routes.page'), [PageDisplayController::class, 'show'])->name('page');
     // Route::get(LaravelLocalization::transRoute('routes.page'), [PageDisplayController::class, 'show'])->name('page');

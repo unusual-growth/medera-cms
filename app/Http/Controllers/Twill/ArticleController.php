@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers\Twill;
 
-use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
-use A17\Twill\Models\Contracts\TwillModelContract;
+use App\Models\Article;
+use App\Models\BlogCategory;
+use A17\Twill\Services\Forms\Form;
+use A17\Twill\Services\Forms\Fieldset;
 use A17\Twill\Services\Forms\BladePartial;
-use A17\Twill\Services\Forms\Fields\BlockEditor;
-use A17\Twill\Services\Forms\Fields\Browser;
-use A17\Twill\Services\Forms\Fields\DatePicker;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Fields\Medias;
-use A17\Twill\Services\Forms\Fieldset;
-use A17\Twill\Services\Forms\Form;
-use App\Models\Article;
+use A17\Twill\Services\Forms\Fields\Browser;
+use A17\Twill\Services\Forms\InlineRepeater;
+use A17\Twill\Services\Forms\Fields\DatePicker;
+use A17\Twill\Services\Forms\Fields\BlockEditor;
+use A17\Twill\Models\Contracts\TwillModelContract;
+use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 
 class ArticleController extends BaseModuleController
 {
@@ -29,13 +31,13 @@ class ArticleController extends BaseModuleController
 
 
     protected function getLocalizedPermalinkBase(): array
-{
-    return [
-        'en' => 'library',
-        'nl' => 'bibliotheek',
-        'tr' => 'kutuphane',
-    ];
-}
+    {
+        return [
+            'en' => 'library',
+            'nl' => 'bibliotheek',
+            'tr' => 'kutuphane',
+        ];
+    }
 
     /**
      * See the table builder docs for more information. If you remove this method you can use the blade files.
@@ -70,15 +72,27 @@ class ArticleController extends BaseModuleController
 
         $form->addFieldset(
             Fieldset::make()
-            ->title(trans('twill-metadata::form.titles.fieldset'))
-            ->id('metadata')
-            ->fields([
-                BladePartial::make()->view('twill-metadata::includes.metadata-fields')
-                ->withAdditionalParams([
-                    'metadata_card_type_options' => config('metadata.card_type_options'),
-                    'metadata_og_type_options' => config('metadata.opengraph_type_options'),
-                ]),
-            ])
+                ->title('Categories')
+                ->id('categories')
+                ->fields([
+                    Browser::make()
+                        ->modules([BlogCategory::class])
+                        ->name('categories')
+                        ->max(100)
+                ])
+        );
+
+        $form->addFieldset(
+            Fieldset::make()
+                ->title(trans('twill-metadata::form.titles.fieldset'))
+                ->id('metadata')
+                ->fields([
+                    BladePartial::make()->view('twill-metadata::includes.metadata-fields')
+                        ->withAdditionalParams([
+                            'metadata_card_type_options' => config('metadata.card_type_options'),
+                            'metadata_og_type_options' => config('metadata.opengraph_type_options'),
+                        ]),
+                ])
         );
 
         $form->addFieldset(
@@ -87,9 +101,9 @@ class ArticleController extends BaseModuleController
                 ->id('related')
                 ->fields([
                     Browser::make()
-                    ->modules([Article::class])
-                    ->name('related')
-                    ->max(3)
+                        ->modules([Article::class])
+                        ->name('related')
+                        ->max(3)
                 ])
         );
         return $form;

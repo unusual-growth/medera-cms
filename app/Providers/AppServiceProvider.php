@@ -38,6 +38,10 @@ class AppServiceProvider extends ServiceProvider
         );
 
         TwillNavigation::addLink(
+            NavigationLink::make()->title("Blog Categories")->forModule('blogCategories')
+        );
+        
+        TwillNavigation::addLink(
             NavigationLink::make()
             ->title(title: Str::ucfirst(string: __('backend.articles')))
             ->forModule('articles')
@@ -48,6 +52,7 @@ class AppServiceProvider extends ServiceProvider
             ->title("FAQs")
             ->forModule('faqs')
         );
+
         TwillAppSettings::registerSettingsGroups(
             SettingsGroup::make()->name('homepage')->label('Homepage'),
             SettingsGroup::make()

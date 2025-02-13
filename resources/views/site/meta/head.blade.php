@@ -16,11 +16,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
 
-    {{-- @isset($item)
+    @isset($item)
         {!!  SEOMeta::generate() !!}
         {!!  OpenGraph::generate() !!}
         {!!  Twitter::generate() !!}
-    @endisset --}}
+    @endisset
 
     @isset($meta)
         <title>{{ $meta->title }}</title>

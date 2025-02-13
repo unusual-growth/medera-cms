@@ -11,3 +11,5 @@ TwillRoutes::module('pages');
 TwillRoutes::module('articles');
 
 TwillRoutes::module('faqs');
+
+TwillRoutes::module('blogCategories');

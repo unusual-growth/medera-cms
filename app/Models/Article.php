@@ -76,4 +76,9 @@ class Article extends Model implements LocalizedUrlRoutable
         return $this->getSlug($locale);
     }
 
+    public function categories()
+    {
+        return $this->belongsToMany(BlogCategory::class);
+    }
+
 }
