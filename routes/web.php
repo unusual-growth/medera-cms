@@ -63,6 +63,9 @@ Route::get('/library', function () {
 Route::get('/library/article', function () {
     return view('article');
 });
+Route::get('/footer', function () {
+    return view('footer');
+});
 
 Route::get('/success', function () {
     return view('success');

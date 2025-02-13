@@ -1,92 +1,111 @@
-footer{
-    background-color: $footer-gray;
-    justify-content: center;
-    display: flex;
-    flex-flow: column;
-    .socials {
-        display: flex;
-        flex-flow: row nowrap;
-        column-gap: rem(14px);
-        row-gap: rem(18px);
-        a {
-            padding: 10px 14px;
-            border: 1px solid $detailcolor;
-            display: inline-flex;
-            border-radius: 48px;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-  .footer-top{
-    display: flex;
-    width: 100%;
-    margin: 36px auto;
-    // gap: 16px 32px;
-    flex-flow: row wrap;
-    @include media('<cont-xlarge') {
-        column-gap: 16px;
-    }
-    @include media('<=tablet') {
-        flex-flow: column;
-    }
-    .socials-column {
-        @include media('>tablet') {
-            display: none;
-        }
-    }
-    .title {
-        // font-weight: 600;
-        @include media('<=tablet') {
-            font-size: 24px;
-            margin-bottom: .5em !important;
-            & ~ p {
-                font-size: 18px;
-            }
-        }
+footer {
+  background-color: $primary_darken_1;
+  @include media("<tablet") {
+    * {
+      text-align: center;
     }
   }
-  .footer-bottom{
-    background-color: $footer-dark-gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .bottom-left{
-      width: rem(570px);
-    }
-    .menu{
-      width: rem(570px);
-      display: flex;
-      justify-content: flex-end;
-      ul{
-        list-style: none;
-        padding: 0;
-        display: flex;
-        li{
-          margin-left: rem(36px);
-          a{
-            color: $detailcolor;
-            &:hover{
-              color: $primary;
-            }
+  .row-top {
+    padding: 50px 0;
+    .left {
+      .logo {
+        margin-bottom: 80px;
+        @include media("<tablet") {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 60px;
+        }
+      }
+      .socials {
+        div {
+          display: flex;
+          gap: 16px;
+          a {
+            cursor: pointer;
+          }
+          @include media("<tablet") {
+            justify-content: center;
+            margin-bottom: 48px;
           }
         }
       }
     }
-  }
-  .newsletter {
-    .custom-submit {
-        // border: 1px solid #35b98b;
-        // border-radius: 0 8px 8px 0;
-        // height: 100%;
-        // border-radius: 0 8px 8px 0;
-        // height: 100%;
-        // line-height: 1;
-        // padding: 17px 42px;
+    .mid-left,
+    .mid-right {
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+          &:not(:last-child) {
+            margin-bottom: 16px;
+          }
+          a {
+            text-decoration: none;
+            color: $white;
+          }
+        }
+      }
+      @include media("<tablet") {
+        margin-bottom: 48px;
+      }
+    }
+    .right {
+      p {
+        &:not(:first-child) {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 18.8px;
+          letter-spacing: 0;
+        }
+      }
+    }
+
+    p {
+      color: $white;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18.8px;
+      letter-spacing: 0;
+      margin: 0 0 28px 0;
     }
   }
-  .newsletter-column {
-    @include media('<=tablet') {
-        display: none;
+
+  .line {
+    border-top: 1px solid $white;
+  }
+  .bottom {
+    max-width: 1216px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding:26px 0;
+    @include media('<tablet'){
+      flex-flow: column;
+      justify-content: center;
+    }
+
+    .__left {
+      color: $white;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16.45px;
+      letter-spacing: 0;
+    }
+    .__right {
+      display: flex;
+      gap: 20px;
+      @include media('<tablet'){
+        margin-top:12px;
+        justify-content: center;
+      }
+      a {
+        color: $white;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16.45px;
+        letter-spacing: 0;
+        text-decoration: underline;
+      }
     }
   }
 }
