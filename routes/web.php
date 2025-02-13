@@ -31,6 +31,9 @@ Route::get('/packaging', function () {
 Route::get('/shipping', function () {
     return view('shipping');
 });
+Route::get('/library', function () {
+    return view('library');
+});
 // Route::controller(FormController::class)->group(function () {
 //     Route::post('/submit-request', 'submitRequestForm')->name('submit-request');
 //     Route::post('/submit-newsletter', 'newsletter')->name('submit-newsletter');

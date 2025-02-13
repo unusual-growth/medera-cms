@@ -29,6 +29,7 @@
 
     {{-- SEC 2 --}}
     {{-- <x-allbeings.customFlex6 /> --}}
+    {{-- TO DO MOBİLE --}}
     <section class="journey-section">
         <div class="container xlarge journey-container">
             <div class="journey-image col-sm-5">

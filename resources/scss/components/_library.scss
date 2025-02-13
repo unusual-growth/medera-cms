@@ -4,7 +4,7 @@
     flex-flow: row;
     // display: grid;
     // grid-template-columns: repeat(3, 1fr);
-    @include media('>tablet'){
+    @include media(">tablet") {
         *:not(a, button) {
             text-align: left;
         }
@@ -15,15 +15,13 @@
         grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
         $gap: 28px;
         gap: $gap;
-        @include media('<mobile') {
+        @include media("<mobile") {
             grid-template-columns: 1fr;
         }
     }
     .library-card {
         border-radius: 16px;
-        background: $white;
-        box-shadow: 0px 2px 48px 0px rgba(0, 0, 0, 0.06);
-        @include media ('<large') {
+        @include media("<large") {
             flex: 1 1 100%;
         }
     }
@@ -32,7 +30,6 @@
 .card {
     display: flex;
     flex-flow: column;
-
     > div {
         width: 100%;
         background-color: $white;
@@ -41,7 +38,7 @@
         align-items: flex-end;
         border-radius: rem(16px);
         &.pad-active {
-            padding: 16px*2 0;
+            padding: 16px * 2 0;
         }
         img {
             margin: 0 auto;
@@ -52,7 +49,7 @@
         text-align: center;
         font-size: rem(32px);
         width: 80%;
-        margin: .5em 1em;
+        margin: 0.5em 1em;
     }
 }
 nav {
@@ -78,7 +75,8 @@ nav {
             &.disabled {
                 opacity: 0.3;
             }
-            a, span {
+            a,
+            span {
                 border-radius: 6px;
                 padding: 8px 10px;
                 color: $detailcolor;
@@ -100,8 +98,7 @@ nav {
                         }
                     }
                 }
-                &:not([aria-label='Next »']):hover {
-
+                &:not([aria-label="Next »"]):hover {
                 }
             }
         }

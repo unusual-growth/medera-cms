@@ -174,7 +174,7 @@
                     <div>
                         <h4>Complete the form today and position yourself as the trusted choice for gut health solutions.
                         </h4>
-                        <a href="#">request</a>
+                        <a class="primary-cta" href="#">request</a>
                     </div>
                 </div>
             </div>
@@ -576,7 +576,7 @@
                 <div class="go-to-form">
                     <h4>Contact us to request a free sample
                         and experience the quality firsthand.</h4>
-                    <a href="#">contact us</a>
+                    <a class="primary-cta" href="#">contact us</a>
                 </div>
             </div>
         </div>

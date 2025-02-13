@@ -6,28 +6,17 @@
     flex-flow: column;
     min-height: 340px;
     position: relative;
-    @include media('<tablet') {
+    @include media("<tablet") {
         max-width: unset;
     }
-
     &.full {
         min-height: 460px;
-        @include media('<large') {
+        @include media("<large") {
             min-height: 360px;
         }
     }
     &.w-button {
         min-height: 380px;
-    }
-    .date {
-        position: absolute;
-        top: rem(16);
-        left: rem(18);
-        background-color: $primary;
-        color: $white;
-        padding: rem(8) rem(12);
-        border-radius: .5em;
-        font-size: rem(14);
     }
     img {
         border-radius: 16px 16px 0 0;
@@ -41,17 +30,14 @@
         height: 100%;
         justify-content: space-between;
         row-gap: 8px;
-        @include media ('<tablet') {
-            align-items: center;
-        }
         .heading {
-            color: #000;
-            font-size: 24px;
+            color: $primary;
+            font-size: 20px;
+            font-weight: 700;
             margin: 0;
             $line-height: 1.2em;
             line-height: $line-height;
-            // min-height: $line-height * 3;
-            // max-height: $line-height * 3;
+            max-width: 70%;
             @include lineClamp(3);
         }
         .desc {
@@ -60,19 +46,105 @@
             flex-grow: 1;
             overflow: hidden;
             margin-bottom: 18px;
+            font-size: rem(16px);
+            line-height: 24px;
+            letter-spacing: 0;
+            opacity: 80%;
             p {
-                @include lineClamp(3);
+                @include lineClamp(4);
                 margin: 0;
-                @include media('<large') {
+                @include media("<large") {
                     font-size: rem(14);
                 }
             }
-
         }
-        a {
-            margin-top: auto;
-            align-self: flex-start;
-            border-radius: 12px;
+        .bottom-line {
+            display: flex;
+            justify-content: space-between;
+            .date {
+                color: $primary;
+                padding: rem(8) 0;
+                font-size: rem(14);
+                width: max-content;
+                font-size: 14px;
+                line-height: 21px;
+                letter-spacing: 0;
+                display: flex;
+                &::before {
+                    content: "";
+                    background-image: url("/dummy-img/calendar.png");
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    width: 18px;
+                    height: 20px;
+                    margin-right: 7px;
+                }
+            }
+            .library-cta {
+                position: relative;
+                font-size: 16px;
+                color: $primary;
+                text-decoration: none;
+                line-height: 22.4px;
+                letter-spacing: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 12px;
+                font-weight: 700;
+                &::after {
+                    content: "";
+                    background-image: url("/dummy-img/library-arrow.png");
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    width: 16px;
+                    height: 12px;
+                    margin-left: 7px;
+                    transition: all 1s;
+                }
+            }
         }
+    }
+}
+.library-content {
+    background: linear-gradient(270deg, #847c80 0%, #b2c6c1 100%);
+    height: 44.4vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 42px;
+    h1 {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 55px;
+        letter-spacing: -1%;
+    }
+    p {
+        color: $white;
+        max-width: 25rem;
+    }
+}
+.library-tabbed-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap:32px;
+    row-gap:24px;
+    margin-bottom:42px;
+    .__tabbed {
+        display: flex;
+        text-wrap: nowrap;
+        padding:4px 20px;
+        &.active{
+            background-color:$primary;
+            color:$white;
+        }
+    }
+    @include media('<tablet'){
+        flex-wrap:nowrap;
+        overflow:scroll;
     }
 }
