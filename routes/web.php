@@ -57,6 +57,9 @@ Route::get('/packaging', function () {
 Route::get('/shipping', function () {
     return view('shipping');
 });
+Route::get('/library', function () {
+    return view('library');
+});
 
 Route::get('/success', function () {
     return view('success');

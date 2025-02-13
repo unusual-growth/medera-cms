@@ -42,7 +42,7 @@ $colors: (
             height:316px;
             img {
                 padding-top:20px;
-                max-width: 232px;
+                max-width: 14.5rem;
                 border-radius:50%;
             }
             @include media('<mobile'){
@@ -55,7 +55,7 @@ $colors: (
                     text-align: center;
                     border-radius:50px;
                     color:$white;
-                    max-width:215px;
+                    max-width:13.438rem;
                     padding:14px;
                     position:absolute;
                     margin:0;

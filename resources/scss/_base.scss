@@ -59,11 +59,12 @@ picture{
         width:100%;
     }
 }
+// TODO px to em/rem
 h1 {
     color:$white;
 	font-size: rem(48px);
 	font-weight: 400;
-	line-height: 56.4px;
+	line-height: 51px;
 	letter-spacing: -0.02em;
     margin:0;
     strong{
@@ -71,7 +72,7 @@ h1 {
     }
     @include media('<tablet'){
         font-size:rem(30px);
-        line-height: 35.25px
+        line-height: 2.2em;
     }
 }
 
@@ -87,7 +88,7 @@ h2 {
     }
     @include media('<tablet'){
         font-size:rem(24px);
-        line-height:28.2px;
+        line-height:1.75em;
     }
 }
 h3{
@@ -130,7 +131,7 @@ p {
         font-size:rem(14px);
     }
 }
-a {
+.primary-cta {
     color: $primary;
     font-size: rem(14px);
     font-weight: 700;
