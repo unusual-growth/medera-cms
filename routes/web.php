@@ -60,6 +60,9 @@ Route::get('/shipping', function () {
 Route::get('/library', function () {
     return view('library');
 });
+Route::get('/library/article', function () {
+    return view('article');
+});
 
 Route::get('/success', function () {
     return view('success');
