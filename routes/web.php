@@ -64,6 +64,9 @@ Route::group([
 });
 
 
+Route::get('/library/article', function () {
+    return view('article');
+});
 
 Route::get('/success', function () {
     return view('success');
