@@ -22,22 +22,18 @@ class PageHomeDisplayController extends Controller
     public function show(Page $page): View
     {
         LaravelLocalization::setRouteName('home');
-        $item = $this->homepageRepository->getHomepage();
-        FacadesView::share('item', $item);
-        return View('pages.homepage', ['item' => $item]);
+        if (TwillAppSettings::get('homepage.homepage.page')->isNotEmpty()) {
+            /** @var \App\Models\Page $frontPage */
+            $frontPage = TwillAppSettings::get('homepage.homepage.page')->first();
 
-        // if (TwillAppSettings::get('homepage.homepage.page')->isNotEmpty()) {
-        //     /** @var \App\Models\Page $frontPage */
-        //     $frontPage = TwillAppSettings::get('homepage.homepage.page')->first();
+            $this->setMetadata($frontPage);
 
-        //     $this->setMetadata($frontPage);
+            if ($frontPage->published) {
+                FacadesView::share('item', $frontPage);
 
-        //     if ($frontPage->published) {
-        //         FacadesView::share('item', $frontPage);
-
-        //         return view('site.page', ['key'=>"home"]);
-        //     }
-        // }
+                return view('site.page', ['key'=>"home"]);
+            }
+        }
 
         abort(404);
     }
