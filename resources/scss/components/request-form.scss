@@ -1,7 +1,7 @@
 form {
     display: grid !important;
     max-width: 100%;
-    gap: 32px 20px;
+    gap: 20px;
     border-radius: 20px;
     background: $white;
     box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.20);
@@ -10,6 +10,7 @@ form {
         text-align: center;
         font-size: 22px;
         font-weight: 500;
+        line-height: normal;
 
     }
     input:not([type=checkbox]), select, button {
@@ -34,7 +35,7 @@ form {
     }
 
     .custom-control.custom-switch {
-        display: grid;
+        display: grid !important;
         gap: 16px;
         grid-template-columns: 12px 1fr;
         input {
@@ -56,6 +57,7 @@ form {
 }
 .request-section {
     form {
+        gap: 32px 20px;
         @include media('>mobile') {
             grid-template-columns: 1fr 1fr;
         }
