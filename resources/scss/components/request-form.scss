@@ -1,138 +1,77 @@
-.request-section{
-  background-image: url('/assets/img/request-bg.webp');
-  background-size: cover;
-  .create-request{
-    max-width: 632px;
-    margin: auto;
-    .iti.iti--allow-dropdown {
-        width: 100%;
-      }
-  }
-  h2{
-    color: $white;
-    & + p {
-        color: $white;
-        text-align: center;
-        max-width: 66%;
-        margin: auto;
-        font-size: rem(20px);
-        @include media('<=mobile') {
-            max-width: 100%;
-        }
-    }
-  }
-  .custom-control-label{
-    color: $white;
-  }
-
-  .form-group {
-      row-gap: rem(24px);
-      > label:not(.switch) {
-          display: none;
-        }
-    }
-    .input-group {
-        row-gap: rem(24px);
-        column-gap: rem(16px) !important;
-  }
-  label {
-    a {
-        color: $white;
-        &:hover {
-            color: $primary;
-        }
-    }
-  }
-}
 form {
-}
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 50px;
-    border-radius: 8px;
-  }
+    display: grid !important;
+    max-width: 100%;
+    gap: 20px;
+    border-radius: 20px;
+    background: $white;
+    box-shadow: 4px 4px 15px 0px rgba(0, 0, 0, 0.20);
+    h2, h3, h4 {
+        color: $peach;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: normal;
 
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $white;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 8px;
-    height: 50px;
-  }
-
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 40px;
-    top: 5px;
-    width: 50%;
-    left: 8px;
-    // background: rgba(0,21,64,.5);
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 8px;
-  }
-
-// input:checked+.slider {
-//   background-color: #2196F3;
-// }
-
-// input:focus+.slider {
-//   box-shadow: 0 0 1px #2196F3;
-// }
-
-input:checked+.slider:before {
-  -webkit-transform: translateX(calc(100% - 8px ));
-  -ms-transform: translateX(calc(100% - 8px));
-  transform: translateX(calc(100% - 8px));
-}
-.left-label,.right-label{
-  z-index: 2;
-  top: 50%;
-  font-size: 16px;
-  transform: translate(-50%, -50%);
-}
-.left-label{
-  left: 25%;
-  color: $white;
-}
-.right-label{
-    left: 75%;
-    color:$detailcolor;
-}
-input:checked+.slider+.left-label{
-  color: $detailcolor;
-}
-input:checked+.slider+.left-label+.right-label{
-  color:$white !important;
-}
-.create-request{
-  input {
-      border: none;
-      &:focus {
-        outline: 2px solid $primary;
-      }
     }
-}
-.custom-submit{
-  &.primary-bg{
-    background-color: $primary;
-  }
+    input:not([type=checkbox]), select, button {
+        border-radius: 20px;
+        border: 1px solid $peach;
+        padding: 12.5px 20px;
+        border-radius: 24px;
+        font-size: 16px;
+        color: $peach_darken_3;
+        width: 100%;
+    }
+    label {
+        color: $peach;
+        a {
+            color: $peach;
+            text-decoration: underline;
+        }
+    }
 
+    button {
+        width: 100% !important;
+    }
+
+    .custom-control.custom-switch {
+        display: grid !important;
+        gap: 16px;
+        grid-template-columns: 12px 1fr;
+        input {
+            grid-column: 1 / 2;
+            margin-right: 0;
+            margin-left: 0;
+            border-radius: 8px;
+            width: 12px;
+            height: 12px;
+        }
+        label {
+            grid-column: 2 / 3;
+        }
+        .help-block {
+            grid-column: 2 / 3;
+        }
+    }
+
+}
+.request-section {
+    form {
+        gap: 32px 20px;
+        @include media('>mobile') {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        h2, h3, h4 {
+            @include media('>mobile') {
+                grid-column: 1 / 3;
+            }
+        }
+
+        button, .custom-control {
+            @include media('>mobile') {
+                grid-column: 2 / 3;
+            }
+        }
+    }
 }

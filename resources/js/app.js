@@ -35,3 +35,48 @@ $(document).ready(function(){
       }
     });
 })
+window.renderBulletsWithFraction = function (swiper, current, total) {
+    let fraction = "<span class='swiper-pagination-current '>" + current + "</span>" +
+        "<span class='swiper-pagination-total '> / " + total + "</span>";
+    let bullets = '';
+    for (let i = 0; i < total; i++) {
+        if (i === (current - 1)) {
+            bullets += '<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>';
+            continue;
+        }
+        bullets += '<span class="swiper-pagination-bullet"></span>';
+    }
+    const pagination = `
+    <div class="row">
+        <div class="swiper-pagination-bullets">
+            ${bullets}
+        </div>
+        <span class="fraction">
+            ${fraction}
+        </span>
+    </div>`;
+    return pagination;
+};
+$(document).ready(function () {
+    $('.floating-form .activator').on('click', function () {
+        $(this).closest('.floating-form').toggleClass('active');
+    });
+    $('header .activate-mobile').on('click', function () {
+        $('header .mobile-menu').toggleClass('active');
+        $('header .mobile-menu-close').toggleClass('active');
+    });
+    $('header .mobile-menu-close').on('click', function () {
+        $('header .mobile-menu').removeClass('active');
+        $('header .mobile-menu-close').removeClass('active');
+    });
+    $('.image-paragraph-slider a.read-more').on('click', function (e) {
+        e.preventDefault();
+        console.log('read more');
+        $(this).closest('.swiper-slide').find('p.read-more').toggleClass('active');
+        $(this).html($(this).html() === 'Read More' ? 'Read Less' : 'Read More');
+        //TODO: add lang option;
+    });
+    $('.mobile-menu .hasSub').on('click',function(){
+        $(this).toggleClass('active');
+    })
+});

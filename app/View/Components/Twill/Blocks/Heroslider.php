@@ -10,6 +10,7 @@ use A17\Twill\Services\Forms\Fields\Medias;
 use A17\Twill\Services\Forms\Fields\Wysiwyg;
 use A17\Twill\Services\Forms\InlineRepeater;
 use A17\Twill\View\Components\Blocks\TwillBlockComponent;
+use App\Services\Twill\Forms\CollapsibleContainer;
 
 class Heroslider extends TwillBlockComponent
 {
@@ -45,23 +46,26 @@ class Heroslider extends TwillBlockComponent
                     Input::make()->name('link')->label('Link')->translatable(),
 
                     Input::make()->name('link_text')->label('Link Text')->translatable(),
+                    CollapsibleContainer::make()->fields(
+                        [
+                        Medias::make()
+                            ->name('desktop_image')
+                            ->label('Banner Image')
+                            ->max(1)
+                            ->fieldNote('This image will be displayed behind the content in desktop devices.'),
+                        Medias::make()
+                            ->name('tablet_image')
+                            ->label('Banner Image')
 
-                    Medias::make()
-                        ->name('desktop_image')
-                        ->label('Banner Image')
-                        ->max(1)
-                        ->fieldNote('This image will be displayed behind the content in desktop devices, on the right column.'),
-                    Medias::make()
-                        ->name('tablet_image')
-                        ->label('Banner Image')
-
-                        ->max(1)
-                        ->fieldNote('This image will be displayed behind the content in tablet devices on the right column.'),
-                    Medias::make()
-                        ->name('mobile_image')
-                        ->label('Background Image')
-                        ->max(1)
-                        ->fieldNote('This image will be displayed behind the content in mobile devices, under the text.'),
+                            ->max(1)
+                            ->fieldNote('This image will be displayed behind the content in tablet devices.'),
+                        Medias::make()
+                            ->name('mobile_image')
+                            ->label('Background Image')
+                            ->max(1)
+                            ->fieldNote('This image will be displayed behind the content in mobile devices.'),
+                        ]
+                    )
 
                 ])
         ]);

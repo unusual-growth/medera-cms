@@ -1,29 +1,77 @@
-// TO DO MOBİLE
+// // TO DO MOBİLE
+// .border-list-card {
+//     .__fab-card {
+//         display: flex;
+//         justify-content: space-between;
+//         flex-wrap: wrap;
+//         > div {
+//             border: 1px solid $artichoke;
+//             border-radius: 18px;
+//             text-align: center;
+//             display: flex;
+//             width: 32%;
+//             flex-wrap: wrap;
+//             > div {
+//                 max-width: 70%;
+//                 margin: auto;
+//                 padding: 20px 0;
+//                 img {
+//                     display: unset;
+//                 }
+//                 h3 {
+//                     margin: 0;
+//                     color: $secondary;
+//                     font-size: rem(24px);
+//                     font-weight: 500;
+//                     line-height: 28.2px;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+@import "include-media";
+
 .border-list-card {
     .__fab-card {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        
         > div {
             border: 1px solid $artichoke;
             border-radius: 18px;
             text-align: center;
             display: flex;
-            width:32%;
-            >div{
-                max-width:70%;
-                margin:auto;
-                padding:20px 0;
+            flex-wrap: wrap;
+            width: 32%;
+            
+            > div {
+                max-width: 70%;
+                margin: auto;
+                padding: 20px 0;
+                
                 img {
                     display: unset;
                 }
+                
                 h3 {
-                    margin:0;
+                    margin: 0;
                     color: $secondary;
                     font-size: rem(24px);
                     font-weight: 500;
                     line-height: 28.2px;
                 }
+            }
+        }
+
+        @include media("<=tablet") {
+            flex-direction: column;
+            align-items: center;
+            
+            > div {
+                width: 90%;
+                margin-bottom: 15px;
             }
         }
     }

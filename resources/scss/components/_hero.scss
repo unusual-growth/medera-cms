@@ -322,13 +322,13 @@
 // }
 
 
-.hero{
+.hero {
     padding:0 !important;
     .content{
         max-width: 460px;
-        h1, h2, p{
-            color:$white;
-        }
+    }
+    h1, h2, p{
+        color:$white;
     }
     img {
         border-radius: 0 !important;
@@ -341,5 +341,18 @@
     }
     &.dark-forest-to-gray {
         background: linear-gradient(270deg, #434A57 0%, #658D82 100%);
+    }
+    &.gradient-banner {
+        padding: 64px 0 !important;
+        h1 {
+            line-height: normal;
+            margin-bottom: 24px !important;
+        }
+        p {
+            margin: 0 !important;
+        }
+        @include media('>mobile') {
+            min-height: 400px;
+        }
     }
 }

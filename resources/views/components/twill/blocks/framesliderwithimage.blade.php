@@ -25,7 +25,7 @@
     // );
 @endphp
 
-<section class="slider-section framed-slider-with-image {{$block->input('preset')}}">
+<section class="framed-slider-with-image {{$block->input('preset')}}">
     <div class="container xlarge">
         <div class="row">
             <div class="col-sm-6">

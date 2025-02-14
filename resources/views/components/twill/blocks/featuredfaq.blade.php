@@ -36,7 +36,7 @@
                     <div class="card">
                         <h3> {{ $item->title }} </h3>
                         <p> {{ $item->excerpt }} </p>
-                        <a href="{{ $translatedInput('link') }}" target="_blank">{{ __('util.read-more') }}</a>
+                        <a class="primary-cta" href="{{ $translatedInput('link') }}" target="_blank">{{ __('util.read-more') }}</a>
                     </div>
                 @endforeach
             </div>

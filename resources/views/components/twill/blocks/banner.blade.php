@@ -18,7 +18,7 @@
     ];
     # Bir kod yazdım ama inşallah küfür yemem
     if (!function_exists('setUpPicture')) {
-        function setUpPicture($block, &$arr, $setMediaNull = false, $i = 0) {
+        function setUpPicture($block, $arr, $setMediaNull = false, $i = 0) {
             if ($i > array_key_last($arr)) {
                 return $arr;
             }
