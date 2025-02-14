@@ -67,7 +67,7 @@ class Page extends Model implements Sortable
         [
             'value' => 'homepage',
             'label' => 'Homepage',
-            'block_selection' => ['app-heroslider', 'app-doublecolumncontent', 'app-videosection ', 'app-inlinebanner', 'app-fullscreenbanner', 'app-featureheadlineswithsphericalimages', 'app-inlinebanner', 'app-featuredfaq'],
+            'block_selection' => ['app-heroslider', 'app-doublecolumncontent', 'app-videosection ', 'app-inlinebanner', 'app-fullscreenbanner', 'app-featureheadlineswithsphericalimages', 'app-inlinebanner', 'app-featuredfaq','app-featuredblogs'],
         ],
         [
             'value' => 'faq',

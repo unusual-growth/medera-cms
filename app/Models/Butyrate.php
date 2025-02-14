@@ -57,13 +57,12 @@ class Butyrate extends Model
 
     public const DEFAULT_TEMPLATE = 'butyrateforhumans';
     //TODO: butyrateforhumans app-banner dan sonra tam bir vaka gelecek
-    //TODO: butyrateforhumans sonuna library component gelecek
     //TODO: allnaturalbutyrate 'app-iconlist', 'app-doublecolumncontent' arasina request form gelecek
     public const AVAILABLE_TEMPLATES = [
         [
             'value' => 'butyrateforhumans',
             'label' => 'Butyrate for Humans',
-            'block_selection' => ['app-banner', 'app-accordionwithsingleimage', 'app-inlinebanner','app-doublecolumncontent', 'app-iconlist', 'app-doublecolumncontent', 'app-framesliderwithimage', 'app-iconlist', 'app-doublecolumnframedcontent', 'app-iconlist', 'app-doublecolumnframedcontent', 'app-iconlist', 'app-doublecolumncontent', 'app-inlinebanner'],
+            'block_selection' => ['app-banner', 'app-accordionwithsingleimage', 'app-inlinebanner','app-doublecolumncontent', 'app-iconlist', 'app-doublecolumncontent', 'app-framesliderwithimage', 'app-iconlist', 'app-doublecolumnframedcontent', 'app-iconlist', 'app-doublecolumnframedcontent', 'app-iconlist', 'app-doublecolumncontent', 'app-inlinebanner','app-featuredblogs'],
         ],
         [
             'value' => 'drcaps',
