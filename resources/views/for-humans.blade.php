@@ -2,7 +2,7 @@
 
 @section('content')
     {{--  HERO METNİ HİZALA --}}
-    <section class="hero butyrate">
+    {{-- <section class="hero butyrate">
         <div class="container full-1440">
             <div class="row gap-30 justify-space-between">
                 <div class="col-md-6 flex-center">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     {{-- SEC 1 --}}
     <section class="gut-health-section">

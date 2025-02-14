@@ -35,9 +35,9 @@ section {
         @include media('<large') {
             margin: rem(24px) 0;
         }
-        @include media('<tablet') {
-            margin: rem(16px) 0;
-        }
+        // @include media('<tablet') {
+        //     margin: rem(16px) 0;
+        // }
     }
     &:first-of-type {
         margin-top: 0;
@@ -45,11 +45,11 @@ section {
     &:last-of-type {
         margin-bottom: 0;
     }
-    @include media('<tablet') {
-        &:not(.no-padding) {
-            padding: rem(16px) 0;
-        }
-    }
+    // @include media('<tablet') {
+    //     &:not(.no-padding) {
+    //         padding: rem(16px) 0;
+    //     }
+    // }
 }
 picture{
     @include media('<large'){
@@ -94,7 +94,7 @@ h2 {
     }
     @include media('<tablet'){
         font-size:rem(24px);
-        line-height:1.75em;
+        line-height:28.2px;
     }
 }
 h3{
