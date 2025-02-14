@@ -35,7 +35,7 @@ class Accordionwithsingleimage extends TwillBlockComponent
                             ->label(label: twillTrans('Icon'))
                             ->required()
                             ->max(1),
-                        Input::make()->name('title')->label('Accordion Item Title')->note('(h4) Will be displayed alongside the icon, as clickable titleasndmj')->translatable(),
+                        Input::make()->name('title')->label('Accordion Item Title')->note('(h4) Will be displayed alongside the icon, as clickable title.')->translatable(),
                         Wysiwyg::make()
                             ->name('content')
                             ->maxLength(100)
