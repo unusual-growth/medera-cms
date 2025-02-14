@@ -26,6 +26,7 @@ window._swiperKeyboard = Keyboard;
 window._swiperCreativeEffect= EffectCreative;
 window._swiperEffectFade= EffectFade;
 window._swiperFreeMode = FreeMode;
+window.swipers = {};
 
 $(document).ready(function(){
     $('.faq-listing .item h4').on('click',function(){
@@ -79,4 +80,43 @@ $(document).ready(function () {
     $('.mobile-menu .hasSub').on('click',function(){
         $(this).toggleClass('active');
     })
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const questions = document.querySelectorAll('.question');
+    const firstAnswer = document.querySelector('.Accordion-item.active .Accordion-answer');
+    if (firstAnswer) {
+        firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
+    }
+
+    questions.forEach(question => {
+        question.addEventListener('click', function() {
+            const currentAccordion = this.closest('.accordion-item');
+            const currentAnswer = currentAccordion.querySelector('.accordion-answer');
+            const isOpen = currentAccordion.classList.contains('active');
+            const activeAccordions = document.querySelectorAll('.accordion-item.active');
+
+            if (!isOpen) {
+                activeAccordions.forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.accordion-answer').style.maxHeight = '0px';
+                });
+                currentAccordion.classList.add('active');
+                currentAnswer.style.maxHeight = currentAnswer.scrollHeight + 'px';
+            } else if (activeAccordions.length === 1) {
+                return;
+            } else {
+                currentAccordion.classList.remove('active');
+                currentAnswer.style.maxHeight = '0px';
+            }
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    $('.accordion-slider-section .accordion-item').on('click',function(){
+        if(!$(this).hasClass('active')){
+            $(this).siblings('.active').removeClass('active');
+            $(this).addClass('active');
+            window["swipers"][$(this).parents('.accordion-slider-section').data('swiper-id')].slideTo($(this).data('index'));
+        }
+    });
 });
