@@ -43,8 +43,10 @@ $border-width-variation: ('standart', 'tick', 'bold');
 $border-radius-variation: ('standart', 'smooth', 'oval');
 
 $bg-colors: (
-
-    "main-gray": $main-gray,
+    "primary": $primary,
+    "secondary": $secondary,
+    "peach": $peach,
+    "primary-lighten-4": $primary_tone_4,
 );
 
 $size-variations: (

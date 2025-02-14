@@ -141,7 +141,6 @@ p {
     color: $primary;
     font-size: rem(14px);
     font-weight: 700;
-    line-height: 36px;
     letter-spacing: 1px;
     text-transform: uppercase;
     width: max-content;
@@ -216,6 +215,20 @@ img {
 //         font-size: rem(18px);
 //     }
 // }
+.sect-heading-desc {
+    margin-bottom: 48px;
+    @include media('<=mobile') {
+        margin-bottom: 36px;
+        text-align: left !important;
+    }
+    h2 {
+        margin: 0;
+    }
+    P {
+        margin: 0;
+    }
+
+}
 .d-flex {
     display: flex;
 }
