@@ -11,16 +11,16 @@ use A17\Twill\Repositories\Behaviors\HandleSlugs;
 use A17\Twill\Repositories\Behaviors\HandleTranslations;
 use A17\Twill\Repositories\ModuleRepository;
 use A17\Twill\Services\Listings\Filters\FreeTextSearch;
-use App\Models\Page;
+use App\Models\Whoweare;
 use App\Repositories\Behaviours\HandleTemplates;
 use CwsDigital\TwillMetadata\Repositories\Behaviours\HandleMetadata;
 use Illuminate\Support\Collection;
 
-class PageRepository extends ModuleRepository
+class WhoweareRepository extends ModuleRepository
 {
     use HandleBlocks, HandleTranslations, HandleSlugs, HandleMedias, HandleFiles, HandleRevisions, HandleMetadata, HandleTemplates;
 
-    public function __construct(Page $model)
+    public function __construct(Whoweare $model)
     {
         $this->model = $model;
     }

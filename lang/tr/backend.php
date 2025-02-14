@@ -11,4 +11,6 @@ return [
     'footerSettings' => 'Altbilgi Ayarları',
     'customScripts' => 'Özel Script Ayarları',
     'staticPages' => 'Statik Sayfalar',
+    'butyrates' => 'Butyrates',
+    'whoweare' => 'Kimiz',
 ];

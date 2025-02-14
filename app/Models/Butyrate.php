@@ -3,29 +3,26 @@
 namespace App\Models;
 
 use A17\Twill\Models\Model;
-use App\Repositories\PageRepository;
 use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasFiles;
-use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Behaviors\HasBlocks;
 use A17\Twill\Models\Behaviors\HasMedias;
-use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use App\Models\Behaviours\HasLocalizedRoute;
 use A17\Twill\Models\Behaviors\HasTranslation;
 use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
 use App\Models\Behaviours\HasTemplate;
+use App\Repositories\ButyrateRepository;
 
-class Page extends Model implements Sortable
+class Butyrate extends Model
 {
-    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasRevisions, HasPosition, HasMetadata, HasLocalizedRoute, HasTemplate;
+    use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasRevisions, HasMetadata, HasLocalizedRoute, HasTemplate;
     public \Illuminate\Contracts\Foundation\Application|array|\Illuminate\Config\Repository|\Illuminate\Foundation\Application $metadataFallbacks = [];
 
     protected $fillable = [
         'published',
         'title',
         'description',
-        'position',
         'schema',
         'template',
     ];
@@ -58,29 +55,25 @@ class Page extends Model implements Sortable
     ];
 
 
-    public const DEFAULT_TEMPLATE = 'homepage';
-    //TODO: homepage app-doublecolumnconten ten sonra Accordion with Dynamic Images gelecek
-    //TODO: homepage 1 ve 2. 'app-inlinebanner' dan emin degilim o yapilmamis olabilir
-    //TODO: homepage en sona library component gelece
-    //TODO: faq en sona library component gelece
+    public const DEFAULT_TEMPLATE = 'butyrateforhumans';
+    //TODO: butyrateforhumans app-banner dan sonra tam bir vaka gelecek
+    //TODO: allnaturalbutyrate 'app-iconlist', 'app-doublecolumncontent' arasina request form gelecek
     public const AVAILABLE_TEMPLATES = [
         [
-            'value' => 'homepage',
-            'label' => 'Homepage',
-            'block_selection' => ['app-heroslider', 'app-doublecolumncontent', 'app-videosection ', 'app-inlinebanner', 'app-fullscreenbanner', 'app-featureheadlineswithsphericalimages', 'app-inlinebanner', 'app-featuredfaq','app-featuredblogs'],
+            'value' => 'butyrateforhumans',
+            'label' => 'Butyrate for Humans',
+            'block_selection' => ['app-banner', 'app-accordionwithsingleimage', 'app-inlinebanner','app-doublecolumncontent', 'app-iconlist', 'app-doublecolumncontent', 'app-framesliderwithimage', 'app-iconlist', 'app-doublecolumnframedcontent', 'app-iconlist', 'app-doublecolumnframedcontent', 'app-iconlist', 'app-doublecolumncontent', 'app-inlinebanner','app-featuredblogs'],
         ],
         [
-            'value' => 'faq',
-            'label' => 'FAQ',
-            'block_selection' => ['app-banner', 'app-faqlistings'],
+            'value' => 'drcaps',
+            'label' => 'DRcaps',
+            'block_selection' => ['app-banner', 'app-doublecolumncontent', 'app-inlinebanner','app-columncardswithfullbackground', 'app-iconlist', 'app-doublecolumncontent', 'app-iconlist', 'app-doublecolumncontent', 'app-featuredfaq'],
         ],
-
         [
-            'value' => 'textonly',
-            'label' => 'Text Only',
-            'block_selection' => [],
+            'value' => 'allnaturalbutyrate',
+            'label' => 'All-Natural Butyrate',
+            'block_selection' => ['app-banner', 'app-doublecolumncontent', 'app-doublecolumnframedcontent', 'app-fullscreenbanner', 'app-doublecolumnframedcontent', 'app-doublecolumnframedcontent', 'app-sectioncontentwithsingleimage', 'app-framesliderwithimage', 'app-doublecolumncontent', 'app-iconlist', 'app-doublecolumncontent', 'app-iconlist', 'app-doublecolumncontent', 'app-inlinebanner', 'app-doublecolumncontent'],
         ],
-
         [
             'value' => 'empty',
             'label' => 'Empty',
@@ -92,17 +85,17 @@ class Page extends Model implements Sortable
     public function __construct()
     {
         parent::__construct();
-        $this->slugKey = 'page';
-        $this->routeName = 'page';
+        $this->slugKey = 'butyrate';
+        $this->routeName = 'butyrate';
     }
 
     public function resolveRouteBinding($slug, $field = null)
     {
-        $page = app(PageRepository::class)->forSlug($slug);
+        $butyrate = app(ButyrateRepository::class)->forSlug($slug);
 
-        abort_if(! $page, 404);
+        abort_if(! $butyrate, 404);
 
-        return $page;
+        return $butyrate;
     }
 
     // #region routekey

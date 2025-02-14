@@ -25,7 +25,7 @@
         <div class="container xlarge">
 
             <h2 class="text-align-center">
-                Other Blogs
+                {{ __('frontend.Other Blogs') }}
             </h2>
             <div class="card-display library">
                 @foreach ($relatedArticles as $relatedArticle)

@@ -13,21 +13,29 @@ use A17\Twill\Services\Forms\Fieldset;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Services\Listings\Columns\Text;
 use A17\Twill\Services\Listings\TableColumns;
-use App\Models\Page;
+use App\Models\Butyrate;
 
-class PageController extends BaseModuleController
+class ButyrateController extends BaseModuleController
 {
-    protected $moduleName = 'pages';
+    protected $moduleName = 'butyrates';
     /**
      * This method can be used to enable/disable defaults. See setUpController in the docs for available options.
      */
     protected function setUpController(): void
     {
-        $this->setPermalinkBase(permalinkBase: '');
+        $this->setPermalinkBase(permalinkBase: 'butyrate');
         $this->enableDuplicate();
         $this->withoutLanguageInPermalink();
     }
 
+    protected function getLocalizedPermalinkBase(): array
+    {
+        return [
+            'en' => 'butyrate',
+            'nl' => 'butyrate',
+            'tr' => 'butyrate',
+        ];
+    }
     public function getCreateForm(): Form
     {
         return Form::make([
@@ -39,8 +47,8 @@ class PageController extends BaseModuleController
             Select::make()
                 ->name('template')
                 ->label('Template')
-                ->options(Page::getTemplateOptions())
-                ->default(Page::DEFAULT_TEMPLATE),
+                ->options(Butyrate::getTemplateOptions())
+                ->default(Butyrate::DEFAULT_TEMPLATE),
             Input::make()
                 ->name('slug')
                 ->label(twillTrans('twill::lang.modal.permalink-field'))
