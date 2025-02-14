@@ -67,6 +67,12 @@ Route::group([
 Route::get('/library/article', function () {
     return view('article');
 });
+Route::get('/footer', function () {
+    return view('footer');
+});
+Route::get('/header', function () {
+    return view('header');
+});
 
 Route::get('/success', function () {
     return view('success');
@@ -74,3 +80,9 @@ Route::get('/success', function () {
 Route::get('/404', function () {
     return view('404');
 });
+
+
+Route::get('/responsive', function () {
+    return view('responsive');
+});
+
