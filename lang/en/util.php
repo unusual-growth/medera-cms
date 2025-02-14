@@ -24,6 +24,7 @@ return [
         'name' => 'Name',
         'surname' => 'Surname',
         'phone' => 'Phone',
+        'company' => 'Company',
         'createrequest' => 'CREATE REQUEST',
         'send' => 'SEND',
         'select-service' => 'Select Service',
