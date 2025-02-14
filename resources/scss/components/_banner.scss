@@ -58,13 +58,15 @@
         padding: 120px 0;
         justify-content: center;
         gap: 52px;
+        // @include media('<large'){
+        //     padding:unset;
+        // }
     }
     p {
         display: flex;
         align-items: center;
         justify-content: center;
-        max-width: 246px;
-        min-width: 162px;
+        width: 15.125rem;
         line-height: 28.2px;
         text-align: center;
         font-size: rem(24px);
@@ -98,6 +100,7 @@
             @include media('<tablet'){
                 padding: 24px 0;
             }
+         
             h4 {
                 line-height: 28.2px;
                 max-width: 510px;
