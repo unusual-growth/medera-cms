@@ -60,6 +60,10 @@ class AppServiceProvider extends ServiceProvider
             ->forModule('faqs')
         );
 
+        TwillNavigation::addLink(
+            NavigationLink::make()->forModule('menulinks')
+        );
+
         TwillAppSettings::registerSettingsGroups(
             SettingsGroup::make()->name('homepage')->label('Homepage'),
             SettingsGroup::make()
@@ -83,5 +87,8 @@ class AppServiceProvider extends ServiceProvider
         view()->share('agent', Agent::getUserAgent());
         view()->share('isMobile', Agent::isMobile());
         view()->share('isTablet', Agent::isTablet());
+
+        view()->share('logos', TwillAppSettings::getGroupDataForSectionAndName('site-settings','logos'));
+        view()->share('social_links_block', TwillAppSettings::get('social-media-settings.links.social-media-link') ?? []);
     }
 }

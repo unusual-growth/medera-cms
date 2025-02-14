@@ -5,6 +5,7 @@
 * {
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -17,6 +18,7 @@ html {
 body {
     margin: 0;
 }
+
 section {
     &:not(.no-padding) {
         padding: rem(52px) 0;
@@ -51,92 +53,101 @@ section {
     //     }
     // }
 }
-picture{
-    @include media('<large'){
-        width:100%;
+
+picture {
+    @include media('<large') {
+        width: 100%;
     }
-    img{
-        width:100%;
+    img {
+        width: 100%;
     }
 }
-img {
-    border-radius: 24px;
-}
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: $primary;
 }
+
 // !!TODO: Heading Colorlar böyle olmaz.
 // !!TODO: Default primary olmalı, section içinde utility veya parent class'lardan rengini almalı.
 h1 {
-	font-size: rem(48px);
-	font-weight: 400;
-	line-height: 51px;
-	letter-spacing: -0.02em;
-    margin:0;
-    strong{
+    font-size: rem(48px);
+    font-weight: 400;
+    line-height: 51px;
+    letter-spacing: -0.02em;
+    margin: 0;
+    strong {
         font-weight: 700;
     }
-    @include media('<tablet'){
-        font-size:rem(30px);
+    @include media('<tablet') {
+        font-size: rem(30px);
         line-height: 2.2em;
     }
 }
 
 h2 {
-    color:$primary;
-	font-size: 42px;
-	font-weight: 400;
-	line-height: 49px;
-	letter-spacing: -0.02em;
-    margin:0;
-    strong{
+    color: $primary;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 49px;
+    letter-spacing: -0.02em;
+    margin: 0;
+    strong {
         font-weight: 700;
     }
-    @include media('<tablet'){
-        font-size:rem(24px);
-        line-height:28.2px;
+    @include media('<tablet') {
+        font-size: rem(24px);
+        line-height: 28.2px;
     }
 }
-h3{
-    color:$peach;
-	font-size: rem(36px);
-	font-weight: 400;
-	line-height: 42px;
-	letter-spacing: -0.02em;
-    margin:0;
-    strong{
+
+h3 {
+    color: $peach;
+    font-size: rem(36px);
+    font-weight: 400;
+    line-height: 42px;
+    letter-spacing: -0.02em;
+    margin: 0;
+    strong {
         font-weight: 700;
     }
-    @include media('<tablet'){
-        font-size:rem(20px);
+    @include media('<tablet') {
+        font-size: rem(20px);
         line-height: 21.15px;
     }
 }
-h4{
-    color:$primary;
-	font-size: rem(24px);
-	font-weight: 400;
-	line-height: 42px;
-	letter-spacing: -0.02em;
-    margin:0;
-    strong{
+
+h4 {
+    color: $primary;
+    font-size: rem(24px);
+    font-weight: 400;
+    line-height: 42px;
+    letter-spacing: -0.02em;
+    margin: 0;
+    strong {
         font-weight: 700;
     }
-    @include media('<tablet'){
-        font-size:rem(18px);
+    @include media('<tablet') {
+        font-size: rem(18px);
         line-height: 21.15px;
     }
 }
+
 p {
-    color:$secondary;
-	font-size: 18px;
-	font-weight: 400;
-	line-height: 21px;
-	letter-spacing: -0.02em;
-    @include media('<tablet'){
-        font-size:rem(14px);
+    color: $secondary;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    @include media('<tablet') {
+        font-size: rem(14px);
     }
 }
+
 .primary-cta {
     color: $primary;
     font-size: rem(14px);
@@ -154,6 +165,7 @@ p {
         background-color: $forest_lighten_1;
     }
 }
+
 .peach-cta {
     color: $white !important;
     background-color: $peach !important;
@@ -172,25 +184,22 @@ p {
         background-color: $white !important;
     }
 }
+
 img {
     display: block;
     max-width: 100%;
     // I commented out the following line because it was overriding inline html height values.
     // height: auto;
-
 }
 
 .iti {
     z-index: 4 !important;
 }
+
 @include constructContainer($containerWidths);
-
 @include constructResponsiveColumns($breakpoints, $breakpoints-short);
-
 @include createPropertyClasses($properties);
-
 @include socials($social-icons);
-
 // .sect-heading {
 //     margin:0 0 1.75em 0;
 //     &.has-desc {
@@ -227,11 +236,12 @@ img {
     P {
         margin: 0;
     }
-
 }
+
 .d-flex {
     display: flex;
 }
+
 .d-grid {
     display: grid;
 }
@@ -257,10 +267,11 @@ img {
     display: flex;
     flex-flow: row wrap;
     &.reverse {
-            display: flex;
-            flex-flow: row-reverse wrap;
+        display: flex;
+        flex-flow: row-reverse wrap;
     }
 }
+
 .flex-column {
     display: flex;
     flex-flow: column;
@@ -269,59 +280,82 @@ img {
 .row.no-wrap {
     flex-wrap: nowrap;
 }
+
 .flex-center {
     @include allCenterFlex();
 }
-.no-margin{
+
+.no-margin {
     margin: 0 !important;
 }
-.m-x-auto{
+
+.m-x-auto {
     margin-left: auto;
     margin-right: auto;
 }
-.mb-48{
+
+.mb-48 {
     margin-bottom: rem(48px);
 }
-.mb-40{
+
+.mb-40 {
     margin-bottom: rem(40px);
 }
-.mb-30{
+
+.mb-30 {
     margin-bottom: rem(30px) !important;
 }
+
 .mt-0 {
     margin-top: 0;
 }
-.mt-36{
+
+.mt-36 {
     margin-top: rem(36px);
 }
-.mb-24{
+
+.mb-24 {
     margin-bottom: rem(24px);
 }
+
 .mt-48 {
     margin-top: rem(48px);
 }
+
 .mt-24 {
     margin-top: rem(24px);
 }
-.mr-8{
+
+.mr-8 {
     margin-right: rem(8px);
 }
-.ml-8{
+
+.ml-8 {
     margin-left: rem(8px);
 }
+
 .m-0 {
     margin: 0;
 }
-.text-center{
+
+.text-center {
     text-align: center;
 }
 
-.gap-30{gap:30px};
-.gap-24{gap:24px};
-
-.bold{
-    font-weight:700;
+.gap-30 {
+    gap: 30px
 }
+
+;
+.gap-24 {
+    gap: 24px
+}
+
+;
+.bold {
+    font-weight: 700;
+}
+
 .swiper {
     [class*='swiper-button'] {
         font-size: 1.4rem !important;
@@ -335,7 +369,6 @@ img {
         &[class*="-next"] {
             // transform: translate(calc(100% + $spcb / 2), -50%);
             &::after {
-
                 background-image: asset('icons/arrow-circle-right-navyblue.svg');
                 background-position: center;
                 background-repeat: no-repeat;
@@ -350,13 +383,13 @@ img {
                 background-repeat: no-repeat;
                 background-size: cover;
             }
-
         }
         // &:hover {
         //     opacity: 1;
         // }
     }
-     & , & + {
+    &,
+    &+ {
         .swiper-pagination {
             .swiper-pagination-bullet {
                 background-color: $detailcolor !important;
@@ -374,22 +407,24 @@ img {
         }
     }
 }
+
 .x-hidden {
     overflow-x: hidden;
 }
 
-
-.text-center{
+.text-center {
     text-align: center;
 }
 
 form {
     padding: 36px 24px;
-    &.form-group{
+    &.form-group {
         flex-flow: column;
     }
-    input,textarea,select, .custom-select > div  {
-
+    input,
+    textarea,
+    select,
+    .custom-select>div {
         font-size: 16px;
         padding: 16px;
         border: none;
@@ -398,20 +433,21 @@ form {
         background-color: $white;
         color: $detailcolor;
         -webkit-box-shadow: 0 0 0px 1000px $white inset !important;
-        &:focus, &:focus-within{
+        &:focus,
+        &:focus-within {
             outline: 1px solid $primary;
             color: $detailcolor
         }
     }
-    textarea{
+    textarea {
         min-height: 170px;
     }
-    label{
+    label {
         font-size: 16px;
     }
-    .input-group{
-        &.single-line{
-            input{
+    .input-group {
+        &.single-line {
+            input {
                 width: -webkit-fill-available;
             }
         }
@@ -512,7 +548,6 @@ form {
         display: block;
         margin: none;
     }
-
     // .custom-select {
     //     cursor: pointer;
     //     position: relative;
@@ -565,7 +600,6 @@ form {
     //     }
     //     &.show {
     //         select {
-
     //             outline: 1px solid $primary;
     //             color: $detailcolor;
     //             &::after {
@@ -578,27 +612,35 @@ form {
     //     }
     // }
 }
-.flex-column{
+
+.flex-column {
     flex-flow: column;
 }
-.align-items-end{
+
+.align-items-end {
     align-items: flex-end;
 }
-.justify-content-end{
+
+.justify-content-end {
     justify-content: flex-end;
 }
-.justify-space-between{
+
+.justify-space-between {
     justify-content: space-between;
 }
-button{
+
+button {
     cursor: pointer;
 }
-.p-absolute{
+
+.p-absolute {
     position: absolute;
 }
+
 .primary-bg {
     $background-color: $primary;
 }
+
 .customers {
     .row:last-child {
         @include media('<mobile') {
@@ -608,9 +650,11 @@ button{
         }
     }
 }
+
 .height-100 {
     height: 100%;
 }
+
 .address {
     column-gap: 108px;
     row-gap: 48px;
@@ -631,7 +675,7 @@ button{
         margin: 0;
     }
     iframe {
-        width:  100%;
+        width: 100%;
         aspect-ratio: 600/450;
     }
 }
@@ -642,8 +686,8 @@ button{
     }
 }
 
-.m-auto{
-    margin:auto;
+.m-auto {
+    margin: auto;
 }
 
 select {
@@ -661,9 +705,9 @@ select {
         top: 50%;
         transform: translateY(-50%);
         z-index: 1;
-
     }
 }
+
 textarea {
     resize: none;
     font-family: 'Cabin', sans-serif !important;
@@ -672,6 +716,7 @@ textarea {
 .no-bottom-padding {
     padding-bottom: 0 !important;
 }
+
 // section.success {
 //     overflow: hidden;
 //     min-height: calc(100dvh - 65px);
@@ -726,7 +771,6 @@ textarea {
 //         }
 //     }
 // }
-
 @keyframes customclick {
     0% {
         width: 0px;
@@ -739,5 +783,4 @@ textarea {
         width: 2000px;
         height: 2000px;
     }
-
 }

@@ -86,8 +86,8 @@ class Whoweare extends Model
     public function __construct()
     {
         parent::__construct();
-        $this->slugKey = 'who-we-are';
-        $this->routeName = 'who-we-are';
+        $this->slugKey = 'whoweare';
+        $this->routeName = 'whoweare';
     }
 
     public function resolveRouteBinding($slug, $field = null)

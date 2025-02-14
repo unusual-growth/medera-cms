@@ -10,4 +10,7 @@ return [
     'Search results for:' => 'Search results for:',
     'results found' => 'results found',
     'Other Blogs' => 'Other Blogs',
+    'Product' => 'Product',
+    'LearnMore' => 'Learn More',
+    'AllRightReserved' => 'All Right Reserved',
 ];

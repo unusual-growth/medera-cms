@@ -32,6 +32,14 @@ return [
                     ],
                 ],
             ],
+            'footer-logo' => [
+                'default' => [
+                    [
+                        'name' => 'default',
+                        'ratio' => 0,
+                    ],
+                ],
+            ],
             'favicon' => [
                 'default' => [
                     [

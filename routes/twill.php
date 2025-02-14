@@ -15,3 +15,4 @@ TwillRoutes::module('faqs');
 TwillRoutes::module('blogCategories');
 TwillRoutes::module('butyrates');
 TwillRoutes::module('whoweares');
+TwillRoutes::module('menulinks');
