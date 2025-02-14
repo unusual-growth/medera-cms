@@ -11,5 +11,7 @@ return [
     'customScripts' => 'Custom Scripts',
     'redirects' => 'Redirects',
     'staticPages' => 'Static Pages',
+    'butyrates' => 'Butyrates',
+    'whoweare' => 'Who We Are',
 ];
 

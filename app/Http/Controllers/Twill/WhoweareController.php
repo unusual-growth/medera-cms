@@ -13,21 +13,30 @@ use A17\Twill\Services\Forms\Fieldset;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Services\Listings\Columns\Text;
 use A17\Twill\Services\Listings\TableColumns;
-use App\Models\Page;
+use App\Models\Whoweare;
 
-class PageController extends BaseModuleController
+class WhoweareController extends BaseModuleController
 {
-    protected $moduleName = 'pages';
+    protected $moduleName = 'whoweares';
     /**
      * This method can be used to enable/disable defaults. See setUpController in the docs for available options.
      */
     protected function setUpController(): void
     {
-        $this->setPermalinkBase(permalinkBase: '');
+        $this->setPermalinkBase(permalinkBase: 'who-we-are');
         $this->enableDuplicate();
         $this->withoutLanguageInPermalink();
     }
 
+
+    protected function getLocalizedPermalinkBase(): array
+    {
+        return [
+            'en' => 'who-we-are',
+            'nl' => 'who-we-are',
+            'tr' => 'biz-kimiz',
+        ];
+    }
     public function getCreateForm(): Form
     {
         return Form::make([
@@ -39,8 +48,8 @@ class PageController extends BaseModuleController
             Select::make()
                 ->name('template')
                 ->label('Template')
-                ->options(Page::getTemplateOptions())
-                ->default(Page::DEFAULT_TEMPLATE),
+                ->options(Whoweare::getTemplateOptions())
+                ->default(Whoweare::DEFAULT_TEMPLATE),
             Input::make()
                 ->name('slug')
                 ->label(twillTrans('twill::lang.modal.permalink-field'))

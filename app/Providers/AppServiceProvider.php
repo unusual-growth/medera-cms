@@ -38,6 +38,13 @@ class AppServiceProvider extends ServiceProvider
         );
 
         TwillNavigation::addLink(
+            NavigationLink::make()->title(title:__('backend.butyrates'))->forModule('butyrates')
+        );
+
+        TwillNavigation::addLink(
+            NavigationLink::make()->title(title:__('backend.whoweare'))->forModule('whoweare')
+        );
+        TwillNavigation::addLink(
             NavigationLink::make()->title("Blog Categories")->forModule('blogCategories')
         );
         

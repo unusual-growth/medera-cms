@@ -9,4 +9,5 @@ return [
     'Search articles...' => 'Search articles...',
     'Search results for:' => 'Search results for:',
     'results found' => 'results found',
+    'Other Blogs' => 'Other Blogs',
 ];

@@ -10,4 +10,5 @@ return [
     'Search articles...' => 'Makaleleri Ara...',
     'Search results for:' => 'Arama Sonuçları:',
     'results found' => 'sonuç bulundu',
+    'Other Blogs' => 'Diğer Bloglar',
 ];
