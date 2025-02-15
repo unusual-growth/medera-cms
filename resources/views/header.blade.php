@@ -131,7 +131,6 @@ $defaultLocale = LaravelLocalization::getdefaultLocale();
     </div>
     <div class="mobile-menu-close"></div>
     <div class="mobile-menu">
-      <x-menu location="header" type="mobile"/>
         <div class="lang-switcher">
             @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                 <div>

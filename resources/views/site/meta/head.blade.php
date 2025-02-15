@@ -17,9 +17,9 @@
 
 
     @isset($item)
-        {!!  SEOMeta::generate() !!}
-        {!!  OpenGraph::generate() !!}
-        {!!  Twitter::generate() !!}
+    {!!  SEOMeta::generate() !!}
+    {!!  OpenGraph::generate() !!}
+    {!!  Twitter::generate() !!}
     @endisset
 
     @isset($meta)

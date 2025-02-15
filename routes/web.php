@@ -54,7 +54,7 @@ Route::group([
         'localize',  'localizationRedirect', 'localeViewPath'],
 ], function () {
 
-    // Route::get(LaravelLocalization::transRoute('routes.home'), [PageHomeDisplayController::class, 'show'])->name('home');
+    Route::get(LaravelLocalization::transRoute('routes.home'), [PageHomeDisplayController::class, 'show'])->name('home');
     // Route::get('/', [\App\Http\Controllers\PageHomeDisplayController::class, 'show'])->name('frontend.home');
     // Route::get(LaravelLocalization::transRoute('routes.success'), [PageDisplayController::class, 'success'])->name('success');
     Route::get(LaravelLocalization::transRoute('routes.articles'), [ArticleDisplayController::class, 'index'])->name('articles');

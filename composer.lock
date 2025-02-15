@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4632acaa99016b20d410731aef23e6f0",
+    "content-hash": "2c00c8b39decafbdb676c603f617d4e6",
     "packages": [
         {
             "name": "area17/twill",
@@ -383,16 +383,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.339.12",
+            "version": "3.339.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "a63e79c15a972c54bf015a16cce3f3572e0c8221"
+                "reference": "16b291be8ed930b87267552faeb9974aa3a2e6da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a63e79c15a972c54bf015a16cce3f3572e0c8221",
-                "reference": "a63e79c15a972c54bf015a16cce3f3572e0c8221",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/16b291be8ed930b87267552faeb9974aa3a2e6da",
+                "reference": "16b291be8ed930b87267552faeb9974aa3a2e6da",
                 "shasum": ""
             },
             "require": {
@@ -474,9 +474,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.12"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.13"
             },
-            "time": "2025-02-12T19:08:43+00:00"
+            "time": "2025-02-13T19:07:55+00:00"
         },
         {
             "name": "brick/math",
@@ -6311,25 +6311,25 @@
         },
         {
             "name": "spatie/laravel-view-models",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-view-models.git",
-                "reference": "c8c74e26e2cc78d04e581867ce74c8b772279015"
+                "reference": "97b6eb19e28c0e97b4626e62a42039b38376ee94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-view-models/zipball/c8c74e26e2cc78d04e581867ce74c8b772279015",
-                "reference": "c8c74e26e2cc78d04e581867ce74c8b772279015",
+                "url": "https://api.github.com/repos/spatie/laravel-view-models/zipball/97b6eb19e28c0e97b4626e62a42039b38376ee94",
+                "reference": "97b6eb19e28c0e97b4626e62a42039b38376ee94",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
                 "php": "^7.3|^8.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0",
-                "pestphp/pest": "^1.22|^2.34"
+                "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0|^10.0",
+                "pestphp/pest": "^1.22|^2.34|^3.0"
             },
             "type": "library",
             "extra": {
@@ -6364,7 +6364,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-view-models/issues",
-                "source": "https://github.com/spatie/laravel-view-models/tree/1.6.0"
+                "source": "https://github.com/spatie/laravel-view-models/tree/1.6.1"
             },
             "funding": [
                 {
@@ -6376,7 +6376,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-13T17:58:20+00:00"
+            "time": "2025-02-14T12:54:46+00:00"
         },
         {
             "name": "symfony/cache",
@@ -8913,11 +8913,17 @@
         },
         {
             "name": "unusualify/laravel-form",
-            "version": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": "packages/unusualify/laravel-form",
+            "version": "v0.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/unusualify/laravel-form.git",
                 "reference": "20ecf06bb7325acd000bbac245f31e749cedfbf6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/unusualify/laravel-form/zipball/20ecf06bb7325acd000bbac245f31e749cedfbf6",
+                "reference": "20ecf06bb7325acd000bbac245f31e749cedfbf6",
+                "shasum": ""
             },
             "require": {
                 "cartalyst/tags": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0|^13.0|^14.0",
@@ -8927,10 +8933,10 @@
             "type": "library",
             "extra": {
                 "laravel": {
+                    "aliases": [],
                     "providers": [
                         "Unusualify\\LaravelForm\\LaravelServiceProvider"
-                    ],
-                    "aliases": []
+                    ]
                 }
             },
             "autoload": {
@@ -8938,6 +8944,7 @@
                     "Unusualify\\LaravelForm\\": "src"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8961,9 +8968,11 @@
                 "laravel",
                 "template"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/unusualify/laravel-form/issues",
+                "source": "https://github.com/unusualify/laravel-form/tree/v0.2.2"
+            },
+            "time": "2024-12-16T08:30:13+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

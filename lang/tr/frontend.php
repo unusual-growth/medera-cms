@@ -11,4 +11,7 @@ return [
     'Search results for:' => 'Arama Sonuçları:',
     'results found' => 'sonuç bulundu',
     'Other Blogs' => 'Diğer Bloglar',
+    'Product' => 'Ürün',
+    'LearnMore' => 'Daha Fazla Öğren',
+    'AllRightReserved' => 'Tüm Hakları Saklıdır',
 ];
