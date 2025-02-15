@@ -93,7 +93,11 @@ class AppServiceProvider extends ServiceProvider
         } catch (\Throwable $th) {
             view()->share('logos', []);
         }
+        try {
+            view()->share('social_links_block', TwillAppSettings::get('social-media-settings.links.social-media-link') ?? []);
+        } catch (\Throwable $th) {
+            view()->share('social_links_block', []);
+        }
 
-        view()->share('social_links_block', TwillAppSettings::get('social-media-settings.links.social-media-link') ?? []);
     }
 }
