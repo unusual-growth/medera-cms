@@ -47,7 +47,7 @@ class AppServiceProvider extends ServiceProvider
         TwillNavigation::addLink(
             NavigationLink::make()->title("Blog Categories")->forModule('blogCategories')
         );
-        
+
         TwillNavigation::addLink(
             NavigationLink::make()
             ->title(title: Str::ucfirst(string: __('backend.articles')))
@@ -88,7 +88,16 @@ class AppServiceProvider extends ServiceProvider
         view()->share('isMobile', Agent::isMobile());
         view()->share('isTablet', Agent::isTablet());
 
-        view()->share('logos', TwillAppSettings::getGroupDataForSectionAndName('site-settings','logos'));
-        view()->share('social_links_block', TwillAppSettings::get('social-media-settings.links.social-media-link') ?? []);
+        try {
+            view()->share('logos', TwillAppSettings::getGroupDataForSectionAndName('site-settings','logos'));
+        } catch (\Throwable $th) {
+            view()->share('logos', []);
+        }
+        try {
+            view()->share('social_links_block', TwillAppSettings::get('social-media-settings.links.social-media-link') ?? []);
+        } catch (\Throwable $th) {
+            view()->share('social_links_block', []);
+        }
+
     }
 }

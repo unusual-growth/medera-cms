@@ -57,7 +57,7 @@ class Whoweare extends Model
 
 
     public const DEFAULT_TEMPLATE = 'aboutus';
-  
+
     public const AVAILABLE_TEMPLATES = [
         [
             'value' => 'aboutus',
@@ -67,7 +67,7 @@ class Whoweare extends Model
         [
             'value' => 'sustainability',
             'label' => 'Sustainability',
-            'block_selection' => ['app-banner', 'app-doublecolumncontent', 'app-doublecolumncontent','app-doublecolumnframedcontent', 'app-doublecolumncontent', 'app-iconlist'],
+            'block_selection' => ['app-banner', 'app-doublecolumncontent', 'app-doublecolumncontent','app-framesliderwithimage', 'app-doublecolumncontent', 'app-iconlist'],
         ],
        /*  [
             'value' => 'certificates',

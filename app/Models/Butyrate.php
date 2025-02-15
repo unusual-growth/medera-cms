@@ -72,7 +72,7 @@ class Butyrate extends Model
         [
             'value' => 'allnaturalbutyrate',
             'label' => 'All-Natural Butyrate',
-            'block_selection' => ['app-banner', 'app-doublecolumncontent', 'app-doublecolumnframedcontent', 'app-fullscreenbanner', 'app-doublecolumnframedcontent', 'app-doublecolumnframedcontent', 'app-sectioncontentwithsingleimage', 'app-framesliderwithimage', 'app-doublecolumncontent', 'app-iconlist', 'app-doublecolumncontent', 'app-iconlist', 'app-doublecolumncontent', 'app-inlinebanner', 'app-doublecolumncontent'],
+            'block_selection' => ['app-banner', 'app-doublecolumncontent', 'app-doublecolumnframedcontent', 'app-fullscreenbanner', 'app-doublecolumnframedcontent', 'app-doublecolumnframedcontent', 'app-sectioncontentwithsingleimage', 'app-framesliderwithimage', 'app-requestform','app-doublecolumncontent', 'app-iconlist', 'app-doublecolumncontent', 'app-iconlist', 'app-doublecolumncontent', 'app-inlinebanner', 'app-doublecolumncontent'],
         ],
         [
             'value' => 'empty',
