@@ -17,29 +17,29 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 
-Route::get('/for-all-beings', function () {
-    return view('for-all-beings');
-});
-Route::get('/drcaps', function () {
-    return view('drcaps');
-});
-Route::get('/for-humans', function () {
-    return view('for-humans');
-});
-Route::get('/sustainability', function () {
-    return view('sustainability');
-});
+// Route::get('/for-all-beings', function () {
+//     return view('for-all-beings');
+// });
+// Route::get('/drcaps', function () {
+//     return view('drcaps');
+// });
+// Route::get('/for-humans', function () {
+//     return view('for-humans');
+// });
+// Route::get('/sustainability', function () {
+//     return view('sustainability');
+// });
 
-Route::get('/packaging', function () {
-    return view('packaging');
-});
+// Route::get('/packaging', function () {
+//     return view('packaging');
+// });
 
-Route::get('/shipping', function () {
-    return view('shipping');
-});
-Route::get('/library', function () {
-    return view('library');
-});
+// Route::get('/shipping', function () {
+//     return view('shipping');
+// });
+// Route::get('/library', function () {
+//     return view('library');
+// });
 // Route::controller(FormController::class)->group(function () {
 //     Route::post('/submit-request', 'submitRequestForm')->name('submit-request');
 //     Route::post('/submit-newsletter', 'newsletter')->name('submit-newsletter');

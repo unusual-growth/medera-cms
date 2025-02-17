@@ -65,7 +65,7 @@ class Heroslider extends TwillBlockComponent
                             ->max(1)
                             ->fieldNote('This image will be displayed behind the content in mobile devices.'),
                         ]
-                    )
+                    )->label('Banner Images')
 
                 ])
         ]);

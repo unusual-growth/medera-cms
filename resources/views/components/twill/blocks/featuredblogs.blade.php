@@ -7,11 +7,12 @@
             </div>
         </div>
     </div>
-
-    <div class="card-display library">
-        {{-- !!TODO: put inside a slider for mobile --}}
-        @foreach ($blogs as $relatedArticle)
-            <x-article-card :article="$relatedArticle" />
-        @endforeach
+    <div class="container">
+        <div class="card-display library">
+            {{-- !!TODO: put inside a slider for mobile --}}
+            @foreach ($blogs as $relatedArticle)
+                <x-article-card :article="$relatedArticle" />
+            @endforeach
+        </div>
     </div>
 </section>
