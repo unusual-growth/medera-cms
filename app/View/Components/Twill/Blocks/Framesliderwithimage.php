@@ -54,7 +54,7 @@ class Framesliderwithimage extends TwillBlockComponent
                     ['header' => 2, true],
                     'bold',
                     'italic',
-                ])->connectedTo('has_section_title', true),
+                ])->connectedTo('has_section_content', true),
             Select::make()
                 ->options(
                     Options::make([
