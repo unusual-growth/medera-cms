@@ -81,9 +81,9 @@
     }
 }
 .banner {
-    @include media('<tablet'){
-        .container{
-            padding:0;
+    @include media("<tablet") {
+        .container {
+            padding: 0;
         }
     }
     .row {
@@ -97,10 +97,10 @@
             margin: auto;
             text-align: center;
             padding: 44px 0;
-            @include media('<tablet'){
+            @include media("<tablet") {
                 padding: 24px 0;
             }
-         
+
             h4 {
                 line-height: 28.2px;
                 max-width: 510px;
@@ -108,9 +108,9 @@
             }
             &.go-to-form {
                 background: linear-gradient(270deg, #f6ece9 0%, #d8e2e0 100%);
-                >div{
-                    @include media('<mobile'){
-                        max-width:80%;
+                > div {
+                    @include media("<mobile") {
+                        max-width: 80%;
                     }
                 }
             }
@@ -122,35 +122,69 @@
                 text-align: center;
                 padding: 58px 0;
             }
-            &.plant-based{
+            &.plant-based {
                 background: linear-gradient(270deg, #f6ece9 0%, #d8e2e0 100%);
-                h3{
-                    max-width:570px;
-                    color:$primary;
+                h3 {
+                    max-width: 570px;
+                    color: $primary;
                 }
             }
-            &.purchase{
+            &.purchase {
                 background: linear-gradient(270deg, #847c80 0%, #d9b3a8 100%);
-                h3{
-                    color:$white;
-                    max-width:650px;
+                h3 {
+                    color: $white;
+                    max-width: 650px;
                 }
             }
-            &.customize{
+            &.customize {
                 background: linear-gradient(270deg, #f6ece9 0%, #d8e2e0 100%);
-                h3{
-                    max-width:670px;
-                    color:$primary;
+                h3 {
+                    max-width: 670px;
+                    color: $primary;
                 }
             }
-            &.improveyourguthealth{
+            &.improveyourguthealth {
                 background: linear-gradient(270deg, #847c80 0%, #d9b3a8 100%);
-                h3{
-                    color:$white;
-                    max-width:650px;
+                h3 {
+                    color: $white;
+                    max-width: 650px;
                 }
             }
-
+            &.__info {
+                background-image: url("/dummy-img/info-banner.png");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                border: 1px solid $white;
+                div {
+                    border: 1px solid $white;
+                    border-radius: 20px;
+                    text-align: center;
+                    backdrop-filter: blur(6px);
+                    padding: 28px 64px;
+                    span {
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 23.5px;
+                        letter-spacing: 0;
+                    }
+                    h2,
+                    h3,
+                    h4 {
+                        color:$secondary;
+                        max-width: 650px;
+                        font-weight: 700;
+                    }
+                    a {
+                        background-color: $primary;
+                        color: $white;
+                        &:hover {
+                            background-color: transparent;
+                            color: $primary;
+                        }
+                    }
+                }
+            }
         }
     }
 }
