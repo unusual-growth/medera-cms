@@ -16,3 +16,4 @@ TwillRoutes::module('blogCategories');
 TwillRoutes::module('butyrates');
 TwillRoutes::module('whoweares');
 TwillRoutes::module('menulinks');
+TwillRoutes::module('howWeWorks');
