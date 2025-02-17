@@ -24,11 +24,20 @@ class Doublecolumncontent extends TwillBlockComponent
     {
         return Form::make([
             Checkbox::make()
+                ->name('has_middle_image')
+                ->label('Does this section have an image in the Middle?')
+                ->default(false),
+            Medias::make()
+                ->name('middle_image')
+                ->label('The Middle Image')
+                ->required()
+                ->max(1)->connectedTo('has_middle_image', true),
+            Checkbox::make()
                 ->name('image_right')
-                ->label('Right Image Position'),
+                ->label('Right Image Position')->connectedTo('has_middle_image', false),
             Checkbox::make()
                 ->name('reverse_order_mobile')
-                ->label('Reverse Order on Mobile'),
+                ->label('Reverse Order on Mobile')->connectedTo('has_middle_image', false),
             Radios::make()
                 ->name('color_scheme')
                 ->inline()
@@ -42,7 +51,7 @@ class Doublecolumncontent extends TwillBlockComponent
             Wysiwyg::make()->name('text')->label('Content')->required()->translatable()
                 ->toolbarOptions([
                     ['header' => [2, 3, false]],
-                    'strong',
+                    'bold',
                     'italic',
                     'underline',
                     'link'
@@ -51,7 +60,7 @@ class Doublecolumncontent extends TwillBlockComponent
                 ->name('col_image')
                 ->label('Image')
                 ->required()
-                ->max(1)
+                ->max(1),
         ]);
     }
 
@@ -59,6 +68,18 @@ class Doublecolumncontent extends TwillBlockComponent
     {
         return [
             'col_image' => [
+                'default' => [
+                    [
+                        'name' => 'default',
+                        'ratio' => 0,
+                        'minValues' => [
+                            'width' => 643,
+                            'height' => 466,
+                        ],
+                    ],
+                ]
+            ],
+            'middle_image' => [
                 'default' => [
                     [
                         'name' => 'default',

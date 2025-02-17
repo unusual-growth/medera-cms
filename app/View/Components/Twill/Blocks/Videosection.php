@@ -23,7 +23,7 @@ class Videosection extends TwillBlockComponent
                 ->translatable()
                 ->toolbarOptions(toolbarOptions: [
                     ['header' => [1, 2, 3, false]],
-                    'strong',
+                    'bold',
                     'italic',
                     'underline',
                     'link'

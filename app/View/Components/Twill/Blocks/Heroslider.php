@@ -31,14 +31,14 @@ class Heroslider extends TwillBlockComponent
                     Wysiwyg::make()->name('heading')->label('Heading')->required()->translatable()
                         ->toolbarOptions(toolbarOptions: [
                             ['header' => [1, 2, 3, false]],
-                            'strong',
+                            'bold',
                             'italic',
                             'underline',
                             'link'
                         ])->allowSource(true),
                     Wysiwyg::make()->name('text')->label('Content')->required()->translatable()
                         ->toolbarOptions([
-                            'strong',
+                            'bold',
                             'italic',
                             'underline',
                             'link'

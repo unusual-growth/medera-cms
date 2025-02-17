@@ -24,7 +24,7 @@ class Sectioncontentwithsingleimage extends TwillBlockComponent
                 ->translatable()
                 ->toolbarOptions(toolbarOptions: [
                     ['header' => [2, 3, false]],
-                    'strong',
+                    'bold',
                     'italic',
                     'underline',
                     'link'
@@ -32,7 +32,7 @@ class Sectioncontentwithsingleimage extends TwillBlockComponent
             Wysiwyg::make()->name('text')
                 ->translatable()
                 ->toolbarOptions(toolbarOptions: [
-                    'strong',
+                    'bold',
                     'italic',
                     'underline',
                     'link'

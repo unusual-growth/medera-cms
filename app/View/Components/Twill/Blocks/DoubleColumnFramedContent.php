@@ -52,7 +52,7 @@ class Doublecolumnframedcontent extends TwillBlockComponent
             Wysiwyg::make()->name('text')->label('Content')->required()->translatable()
                 ->toolbarOptions([
                     ['header' => [2, 3, false]],
-                    'strong',
+                    'bold',
                     'italic',
                     'underline',
                     'link'
