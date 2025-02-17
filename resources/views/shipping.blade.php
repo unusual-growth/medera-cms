@@ -36,13 +36,13 @@
     <section class="content-image-section">
         <div class="container xlarge">
             <div class="row justify-space-between">
-                <div class="col-md-5">
+                <div class="col-sm-5">
                     <div>
                         <h2>Butyrate for a happier, healthier you. <strong>Buy now!</strong> </h2>
                         <p>Butyrate (butyric acid | CH3CH2CH2-COOH) is a short-chain fatty acid produced by gut bacteria. The four-carbon carboxylic acid offers numerous health benefits, including improved gut health, enhanced metabolic function, boosted cognitive function, reduced inflammation, enhanced immune function, and potential anti-cancer effects.</p>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-sm-6">
                     <picture>
                         <source srcset="{{ asset('/dummy-img/bottle-sec.png') }}" media="(min-width: 1024px)">
                         <source srcset="{{ asset('/dummy-img/bottle-sec.png') }}" media="(min-width: 768px)">
