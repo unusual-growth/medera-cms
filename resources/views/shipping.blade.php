@@ -39,7 +39,10 @@
                 <div class="col-sm-5">
                     <div>
                         <h2>Butyrate for a happier, healthier you. <strong>Buy now!</strong> </h2>
-                        <p>Butyrate (butyric acid | CH3CH2CH2-COOH) is a short-chain fatty acid produced by gut bacteria. The four-carbon carboxylic acid offers numerous health benefits, including improved gut health, enhanced metabolic function, boosted cognitive function, reduced inflammation, enhanced immune function, and potential anti-cancer effects.</p>
+                        <p>Butyrate (butyric acid | CH3CH2CH2-COOH) is a short-chain fatty acid produced by gut bacteria.
+                            The four-carbon carboxylic acid offers numerous health benefits, including improved gut health,
+                            enhanced metabolic function, boosted cognitive function, reduced inflammation, enhanced immune
+                            function, and potential anti-cancer effects.</p>
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -48,9 +51,46 @@
                         <source srcset="{{ asset('/dummy-img/bottle-sec.png') }}" media="(min-width: 768px)">
                         <img src="{{ asset('/dummy-img/bottle-sec.png') }}" alt="Açıklama metni">
                     </picture>
-                    <img class="bottle-img" src="/dummy-img/sise.png" alt=""/>
+                    <img class="bottle-img" src="/dummy-img/sise.png" alt="" />
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <section class="gut-health-section">
+        <div class="container xlarge">
+            <div class="row justify-space-between">
+                <div class="col-md-5 text-content">
+                    <h2>
+                        <strong>4-in-1 Formula:<br /></strong>
+                        Supporting Gut Health with Unique Components
+                    </h2>
+
+                    <p>
+                        Our ButyEra are specially designed for gut health and are
+                        available in four distinct formulations, each featuring a
+                        unique component. By combining calcium, potassium,
+                        sodium, and magnesium, we deliver an innovative approach
+                        to improving gut health and adding value to human well-being.
+                    </p>
+                </div>
+
+                <div class=" col-md-6 product-content">
+                    <img src="/dummy-img/sise.png" alt="Butyrate Supplement Bottle" class="product-image">
+                    <div class="capsule-info preset-color-primary">
+                        <p>
+                            Each capsule includes 568 mg of components and 174 mg of other fatty acids.
+                        </p>
+                    </div>
+
+                    <div class="info-box preset-color-primary">
+                        <p>
+                            Our products contain no artificial coloring, flavoring, animal-derived ingredients, or
+                            genetically modified nutrients.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
