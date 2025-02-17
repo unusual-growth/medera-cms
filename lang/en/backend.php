@@ -13,5 +13,6 @@ return [
     'staticPages' => 'Static Pages',
     'butyrates' => 'Butyrates',
     'whoweare' => 'Who We Are',
+    'how-we-work' => 'How We Work',
 ];
 
