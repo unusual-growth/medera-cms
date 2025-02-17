@@ -26,6 +26,13 @@
 @endphp
 
 <section class="framed-slider-with-image {{$block->input('preset')}}">
+    @if($input('has_section_content') && $translatedInput('section_content'))
+        <div class="container xlarge">
+            <div class="heading">
+                {!! $translatedInput('section_content') !!}
+            </div>
+        </div>
+    @endif
     <div class="container xlarge">
         <div class="row">
             <div class="col-sm-6">

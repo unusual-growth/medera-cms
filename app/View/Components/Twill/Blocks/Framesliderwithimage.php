@@ -4,6 +4,7 @@ namespace App\View\Components\Twill\Blocks;
 
 use A17\Twill\Models\Block;
 use A17\Twill\Services\Forms\Columns;
+use A17\Twill\Services\Forms\Fields\Checkbox;
 use A17\Twill\Services\Forms\Fields\Repeater;
 use A17\Twill\Services\Forms\Fields\Wysiwyg;
 use A17\Twill\Services\Forms\Form;
@@ -40,6 +41,20 @@ class Framesliderwithimage extends TwillBlockComponent
     public function getForm(): Form
     {
         return Form::make([
+            Checkbox::make()
+                ->name('has_section_content')
+                ->label('Does this banner have section content (Title & Description)?')
+                ->default(false),
+            Wysiwyg::make()
+                ->name('section_title')
+                ->label('Section Title')
+                ->placeholder('Enter the section title and description')
+                ->note('Always displayed as centered text')
+                ->toolbarOptions([
+                    ['header' => 2, true],
+                    'bold',
+                    'italic',
+                ])->connectedTo('has_section_title', true),
             Select::make()
                 ->options(
                     Options::make([
