@@ -48,10 +48,10 @@ class Framesliderwithimage extends TwillBlockComponent
             Wysiwyg::make()
                 ->name('section_title')
                 ->label('Section Title')
-                ->placeholder('Enter the section title and description')
+                // ->placeholder('Enter the section title and description')
                 ->note('Always displayed as centered text')
                 ->toolbarOptions([
-                    ['header' => 2, true],
+                    ['header' => [2, true]],
                     'bold',
                     'italic',
                 ])->connectedTo('has_section_content', true),
