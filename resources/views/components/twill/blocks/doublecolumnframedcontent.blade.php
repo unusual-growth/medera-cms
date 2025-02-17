@@ -1,5 +1,8 @@
 @php
-    $image = TwillImage::make($block, 'col_image')->crop('default')->width(592)->toArray();
+    $has_image = $block->hasImage('col_image');
+    if ($has_image) {
+        $image = TwillImage::make($block, 'col_image')->crop('default')->width(592)->toArray();
+    }
 
     $image_right = $input('image_right');
     $color_mode = $input('color_mode');
@@ -11,8 +14,13 @@
   <div class="container xlarge journey-container">
     <div class="row {{ $reverse_order_mobile ? 'mob-rev' : '' }} {{ $image_right ? 'reverse' : '' }}">
       <div class="journey-image col-sm-5">
-        {!! TwillImage::render($image, []) !!}
-
+        @if($has_image)
+            {!! TwillImage::render($image, []) !!}
+        @else
+            <div style="width: 100%; height: 300px; color: white; display: flex; justify-content: center; align-items: center;">
+                Please add an image.
+            </div>
+        @endif
       </div>
       <div class="journey-content height-500 {{ $color_mode == 'dark' ? 'dusky-blush-gradient' : 'bg-light' }} col-sm-7">
           <div>

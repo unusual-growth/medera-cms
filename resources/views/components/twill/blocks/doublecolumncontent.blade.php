@@ -1,5 +1,8 @@
 @php
-    $image = TwillImage::make($block, 'col_image')->crop('default')->width(592)->toArray();
+    $has_image = $block->hasImage('col_image');
+    if ($has_image) {
+        $image = TwillImage::make($block, 'col_image');
+    }
 
     $image_right = $input('image_right');
     $reverse_order_mobile = $input('reverse_order_mobile');
@@ -9,7 +12,13 @@
     <div class="container xlarge">
         <div class="row {{ $reverse_order_mobile ? 'mob-rev' : '' }} {{ $image_right ? 'reverse' : '' }}">
             <div class="col-md-6 bg-coating">
-                {!! TwillImage::render($image, []) !!}
+                @if($has_image)
+                    {!! TwillImage::render($image, []) !!}
+                @else
+                    <div style="width: 100%; height: 100%; color: white; display: flex; justify-content: center; align-items: center; background: #427277; font-size: 32px;">
+                        Please add an image.
+                    </div>
+                @endif
             </div>
             <div class="col-md-6 ">
                 {!! $translatedInput('text') !!}

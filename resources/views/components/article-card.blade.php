@@ -1,9 +1,17 @@
 <div class="library-card ">
     @php
-    $image = TwillImage::make($article, 'library-image')->crop('thumbnail')->width(421)->height(252)->toArray();
-
-@endphp
-    {!! TwillImage::render($image) !!}
+        $has_image = $article->hasImage('library-image');
+        if ($has_image) {
+            $image = TwillImage::make($article, 'library-image')->crop('thumbnail')->width(421)->height(252)->toArray();
+        }
+    @endphp
+    @if($has_image)
+        {!! TwillImage::render($image) !!}
+    @else
+        <div style="width: 100%; height: 320px; color: white; display: flex; justify-content: center; align-items: center;">
+            Please add an image.
+        </div>
+    @endif
     <div>
         <h2 class="heading">
             {{ $article->title }}
