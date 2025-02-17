@@ -6,6 +6,7 @@ use App\Http\Controllers\ButyrateDisplayController;
 use App\Http\Controllers\CompanyEstablishmentDisplayController;
 use App\Http\Controllers\EmployerServiceDisplayController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\HowWeWorkDisplayController;
 use App\Http\Controllers\PageDisplayController;
 use App\Http\Controllers\PageHomeDisplayController;
 use App\Http\Controllers\SitemapController;
@@ -63,6 +64,7 @@ Route::group([
     Route::get(LaravelLocalization::transRoute('routes.page'), [PageDisplayController::class, 'show'])->name('page');
     Route::get(LaravelLocalization::transRoute('routes.whoweare'), [WhoweareDisplayController::class, 'show'])->name('whoweare');
     Route::get(LaravelLocalization::transRoute('routes.butyrate'), [ButyrateDisplayController::class, 'show'])->name('butyrate');
+    Route::get(LaravelLocalization::transRoute('routes.how-we-work'), [HowWeWorkDisplayController::class, 'show'])->name('how-we-work');
     // Route::get(LaravelLocalization::transRoute('routes.page'), [PageDisplayController::class, 'show'])->name('page');
     // Route::get(LaravelLocalization::transRoute('routes.companyEstablishment'), [CompanyEstablishmentDisplayController::class, 'show'])->name('companyEstablishment');
     // Route::get(LaravelLocalization::transRoute('routes.employerService'), [EmployerServiceDisplayController::class, 'show'])->name('employerService');
