@@ -23,7 +23,7 @@ class Sectioncontentwithsingleimage extends TwillBlockComponent
             Wysiwyg::make()->name('title')
                 ->translatable()
                 ->toolbarOptions(toolbarOptions: [
-                    ['header' => [1, 2, 3, false]],
+                    ['header' => [2, 3, false]],
                     'strong',
                     'italic',
                     'underline',

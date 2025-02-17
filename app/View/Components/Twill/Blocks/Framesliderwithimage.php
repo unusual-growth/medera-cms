@@ -51,7 +51,7 @@ class Framesliderwithimage extends TwillBlockComponent
                 // ->placeholder('Enter the section title and description')
                 ->note('Always displayed as centered text')
                 ->toolbarOptions([
-                    ['header' => [2, true]],
+                    ['header' => [2,3, true]],
                     'bold',
                     'italic',
                 ])->connectedTo('has_section_content', true),

@@ -50,7 +50,7 @@ class Featureheadlineswithsphericalimages extends TwillBlockComponent
                 ->name('section_content')
                 ->label('Section Content')
                 ->toolbarOptions([
-                    ['header' => [2, false]],
+                    ['header' => [2,3, false]],
                     'bold',
                     'italic',
                     'underline',
