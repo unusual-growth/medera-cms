@@ -17,6 +17,7 @@ use A17\Twill\Services\Forms\Fields\Select;
 use A17\Twill\Services\Forms\Fields\Browser;
 use A17\Twill\Models\Contracts\TwillModelContract;
 use A17\Twill\Http\Controllers\Admin\NestedModuleController as BaseModuleController;
+use App\Models\HowWeWork;
 
 class MenulinkController extends BaseModuleController
 {
@@ -39,7 +40,7 @@ class MenulinkController extends BaseModuleController
     public function getForm(TwillModelContract $model): Form
     {
         $form = parent::getForm($model);
-        $form->add(Browser::make()->name('page')->modules([Page::class, Whoweare::class, Butyrate::class])->label('Page'));
+        $form->add(Browser::make()->name('page')->modules([Page::class, Whoweare::class, Butyrate::class, HowWeWork::class])->label('Page'));
         $form->add(Select::make()
         ->name('location')
         ->options(
