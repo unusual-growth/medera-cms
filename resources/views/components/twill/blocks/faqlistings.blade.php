@@ -18,7 +18,7 @@
                         <div>
                             <div>
                                 <p>
-                                    {{ $item->title }}
+                                    {{ $item->answer }}
                                 </p>
                             </div>
                         </div>
