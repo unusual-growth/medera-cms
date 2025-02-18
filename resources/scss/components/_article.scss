@@ -88,115 +88,115 @@
     }
 }
 
-@include media('>tablet') {
-    .floating-form {
-        display: grid;
-        .form-group {
-            row-gap: rem(24px);
-            > label {
-                display: none;
-              }
-              > span {
-                  display: none;
-              }
-          }
-          .input-group {
-              row-gap: rem(24px);
-              column-gap: rem(16px) !important;
-              input, select {
-                height: 100%;
-              }
-        }
-        div.activator{
-           display: none;
-        }
-        .formcontainer {
-            height: auto;
-            background: #001640b8;
-            backdrop-filter: blur(4.8px);
-            form {
-                display: grid;
-                grid-template-columns: repeat(10, 1fr);
-                column-gap: 24px;
-                row-gap: 24px;
-                @include media('<large') {
-                    row-gap: 12px;
-                    column-gap: 12px;
-                }
-                .name-surname {
-                    flex-wrap: nowrap;
-                    grid-column: 1 / 5;
-                    input {
-                        width: 100%;
-                    }
-                    @include media('<large') {
-                        row-gap: 12px;
-                        column-gap: 12px;
-                    }
-                }
-                input {
-                    // &[type="email"] {
-                    //     grid-column: 5 / 7;
+// @include media('>tablet') {
+//     .floating-form {
+//         display: grid;
+//         .form-group {
+//             row-gap: rem(24px);
+//             > label {
+//                 display: none;
+//               }
+//               > span {
+//                   display: none;
+//               }
+//           }
+//           .input-group {
+//               row-gap: rem(24px);
+//               column-gap: rem(16px) !important;
+//               input, select {
+//                 height: 100%;
+//               }
+//         }
+//         div.activator{
+//            display: none;
+//         }
+//         .formcontainer {
+//             height: auto;
+//             background: #001640b8;
+//             backdrop-filter: blur(4.8px);
+//             form {
+//                 display: grid;
+//                 grid-template-columns: repeat(10, 1fr);
+//                 column-gap: 24px;
+//                 row-gap: 24px;
+//                 @include media('<large') {
+//                     row-gap: 12px;
+//                     column-gap: 12px;
+//                 }
+//                 .name-surname {
+//                     flex-wrap: nowrap;
+//                     grid-column: 1 / 5;
+//                     input {
+//                         width: 100%;
+//                     }
+//                     @include media('<large') {
+//                         row-gap: 12px;
+//                         column-gap: 12px;
+//                     }
+//                 }
+//                 input {
+//                     // &[type="email"] {
+//                     //     grid-column: 5 / 7;
 
-                    // }
-                    // &[type="tel"] {
-                    //     grid-column: 7 / 9;
-                    // }
-                }
-                .input-group {
-                    &.has-email {
-                        grid-column: 5 / 7;
+//                     // }
+//                     // &[type="tel"] {
+//                     //     grid-column: 7 / 9;
+//                     // }
+//                 }
+//                 .input-group {
+//                     &.has-email {
+//                         grid-column: 5 / 7;
 
-                    }
-                    &.has-phone {
-                        grid-column: 7 / 9;
-                    }
-                }
-                .iti {
-                    width: 100%;
-                    &[class*="allow-dropdown"] {
-                        input {
-                            padding-left: 52px !important;
-                        }
-                    }
-                }
-                .input-group:has(select), .input-group:not(.single-line):not(.has-email):not(.has-phone) {
-                    grid-column: 9 / -1;
-                }
-                .custom-control.custom-switch {
-                    align-items: start;
-                    grid-column: 1 / 6;
-                    margin-bottom: 0;
-                    flex-wrap: wrap;
-                    .help-block {
-                        order: 1;
-                        display: block;
-                        padding-left: 24px;
-                    }
-                    label {
-                        color: $white;
-                        font-size: 15px;
-                        a {
-                            color: $primary;
-                            &:hover {
-                                color: lighten($primary, 10%);
-                            }
-                        }
-                    }
-                }
-                .custom-submit {
-                    grid-column: 6 / -1;
-                    padding: 7px 0;
-                }
-                input,  textarea,  select {
-                    padding: 8px;
-                    height: min-content;
-                }
-                .help-block {
-                    color: $teritary;
-                }
-            }
-        }
+//                     }
+//                     &.has-phone {
+//                         grid-column: 7 / 9;
+//                     }
+//                 }
+//                 .iti {
+//                     width: 100%;
+//                     &[class*="allow-dropdown"] {
+//                         input {
+//                             padding-left: 52px !important;
+//                         }
+//                     }
+//                 }
+//                 .input-group:has(select), .input-group:not(.single-line):not(.has-email):not(.has-phone) {
+//                     grid-column: 9 / -1;
+//                 }
+//                 .custom-control.custom-switch {
+//                     align-items: start;
+//                     grid-column: 1 / 6;
+//                     margin-bottom: 0;
+//                     flex-wrap: wrap;
+//                     .help-block {
+//                         order: 1;
+//                         display: block;
+//                         padding-left: 24px;
+//                     }
+//                     label {
+//                         color: $white;
+//                         font-size: 15px;
+//                         a {
+//                             color: $primary;
+//                             &:hover {
+//                                 color: lighten($primary, 10%);
+//                             }
+//                         }
+//                     }
+//                 }
+//                 .custom-submit {
+//                     grid-column: 6 / -1;
+//                     padding: 7px 0;
+//                 }
+//                 input,  textarea,  select {
+//                     padding: 8px;
+//                     height: min-content;
+//                 }
+//                 .help-block {
+//                     color: $teritary;
+//                 }
+//             }
+//         }
 
-    }
-}
+//     }
+// }

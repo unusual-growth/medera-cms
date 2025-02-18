@@ -141,7 +141,8 @@ p {
     color: $secondary;
     font-size: 18px;
     font-weight: 400;
-    line-height: 21px;
+    // line-height: 21px;
+    line-height: 1.15;
     letter-spacing: -0.02em;
     @include media('<tablet') {
         font-size: rem(14px);

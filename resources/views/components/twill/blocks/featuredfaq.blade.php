@@ -24,7 +24,7 @@
     <section class="learnmore-cards">
         <div class="container xlarge">
             <h2> Any questions? We are here to help!</h2>
-            <div class="row justify-space-between">
+            <div class="card-container">
                 {{-- @foreach ($learnMoreCards as $type)
                     <div class="card">
                         <h3> {{ $type['title'] }} </h3>

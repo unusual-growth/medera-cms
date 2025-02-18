@@ -51,10 +51,6 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
         crossorigin="anonymous"></script>
     @stack('scripts')
-    @vite([
-        "resources/js/app.js",
-        "resources/scss/style.scss"
-    ])
     @isset($item->schema)
         <script type="application/ld+json">
             {!! $item->schema !!}
@@ -67,6 +63,10 @@
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
     <script src="/vendor/unusual_form/js/step-form.js"></script>
     <script src="/vendor/unusual_form/js/form-validation.js"></script>
+    @vite([
+        "resources/js/app.js",
+        "resources/scss/style.scss"
+    ])
     @stack('preload')
     {{-- <link rel="preload" href="{{ $logos->image('logo') }}" as="image"> --}}
     @stack('custom-css')

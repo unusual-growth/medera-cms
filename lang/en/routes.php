@@ -8,6 +8,6 @@
     'page' => '{page}',
     'whoweare' => 'who-we-are/{whoweare}',
     'butyrate' => 'butyrate/{butyrate}',
-    'how-we-work' => 'how-we-wor/{howWeWork}',
+    'howWeWork' => 'how-we-work/{howWeWork}',
 
 ];

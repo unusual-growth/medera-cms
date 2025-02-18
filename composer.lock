@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c00c8b39decafbdb676c603f617d4e6",
+    "content-hash": "d252af70cfe724d9e8cbaf9ea8d9740e",
     "packages": [
         {
             "name": "area17/twill",
@@ -383,16 +383,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.339.13",
+            "version": "3.339.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "16b291be8ed930b87267552faeb9974aa3a2e6da"
+                "reference": "532eb5e502c5b1181456023e41d61445b2c7101d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/16b291be8ed930b87267552faeb9974aa3a2e6da",
-                "reference": "16b291be8ed930b87267552faeb9974aa3a2e6da",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/532eb5e502c5b1181456023e41d61445b2c7101d",
+                "reference": "532eb5e502c5b1181456023e41d61445b2c7101d",
                 "shasum": ""
             },
             "require": {
@@ -474,9 +474,9 @@
             "support": {
                 "forum": "https://github.com/aws/aws-sdk-php/discussions",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.13"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.339.14"
             },
-            "time": "2025-02-13T19:07:55+00:00"
+            "time": "2025-02-14T19:11:38+00:00"
         },
         {
             "name": "brick/math",
@@ -1189,6 +1189,54 @@
                 }
             ],
             "time": "2024-10-09T13:47:03+00:00"
+        },
+        {
+            "name": "drewm/mailchimp-api",
+            "version": "v2.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drewm/mailchimp-api.git",
+                "reference": "c6cdfab4ca6ddbc3b260913470bd0a4a5cb84c7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drewm/mailchimp-api/zipball/c6cdfab4ca6ddbc3b260913470bd0a4a5cb84c7a",
+                "reference": "c6cdfab4ca6ddbc3b260913470bd0a4a5cb84c7a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "7.0.*",
+                "vlucas/phpdotenv": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DrewM\\MailChimp\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Drew McLellan",
+                    "email": "drew.mclellan@gmail.com",
+                    "homepage": "http://allinthehead.com/"
+                }
+            ],
+            "description": "Super-simple, minimum abstraction MailChimp API v3 wrapper",
+            "homepage": "https://github.com/drewm/mailchimp-api",
+            "support": {
+                "issues": "https://github.com/drewm/mailchimp-api/issues",
+                "source": "https://github.com/drewm/mailchimp-api/tree/master"
+            },
+            "time": "2019-08-06T09:24:58+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -6248,6 +6296,88 @@
                 }
             ],
             "time": "2025-01-13T11:39:58+00:00"
+        },
+        {
+            "name": "spatie/laravel-newsletter",
+            "version": "5.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-newsletter.git",
+                "reference": "7eda1452c490b0a38d4e59ec8a7f82a98b2cdb68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/7eda1452c490b0a38d4e59ec8a7f82a98b2cdb68",
+                "reference": "7eda1452c490b0a38d4e59ec8a7f82a98b2cdb68",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/log": "^9|^10|^11",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.13"
+            },
+            "require-dev": {
+                "drewm/mailchimp-api": "^2.5",
+                "guzzlehttp/guzzle": "^7.5|^7.2",
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^7.11|^8.0",
+                "pestphp/pest": "^1.20",
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "^9.5",
+                "spatie/mailcoach-sdk-php": "^1.0",
+                "spatie/ray": "^1.28"
+            },
+            "suggest": {
+                "drewm/mailchimp-api": "For working with MailChimp",
+                "spatie/mailcoach-sdk-php": "For working with Mailcoach"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Newsletter": "Spatie\\Newsletter\\Facades\\Newsletter"
+                    },
+                    "providers": [
+                        "Spatie\\Newsletter\\NewsletterServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Newsletter\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Manage Mailcoach and MailChimp newsletters in Laravel",
+            "homepage": "https://github.com/spatie/laravel-newsletter",
+            "keywords": [
+                "laravel",
+                "mailchimp",
+                "mailcoach",
+                "newsletter"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-newsletter/issues",
+                "source": "https://github.com/spatie/laravel-newsletter/tree/5.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2025-01-31T15:04:47+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",

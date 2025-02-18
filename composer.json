@@ -10,10 +10,12 @@
         "area17/twill": "^3.4",
         "area17/twill-image": "^2.0",
         "cwsdigital/twill-metadata": "^1.4",
+        "drewm/mailchimp-api": "^2.5",
         "jenssegers/agent": "^2.6",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "mcamara/laravel-localization": "^2.2",
+        "spatie/laravel-newsletter": "^5.2",
         "unusualify/laravel-form": "^0.2.2"
     },
     "require-dev": {

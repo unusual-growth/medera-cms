@@ -29,7 +29,7 @@
         <div class="container xlarge">
             <div class="row">
                 <div class="fab-card">
-                    @foreach ($repeater("features") as $item)
+                    @foreach ($repeater("features_1") as $item)
                         @php
                             $_block = $item->renderData->block;
                             $_img = $_block->imagesAsArrays('image')[0];

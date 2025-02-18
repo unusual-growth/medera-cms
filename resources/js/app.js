@@ -1,6 +1,7 @@
 import './bootstrap';
 import $ from 'jquery';
 window.$ = $;
+import './request-form';
 
 
 import Swiper from 'swiper';
