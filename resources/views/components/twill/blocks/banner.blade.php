@@ -57,7 +57,10 @@
                         @if($item['media'])
                             <source srcset="{{ $item['src'] }}" media="{{ $item['media'] }}">
                         @else
-                            <img src="{{ $item['src'] }}" alt="{{$block->imagesAsArrays($item['key'])[0]['alt']}}">
+                            @php
+                                $arr = $block->imagesAsArrays($item['key'])[0];
+                            @endphp
+                            <img src="{{ $item['src'] }}" alt="{{$arr['alt']}}" width="{{$arr['width']}}" height="{{$arr['height']}}">
                         @endif
 
                     @endfor

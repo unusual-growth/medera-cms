@@ -19,8 +19,8 @@ class Gradientbanner extends TwillBlockComponent
     public function getForm(): Form
     {
         return Form::make([
-            Input::make()->name('title')->label('Title')->note('This field is always H1'),
-            Input::make()->type('textarea')->name('text')->label('Text')->note('This field is always P'),
+            Input::make()->name('title')->label('Title')->note('This field is always H1')->translatable(),
+            Input::make()->type('textarea')->name('text')->label('Text')->note('This field is always P')->translatable(),
             Select::make()
                 ->name('background')
                 ->label('Background')
