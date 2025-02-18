@@ -73,6 +73,18 @@
     flex: 1;
     padding: 20px;
 }
+@media screen and (max-width: 1024px) {
+    .twill-content-wrapper {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .twill-content-wrapper {
+        padding: 0;
+    }
+}
+
 
 .header > .container {
     display: flex;
