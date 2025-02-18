@@ -22,7 +22,7 @@
                         $_img = $_block->imagesAsArrays('icon')[0];
                     @endphp
                     {{-- !!TODO active logic does not work properly at the beginning --}}
-                    <div class="accordion-item {{ $key === 0 ? 'active' : '' }}">
+                    <div class="accordion-item {{ $loop->first ? 'active' : '' }}">
                         <div class="question" data-accordion="{{ $key }}">
                             <div class="question-content">
                                 <img  width="34" height="34" src="{{ $_img['src'] }}" alt="{{$_img['alt']}}" />

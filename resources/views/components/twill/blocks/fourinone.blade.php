@@ -13,10 +13,10 @@
                     <img src="{{$block->image('col_image')}}" alt="Butyrate Supplement Bottle" class="product-image">
                 @endif
                 <div class="capsule-info preset-color-primary">
-                    {!! $translatedInput('left_text') !!}
+                    {!! $translatedInput('right_text') !!}
                 </div>
                 <div class="info-box preset-color-primary">
-                    {!! $translatedInput('right_text') !!}
+                    {!! $translatedInput('left_text') !!}
                 </div>
             </div>
         </div>

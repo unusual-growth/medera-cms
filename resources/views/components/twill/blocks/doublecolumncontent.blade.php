@@ -12,7 +12,7 @@
     <section class="flex6 {{ $color_scheme == 'peach' ? 'preset-color-peach' : '' }}">
         <div class="container xlarge">
             <div class="row {{ $reverse_order_mobile ? 'mob-rev' : '' }} {{ $image_right ? 'reverse' : '' }}">
-                <div class="col-md-6 bg-coating">
+                <div class="col-md-5 bg-coating">
                     @if($has_image)
                         {!! TwillImage::render($image, []) !!}
                     @else
