@@ -1,12 +1,12 @@
 @php
     $currentSlug = request()->segment(2);
-    if(isset($type) && $type == 'mobile') {
+    if (isset($type) && $type == 'mobile') {
         // dd($links);
     }
 @endphp
 <ul>
     @foreach ($links as $link)
-    @php
+        @php
             $page = $link->getRelated('page')->first();
             if ($page) {
                 $linkSlug = $page->slug;
@@ -16,18 +16,16 @@
         @endphp
         @php
             if ($type == 'mobile' && isset($link->children) && count($link->children) > 0) {
-                // dd(isset($type) && $type == 'desktop',$link->children);
-
             }
         @endphp
 
         @if (isset($link->children) && count($link->children) > 0)
-            {{-- @dd($link->children) --}}
             @if (isset($type) && $type == 'desktop')
                 <li>
                     <div class="dropdown">
                         @if ($page)
-                            <a href="{{  $page->getLocalizedUriWithRoute(LaravelLocalization::getCurrentLocale()) }}">{{ $link->title }}</a>
+                            <a
+                                href="{{ $page->getLocalizedUriWithRoute(LaravelLocalization::getCurrentLocale()) }}">{{ $link->title }}</a>
                         @else
                             <span>{{ $link->title }}</span>
                         @endif
@@ -36,9 +34,12 @@
                                 @foreach ($link->children as $subitem)
                                     @php
                                         $subitemSlug = $subitem->getRelated('page')->first()->slug;
-                                        $isActive = isset($item) && $subitem instanceof $item && $subitem->id == $item->id ? 'active' : '';
+                                        $isActive =
+                                            isset($item) && $subitem instanceof $item && $subitem->id == $item->id
+                                                ? 'active'
+                                                : '';
                                     @endphp
-                                    <a href="{{$subitem->getRelated('page')->first()->getLocalizedUriWithRoute(LaravelLocalization::getCurrentLocale())}}"
+                                    <a href="{{ $subitem->getRelated('page')->first()->getLocalizedUriWithRoute(LaravelLocalization::getCurrentLocale()) }}"
                                         class="{{ $isActive }}">{{ $subitem->title }}</a>
                                 @endforeach
                             </div>
@@ -46,9 +47,15 @@
                     </div>
                 </li>
             @else
-                {{-- @dd('else',$link->children); --}}
                 <li class="hasSub">
-                    <span>{{ $link->title }}</span>
+                    <div class="flex-center justify-space-between width-95">
+                        <span>{{ $link->title }}</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="m17.613 15-5.87-6-5.872 6" stroke="#427277" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
                     <ul class="submenu">
                         @foreach ($link->children as $subitem)
                             @php
@@ -66,18 +73,19 @@
         @else
             <li>
                 @if ($page)
-                    <a href="{{ $page->getLocalizedUriWithRoute(LaravelLocalization::getCurrentLocale()) }}" class="{{ $isActive }}">{{ $link->title }}</a>
+                    <a href="{{ $page->getLocalizedUriWithRoute(LaravelLocalization::getCurrentLocale()) }}"
+                        class="{{ $isActive }}">{{ $link->title }}</a>
                 @else
                     <span>{{ $link->title }}</span>
                 @endif
             </li>
         @endisset
     @endforeach
-    @if (isset($location) && $location == 'header')
+    {{-- @if (isset($location) && $location == 'header')
 
         <li>
             <a href="{{ LaravelLocalization::getURLFromRouteNameTranslated(App::currentLocale(), 'routes.articles') }}"
                 class="secondary-cta active">{{ __('frontend.Library') }}</a>
         </li>
-    @endif
+    @endif --}}
 </ul>

@@ -58,6 +58,7 @@ window.renderBulletsWithFraction = function (swiper, current, total) {
     </div>`;
     return pagination;
 };
+
 $(document).ready(function () {
     $('.floating-form .activator').on('click', function () {
         $(this).closest('.floating-form').toggleClass('active');
@@ -81,6 +82,7 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     })
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     const questions = document.querySelectorAll('.question');
     const firstAnswer = document.querySelector('.Accordion-item.active .Accordion-answer');
