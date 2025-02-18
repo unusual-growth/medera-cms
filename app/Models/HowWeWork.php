@@ -79,8 +79,8 @@ class HowWeWork extends Model
     public function __construct()
     {
         parent::__construct();
-        $this->slugKey = 'how-we-work';
-        $this->routeName = 'how-we-work';
+        $this->slugKey = 'howWeWork';
+        $this->routeName = 'howWeWork';
     }
     public function resolveRouteBinding($slug, $field = null)
     {

@@ -23,7 +23,9 @@ class Featuredescriptionwithimage extends TwillBlockComponent
     {
         return Form::make([
             InlineRepeater::make()
-                ->name('features')
+                ->name('features_1')
+                ->label('Features')
+                ->selectTriggerText('Add Content')
                 ->fields([
                     Input::make()->name("title")->label('Title')->translatable(),
                     Input::make()->name("description")->label('Description')->type('textarea')->translatable(),
