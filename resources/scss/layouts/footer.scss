@@ -8,6 +8,8 @@ footer {
   .row-top {
     padding: 50px 0;
     .left {
+        display: flex;
+        flex-direction: column;
       .logo {
         margin-bottom: 80px;
         @include media("<tablet") {

@@ -10,7 +10,6 @@
     .journey-image {
         position: relative;
         picture {
-            img {
                 transform: scale(1.1);
                 @include media("<tablet") {
                     max-width:75%;
@@ -31,7 +30,6 @@
                         margin:auto;
                     }
                 }
-            }
         }
     }
 

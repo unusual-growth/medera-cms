@@ -350,9 +350,14 @@
         }
         p {
             margin: 0 !important;
+            font-size: 24px;
         }
         @include media('>mobile') {
             min-height: 400px;
         }
+        & + .request-section {
+            background-color: red;
+        }
     }
+
 }
