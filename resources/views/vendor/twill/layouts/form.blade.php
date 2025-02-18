@@ -10,6 +10,54 @@
     @unless (config('twill.dev_mode', false))
         <link href="{{ twillAsset('main-form.css') }}" rel="stylesheet" crossorigin />
     @endunless
+
+    <style>
+        .button--back {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: #1d9f3c;
+            border: 1px solid #fff;
+            color: #fff;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            position: absolute;
+            left: 50px;
+            top: 27px;
+            z-index: 100;
+            margin: 0;
+        }
+   
+
+        .button--back:hover {
+            background-color: #e0e0e0;
+            text-decoration: none;
+        }
+
+        .button--back .icon {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+        }
+
+        .button--back .button__label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .titleEditor__preview {
+            position: relative;
+            left: 100px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .button--back {
+                left: 20px;
+            }
+        }
+    </style>
 @endpush
 
 @push('extra_js_head')
@@ -47,7 +95,16 @@
 
 @section('content')
     <div class="form" v-sticky data-sticky-id="navbar" data-sticky-offset="0" data-sticky-topoffset="12">
+
+
         <div class="navbar navbar--sticky" data-sticky-top="navbar">
+            <a href="{{ url()->previous() ?? route('twill.dashboard') }}" class="button button--back">
+                <span class="icon icon--pagination_left"><svg>
+                        <title>dropdown_module</title>
+                        <use xlink:href="#icon--pagination_left"></use>
+                    </svg></span>
+                <span class="button__label">Back</span>
+            </a>
             @php
                 $additionalFieldsets =
                     $additionalFieldsets ?? (isset($formBuilder) ? $formBuilder->getAdditionalFieldsets() : []);
@@ -71,21 +128,25 @@
                         @partialView($moduleName ?? null, 'create')
                     </template>
                 </a17-title-editor>
+
                 <div slot="actions">
                     <a17-langswitcher :all-published="{{ json_encode(!$controlLanguagesPublication) }}"></a17-langswitcher>
                     <a17-button v-if="editor" type="button" variant="editor" size="small" @click="openEditor(-1)">
                         <span v-svg symbol="editor"></span>{{ twillTrans('twill::lang.form.editor') }}
                     </a17-button>
                 </div>
+
             </a17-sticky-nav>
+
         </div>
         <form action="{{ $saveUrl }}" novalidate method="POST"
             @if ($customForm) ref="customForm"
               @else v-on:submit.prevent="submitForm" @endif>
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <div>                    <div class="container">
+            <div>
+                <div class="container">
 
-                <div class="wrapper wrapper--reverse" v-sticky data-sticky-id="publisher" data-sticky-offset="80">
+                    <div class="wrapper wrapper--reverse" v-sticky data-sticky-id="publisher" data-sticky-offset="80">
                         <aside class="col col--aside">
                             <div class="publisher" data-sticky-target="publisher">
                                 <a17-publisher {!! !empty($publishDateDisplayFormat) ? "date-display-format='{$publishDateDisplayFormat}'" : '' !!} {!! !empty($publishDateFormat) ? "date-format='{$publishDateFormat}'" : '' !!} {!! !empty($publishDate24Hr) && $publishDate24Hr ? ':date_24h="true"' : '' !!}
