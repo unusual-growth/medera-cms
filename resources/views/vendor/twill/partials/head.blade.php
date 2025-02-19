@@ -96,6 +96,7 @@
 /* Make the menu vertical */
 .header__nav {
     height: auto;
+    overflow: hidden;
     flex-direction: column;
 }
 
