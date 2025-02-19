@@ -17,7 +17,7 @@ use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
 class BlogCategory extends Model implements Sortable
 {
     use HasTranslation, HasSlug, HasRevisions, HasPosition, HasNesting, HasRelated, HasMetadata, HasMedias;
-    public \Illuminate\Contracts\Foundation\Application|array|\Illuminate\Config\Repository|\Illuminate\Foundation\Application $metadataFallbacks = []; 
+    public \Illuminate\Contracts\Foundation\Application|array|\Illuminate\Config\Repository|\Illuminate\Foundation\Application $metadataFallbacks = [];
 
     protected $fillable = [
         'published',
@@ -32,7 +32,7 @@ class BlogCategory extends Model implements Sortable
     ];
 
     public $slugAttributes = [
-        'title',
+        // 'title',
     ];
 
     public $mediasParams = [
@@ -64,7 +64,7 @@ class BlogCategory extends Model implements Sortable
 
         return $blogCategory;
     }
- 
+
     // #region routekey
     public function getLocalizedRouteKey($locale)
     {
