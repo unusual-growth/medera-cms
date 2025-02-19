@@ -5,7 +5,7 @@
 <section class="accordion-slider-section" data-swiper-id="{{ $fid }}">
     <div class="container xlarge">
         <div class="row gap-30">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div id="{{ $id }}" class="swiper accordion-image-slider">
 
                     <div class="swiper-wrapper">
@@ -29,7 +29,7 @@
 
                     {{-- <img width="{{$img["width"]}}" height="{{$img["height"]}}" src="{{ $img["src"] }}" alt="{{$img["alt"]}}" /> --}}
             </div>
-            <div class="col-md-6 ">
+            <div class="col-md-5 ">
                 @foreach ($repeater('items') as $key => $item)
                     @php
                         $_block = $item->renderData->block;
@@ -38,7 +38,8 @@
                     {{-- !!TODO active logic does not work properly at the beginning --}}
                     <div class="accordion-item {{ $loop->first ? 'active' : '' }}" data-index="{{ $key }}">
                         <div class="title" data-accordion="{{ $key }}">
-                                <img  width="34" height="34" src="{{ $_img['src'] }}" alt="{{$_img['alt']}}" />
+                                <div style="width: 34px; height: 34px; --mask-image: url('{{ $_img['src'] }}')">
+                                </div>
                                 <h4 itemprop="name">{{ $_block->translatedInput('title') }}</h4>
                         </div>
                         <div class="content-container">

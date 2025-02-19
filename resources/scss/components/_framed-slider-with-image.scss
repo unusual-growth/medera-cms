@@ -2,8 +2,12 @@
     .content {
         align-self: center;
         border: 1px solid $peach;
-        border-radius: 20px;
         padding: 80px 10px;
+        border-radius: 20px;
+        @include media('>large'){
+            border-radius: 0 20px 20px 0;
+            border-left: none;
+        }
         @include media('<tablet'){
             padding:20px 20px;
         }

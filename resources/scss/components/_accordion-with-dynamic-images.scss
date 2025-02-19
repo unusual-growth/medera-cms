@@ -1,10 +1,18 @@
 .accordion-slider-section {
     border-radius: 20px;
     background: linear-gradient(270deg, $peach_lighten_3 0%, $forest_lighten_3 100%);
+    picture {
+        height: 100%;
+        overflow: hidden;
+        border-radius: 24px;
+    }
     .swiper-slide img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+    .container {
+        padding: 32px 0px;
     }
 }
 .accordion-item {
@@ -27,8 +35,15 @@
         border-left: 1px solid transparent;
         border-right: 1px solid transparent;
         border-radius: 0px;
-        img {
+        > div {
+            width: 34px;
+            height: 34px;
+            background-color: rgb(156, 120, 110);            ;
+            -webkit-mask-image: var(--mask-image);
+            mask-repeat: no-repeat;
+            mask-size: contain;
             transition: $transition;
+            mask-position: center;
         }
         h4 {
             color: inherit;
@@ -58,6 +73,9 @@
             font-style: 22px;
             border: 1px solid $peach;
             border-radius: 16px;
+            > div {
+                background-color: #fff;
+            }
         }
         .content-container {
             grid-template-rows: 1fr;

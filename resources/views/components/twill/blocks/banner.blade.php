@@ -36,16 +36,16 @@
     $picture_hierarchy = setUpPicture($block, $picture_hierarchy);
 @endphp
 <section class="hero {{ $block->input('background') }}" >
-    <div class="container full-1440">
+    <div class="container xlarge">
         <div class="row gap-30 justify-space-between">
-            <div class="col-md-6 flex-center">
+            <div class="col-sm-6 flex-center">
                 <div class="content">
                     {!! $block->translatedInput('content') !!}
                 </div>
             </div>
-            <div class="col-md-6 image">
+            <div class="col-sm-6 image">
 
-                <picture>
+                <picture class="width-100 height-100">
                     @for($i = array_key_last($picture_hierarchy); $i >= 0; $i--)
                         @php
                             $item = $picture_hierarchy[$i] ?? null;

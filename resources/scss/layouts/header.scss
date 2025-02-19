@@ -16,6 +16,9 @@ header {
         display: none;
       }
     }
+    span {
+        cursor: default;
+    }
     ul {
       display: flex;
       padding: 0;
@@ -23,7 +26,7 @@ header {
       column-gap: 32px;
       height: 10vh;
       align-items: center;
-  
+
       @include media("<large") {
         flex-flow: column;
         height: max-content;
@@ -33,7 +36,7 @@ header {
         display: flex;
         align-items: center;
         list-style: none;
-  
+
         @include media("<large") {
           width: 100%;
         }
@@ -41,7 +44,7 @@ header {
           color: $primary;
           text-decoration: none;
           transition: font-weight 0.2s ease;
-  
+          cursor: pointer;
           &:hover {
             font-weight: 700;
             transform: translateX(0);
@@ -81,7 +84,7 @@ header {
           width: 100%;
           padding: 18px 24px;
           display: block;
-  
+
           &:hover {
             background-color: $primary_tone_4;
             border-radius: 20px 0 20px 20px;
@@ -99,7 +102,7 @@ header {
     .activate-mobile {
       margin-left: auto;
       align-self: center;
-  
+
       @include media(">=large") {
         display: none;
       }
@@ -118,19 +121,19 @@ header {
     transition: all linear 0.3s;
     z-index: 9;
     padding: 0;
-  
+
     @include media(">=large") {
       display: none;
     }
-  
+
     @include media("<tablet") {
       padding-top: 92px;
     }
-  
+
     @include media("<mobile") {
       padding-top: 78px;
     }
-  
+
     &.active {
       transform: translateX(0);
       pointer-events: all;
@@ -138,31 +141,31 @@ header {
     ul {
       list-style: none;
       padding-left: 0;
-  
+
       li {
         line-height: 1;
         font-size: 18px;
         margin: 0;
         padding: 24px 27px;
         text-transform: uppercase;
-  
+
         > div {
           padding-left: 0.5em;
         }
-  
+
         &.hasSub {
           padding: 0;
           position: relative;
           flex-flow: column;
           align-items: start;
-  
+
           span {
             padding: 24px 0 24px 18px;
             color: $primary;
             margin: 0;
             display: block;
           }
-  
+
           .submenu {
             li {
               a {
@@ -175,27 +178,27 @@ header {
             }
           }
         }
-  
+
         &.active {
           svg {
             transform: rotate(180deg);
           }
-  
+
           .submenu {
             visibility: visible;
             height: auto;
             opacity: 1;
           }
-  
+
           &::after {
             transform: rotate(180deg);
           }
         }
-  
+
         a {
           position: relative;
           list-style: none;
-  
+
           &.active:not(.secondary-cta) {
             &::before {
               width: 0.25em;
@@ -204,14 +207,14 @@ header {
           }
         }
       }
-  
+
       &.submenu {
         padding: 0 24px;
         height: 0;
         visibility: hidden;
         opacity: 0;
         // transition: 0.3s linear all;
-  
+
         li {
           border-bottom: unset;
         }
@@ -227,11 +230,11 @@ header {
       background-color: rgba($color: $detailcolor, $alpha: 0.6);
       display: none;
       z-index: 8;
-  
+
       @include media(">tablet") {
         display: none;
       }
-  
+
       &.active {
         display: block;
       }

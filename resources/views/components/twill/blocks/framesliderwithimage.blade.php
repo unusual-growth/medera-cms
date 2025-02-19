@@ -35,7 +35,7 @@
     @endif
     <div class="container xlarge">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-md-6">
                 <div id="slider-controller" class='swiper controlling swiper-creative'>
                     <div class="swiper-wrapper">
                         @foreach ($repeater('image-wysiwyg') as $item)
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <div id="slider-content" class='col-sm-6 swiper content swiper-creative swiper-3d'>
+            <div id="slider-content" class='col-md-6 swiper content swiper-creative swiper-3d'>
                 <div class="swiper-wrapper">
                     @foreach ($repeater('image-wysiwyg') as $item)
                         <div class="swiper-slide">

@@ -324,14 +324,43 @@
 
 .hero {
     padding:0 !important;
+    @include media('<tablet') {
+        .container {
+            padding: 0;
+        }
+    }
     .content{
-        max-width: 460px;
+        @include media('<large') {
+            padding: 0 0 0 24px;
+        }
+        @include media('<tablet') {
+            padding: 53px 24px 32px ;
+        }
+    }
+    @include media('>large') {
+        h1, h2{
+            max-width: 90%;
+        }
+        p {
+            max-width: 80%;
+        }
+    }
+    @include media('<=large') {
+        h1, h2{
+            font-size: 36px;
+        }
+    }
+    @include media('<=tablet') {
+        h1, h2{
+            font-size: 30px;
+        }
     }
     h1, h2, p{
         color:$white;
     }
     img {
         border-radius: 0 !important;
+        object-fit: cover;
     }
     &.forest-to-gray{
         background: linear-gradient(270deg, #847C80 0%, #B2C6C1 100%);

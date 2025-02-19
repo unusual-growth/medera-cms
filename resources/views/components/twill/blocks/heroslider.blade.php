@@ -96,7 +96,6 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="hero-pagination swiper-pagination  swiper-pagination-custom"></div>
             </div>
 
 
@@ -108,6 +107,7 @@
             </div>
         </div>
     </div>
+    <div class="hero-pagination swiper-pagination  swiper-pagination-custom"></div>
     <div class="autoplay-progress">
         <svg viewBox="0 0 48 48">
             <circle cx="24" cy="24" r="20"></circle>
@@ -163,7 +163,7 @@
                         },
                     },
                     pagination: {
-                        el: selector+'+.hero-pagination.swiper-pagination',
+                        el: ' .hero-pagination.swiper-pagination',
                         bulletClass: "swiper-pagination-bullet",
                         bulletActiveClass: "active-tab",
                         type: "custom",

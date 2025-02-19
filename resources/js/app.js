@@ -87,31 +87,11 @@ $(document).ready(function () {
 document.addEventListener('DOMContentLoaded', function() {
     const questions = document.querySelectorAll('.question');
     const firstAnswer = document.querySelector('.Accordion-item.active .Accordion-answer');
-    if (firstAnswer) {
-        firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
-    }
-
-    questions.forEach(question => {
-        question.addEventListener('click', function() {
-            const currentAccordion = this.closest('.accordion-item');
-            const currentAnswer = currentAccordion.querySelector('.accordion-answer');
-            const isOpen = currentAccordion.classList.contains('active');
-            const activeAccordions = document.querySelectorAll('.accordion-item.active');
-
-            if (!isOpen) {
-                activeAccordions.forEach(item => {
-                    item.classList.remove('active');
-                    item.querySelector('.accordion-answer').style.maxHeight = '0px';
-                });
-                currentAccordion.classList.add('active');
-                currentAnswer.style.maxHeight = currentAnswer.scrollHeight + 'px';
-            } else if (activeAccordions.length === 1) {
-                return;
-            } else {
-                currentAccordion.classList.remove('active');
-                currentAnswer.style.maxHeight = '0px';
-            }
-        });
+    $('.question').on('click',function(){
+        if(!$(this).parent('.accordion-item').hasClass('active')){
+            $(this).parent('.accordion-item').siblings('.active').removeClass('active');
+            $(this).parent('.accordion-item').addClass('active');
+        }
     });
 });
 document.addEventListener('DOMContentLoaded', function() {

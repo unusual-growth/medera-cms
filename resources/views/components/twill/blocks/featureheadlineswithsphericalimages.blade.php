@@ -3,7 +3,7 @@
     <section class="circle-card">
         @if($input('has_section_content') && $translatedInput('section_content'))
             <div class="container xlarge">
-                <div class="heading">
+                <div class="section-desctiption heading">
                     {!! $translatedInput('section_content') !!}
                 </div>
             </div>

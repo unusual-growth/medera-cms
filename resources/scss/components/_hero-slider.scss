@@ -118,44 +118,7 @@ section.hero-slider-sect {
         background-position:unset;
     }
     display: flex;
-    &.unformed {
-        // min-height: max(82vh, 800px);
-        // padding: 64px 0;
-        @include media('<=large') {
-            min-height: max(64vh, 450px)
-        }
-        .swiper:not(.swiper-initialized) {
-            .swiper-wrapper {
-                overflow: hidden;
-            }
-        }
-        .hero-slider {
-            padding: 64px 15%;
-            @include media('<=large') {
-                padding: 64px 10%;
-            }
-            @include media('<=tablet') {
-                padding: 64px 5% 5%;
-            }
-        }
-        .swiper-slide {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            @include media('<tablet'){
-                text-align: start;
-            }
-        }
-        .hero-pagination {
-            bottom: unset;
-            top: 100%;
-            justify-content: center;
-            > .row {
-                flex-flow: column;
-            }
-        }
-    }
+
     .slider-col {
         display: flex;
         align-items: center;
@@ -264,9 +227,12 @@ section.hero-slider-sect {
   }
 
 .hero-pagination {
-    align-items: center;
+    position: absolute;
     color: $white;
+    align-items: center;
     bottom: 5%;
+    left: 50%;
+
     @include media('<tablet') {
         bottom: unset;
         top: calc(100% + 32px);
@@ -298,7 +264,17 @@ section.hero-slider-sect {
             background-color: $white !important;
             position: relative;
             opacity: 1;
-
+            width: 8px;
+            transition: width .8s linear;
+            &[class*=active] {
+                width: 24px;
+            }
+            &:not([class*=active]) {
+                opacity: 1 !important;
+                &::after {
+                    animation: pulse 2s infinite backwards 1s cubic-bezier(0.55, 0.19, 0.51, 0.91);
+                }
+            }
             &::after {
                 content: '';
                 position: absolute;
@@ -319,7 +295,7 @@ section.hero-slider-sect {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                border-radius: 100%;
+                border-radius: 8px;
                 top: 50%;
                 left: 50%;
                 opacity: 1;
@@ -335,13 +311,6 @@ section.hero-slider-sect {
                 width: 20px;
                 height: 20px;
             }
-            &:not([class*=active]) {
-                opacity: 1 !important;
-                &::after {
-                    animation: pulse 2s infinite backwards 1s cubic-bezier(0.55, 0.19, 0.51, 0.91);
-                }
-            }
-
         }
     }
     .fraction {

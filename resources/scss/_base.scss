@@ -20,18 +20,19 @@ body {
 }
 
 section {
-    &:not(.no-padding) {
-        padding: rem(52px) 0;
-        &.narrow {
-            padding: rem(48px) 0;
-        }
-        @include media('<large') {
-            padding: rem(48px) 0;
-        }
-        @include media('<tablet') {
-            padding: 1.6rem 0;
-        }
-    }
+    margin: rem(72px) auto;
+    // &:not(.no-padding) {
+    //     padding: rem(52px) 0;
+    //     &.narrow {
+    //         padding: rem(48px) 0;
+    //     }
+    //     @include media('<large') {
+    //         padding: rem(48px) 0;
+    //     }
+    //     @include media('<tablet') {
+    //         padding: 1.6rem 0;
+    //     }
+    // }
     &.margin {
         margin: rem(32px) 0;
         @include media('<large') {
@@ -80,7 +81,7 @@ h6 {
 h1 {
     font-size: rem(48px);
     font-weight: 400;
-    line-height: 51px;
+    line-height: 1.15;
     letter-spacing: -0.02em;
     margin: 0;
     strong {
@@ -88,7 +89,6 @@ h1 {
     }
     @include media('<tablet') {
         font-size: rem(30px);
-        line-height: 2.2em;
     }
 }
 

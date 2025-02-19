@@ -13,7 +13,7 @@
 <section class="journey-section {{ $color_scheme == 'peach' ? 'preset-color-peach' : '' }}">
   <div class="container xlarge journey-container">
     <div class="row {{ $reverse_order_mobile ? 'mob-rev' : '' }} {{ $image_right ? 'reverse' : '' }}">
-      <div class="journey-image col-sm-5">
+      <div class="journey-image col-sm-5 d-flex">
         @if($has_image)
             {!! TwillImage::render($image, []) !!}
         @else

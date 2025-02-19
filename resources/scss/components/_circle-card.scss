@@ -8,6 +8,7 @@ $colors: (
 .circle-card {
     .heading{
         max-width:50%;
+        margin-bottom: 52px;
         @include media('<large'){
             max-width:100%;
             // text-align: center;
@@ -24,6 +25,7 @@ $colors: (
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        padding-bottom: rem(32px);
         @include media('<cont-xlarge'){
             row-gap: 54px;
         }
