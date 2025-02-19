@@ -15,7 +15,7 @@ class BlogCategoryController extends BaseModuleController
 {
     protected $moduleName = 'blogCategories';
     protected $showOnlyParentItemsInBrowsers = false;
-    protected $nestedItemsDepth = 1;
+    protected $nestedItemsDepth = 0;
     /**
      * This method can be used to enable/disable defaults. See setUpController in the docs for available options.
      */
@@ -47,7 +47,7 @@ class BlogCategoryController extends BaseModuleController
         );
 
         $form->add(
-                        Browser::make()
+                Browser::make()
                 ->modules([BlogCategory::class])
                 ->name('categories')
                 ->max(1)
