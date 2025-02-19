@@ -39,6 +39,8 @@ class Faqlistings extends TwillBlockComponent
             ->translatable()
             ->required(),
         Checkbox::make()
+            ->name('show_link')->label('Display Link to the FAQ Page')->default(true),
+        Checkbox::make()
             ->name('show_all_faqs')->label('Show all FAQs')->default(true),
         Browser::make()
             ->modules([Faq::class])

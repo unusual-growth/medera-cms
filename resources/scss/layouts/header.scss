@@ -1,6 +1,25 @@
 
+$header_height: 100px;
+$header_height_mobile: 68px;
+main {
+    padding-top: $header_height;
+    @include media("<tablet") {
+      padding-top: $header_height_mobile;
+    }
+}
 header {
     display: flex;
+    position: fixed;
+    height: $header_height;
+    width: 100%;
+    background: $white;
+    z-index: 999;
+    @include media("<tablet") {
+      height: $header_height_mobile;
+      .logo img {
+        height: 26px;
+      }
+    }
     .logo {
       display: flex;
       align-items: center;
@@ -42,7 +61,7 @@ header {
         }
         a {
           color: $primary;
-          text-decoration: none;
+          text-decoration: none !important;
           transition: font-weight 0.2s ease;
           cursor: pointer;
           &:hover {

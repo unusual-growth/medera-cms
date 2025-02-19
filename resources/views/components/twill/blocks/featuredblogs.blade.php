@@ -7,7 +7,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container xlarge">
         <div class="card-display library">
             {{-- !!TODO: put inside a slider for mobile --}}
             @foreach ($blogs as $relatedArticle)
