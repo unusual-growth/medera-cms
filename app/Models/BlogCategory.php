@@ -35,6 +35,23 @@ class BlogCategory extends Model implements Sortable
         // 'title',
     ];
 
+    public $mediasParams = [
+        'blog-category-image' => [
+            'default' => [
+                [
+                    'name' => 'default',
+                    'ratio' => 2880 / 800,
+                ],
+            ],
+            'thumbnail' => [
+                [
+                    'name' => 'default',
+                    'ratio' => 730 / 440,
+                ],
+            ]
+        ],
+    ];
+
     public function articles()
     {
         return $this->belongsToMany(Article::class);
