@@ -37,7 +37,7 @@
         background-size: cover;
         > div {
             min-height: 200px;
-            padding: $line-height * 2 24px;
+            padding: $line-height 24px;
         }
     }
     @include createBannerSystem('peach-gray', linear-gradient(270deg, #847c80 0%, #d9b3a8 100%), $white);

@@ -58,7 +58,12 @@
                         <div class="__content">
                     @endif
                         <img src="{{ $image }}" alt="icon" />
-                        <{{ $heading_tag }} class="{{ $heading_class }}">{!! $title !!}</{{ $heading_tag }}>
+                        <{{ $heading_tag }} class="{{ $heading_class }}">
+                            {!! $title !!}
+                            @if($preset == 'preset3' && $text != '')
+                                <span>{{$text}}</span>
+                            @endif
+                        </{{ $heading_tag }}>
                         @if ($preset == 'preset5')
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="m17.613 15-5.87-6-5.872 6" stroke="#434A57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
