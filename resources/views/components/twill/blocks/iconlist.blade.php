@@ -34,9 +34,9 @@
 @endphp
 <section {{ $attributes->class([$section_class]) }}>
     <div class="container xlarge">
-        <div class="row">
-            <div {{ $attributes->class([$container_class]) }}>
-                @foreach ($repeater('icons') as $key => $repeaterItem)
+
+        <div {{ $attributes->class([$container_class]) }}>
+            @foreach ($repeater('icons') as $key => $repeaterItem)
                     @php
                         $_renderData = $repeaterItem->renderData;
                         $icon_block = $_renderData->block;
@@ -55,8 +55,8 @@
                             <div>
                         @endif
                         @if ($preset == 'preset5')
-                        <div class="__content">
-                    @endif
+                            <div class="__content">
+                        @endif
                         <img src="{{ $image }}" alt="icon" />
                         <{{ $heading_tag }} class="{{ $heading_class }}">
                             {!! $title !!}
@@ -78,7 +78,6 @@
                     </div>
             @endforeach
         </div>
-    </div>
     </div>
 </section>
 

@@ -9,7 +9,7 @@
     [class*="col-"]:not(.row) {
         display: flex;
         flex-flow: column;
-        justify-content: start;
+        justify-content: center;
     }
     img {
         border-radius:20px;

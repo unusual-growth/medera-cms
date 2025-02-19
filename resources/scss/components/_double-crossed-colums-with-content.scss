@@ -1,5 +1,8 @@
 .double-crossed-colums-with-content{
     margin-bottom:90px;
+    @include media('>large'){
+        padding-bottom: 96px;
+    }
     .left-bubble{
         background: linear-gradient(270deg, #F6ECE9 0%, #D8E2E0 100%);
         border-radius: 20px;

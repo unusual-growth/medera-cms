@@ -1,4 +1,4 @@
-<section class="background-primary-lighten-4">
+<section class="featured-blogs background-primary-lighten-4 p-v-8">
     <div class="container">
         <div class="row justify-content-center">
             <div class="sect-heading-desc col-md-9 flex-column align-items-center">

@@ -1,11 +1,8 @@
-@php
-    $background_image = $block->image('background-image', 'default');
-
-    if (!empty($background_image) && strpos($background_image, 'data:image/gif') === false) {
-        $dynamicAttributes['style'] = 'background-image: url(' . $background_image . ')';
-    }
-@endphp
-<section class="pills-banner" {{ $attributes->merge($dynamicAttributes) }}>
+<section class="pills-banner">
+    <picture>
+        <source srcset="{{$block->image('background-image', 'default')}}" media="(min-width: 768px)">
+        <img src="{{$block->image('background-image-mobile')}}" alt="">
+    </picture>
     <div class="container xlarge">
         <div class="row">
             @foreach ($repeater('texts') as $key => $repeaterItem)

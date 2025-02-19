@@ -1,18 +1,18 @@
 .list-card, .icon-list{
     .fab-card{
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
         gap:30px;
-        &.three{
-            grid-template-columns: repeat(3, 1fr);
-            gap:30px;
-            @include media('<large'){
-                grid-template-columns: repeat(2, 2fr);
-            }
-            @include media('<mobile'){
-                grid-template-columns: repeat(1, 1fr);
-            }
-        }
+        // &.three{
+        //     grid-template-columns: repeat(3, 1fr);
+        //     gap:30px;
+        //     @include media('<large'){
+        //         grid-template-columns: repeat(2, 2fr);
+        //     }
+        //     @include media('<mobile'){
+        //         grid-template-columns: repeat(1, 1fr);
+        //     }
+        // }
         @include media('<large'){
             grid-template-columns: repeat(2, 2fr);
         }

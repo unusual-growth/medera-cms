@@ -29,13 +29,18 @@ class Columncardswithfullbackground extends TwillBlockComponent
             ->label(label: twillTrans('Background Image'))
             ->required()
             ->max(1),
-            InlineRepeater::make()->name('texts') 
+            Medias::make()
+                ->name('background-image-mobile')
+                ->label(label: twillTrans('Mobile Background Image'))
+                ->required()
+                ->max(1),
+            InlineRepeater::make()->name('texts')
             ->fields([
                 Input::make()
                     ->name(name: 'title')
                     ->required()
                     ->translatable()
-            ]) 
+            ])
         ]);
     }
 
@@ -43,6 +48,18 @@ class Columncardswithfullbackground extends TwillBlockComponent
     {
         return [
             'background-image' => [
+                'default' => [
+                    [
+                        'name' => 'default',
+                        'ratio' => 0,
+                        'minValues' => [
+                            'width' => 1440,
+                            'height' => 439,
+                        ],
+                    ],
+                ]
+            ],
+            'background-image-mobile' => [
                 'default' => [
                     [
                         'name' => 'default',

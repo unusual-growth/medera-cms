@@ -17,7 +17,8 @@ return [
     ],
     "empty" => '',
     'create-request' => 'Create Request',
-    "other-blogs" => "Other Blogs",
+    "other-blogs" => "Browse through our library",
+    "other-blogs-description" => "discover the healthy world of butyEra! ",
     'explore' => 'Read More',
     'form' => [
         'email' => 'Email Address',

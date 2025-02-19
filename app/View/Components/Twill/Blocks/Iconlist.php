@@ -30,7 +30,7 @@ class Iconlist extends TwillBlockComponent
                 Options::make([
                     Option::make('preset1', 'Heading peach'),
                     Option::make('preset2', 'Heading green '),
-                    Option::make('preset3', label: 'Heading green - No text'),
+                    Option::make('preset3', label: 'Heading green - No Paragraph'),
                     Option::make('preset4', label: 'Heading green - With Border'),
                     Option::make('preset5', label: 'Heading green - With Border - Show Text on Hover'),
 
@@ -38,9 +38,9 @@ class Iconlist extends TwillBlockComponent
             )->label('Preset')
             ->required()
             ->default('preset1'),
-            InlineRepeater::make()->name('icons') 
+            InlineRepeater::make()->name('icons')
             ->fields([
-    
+
                 Medias::make()
                 ->name('icon-list')
                 ->label(label: twillTrans('Icon'))
@@ -55,7 +55,7 @@ class Iconlist extends TwillBlockComponent
                     ->type(type: 'textarea')
                     ->required()
                     ->translatable(),
-            ]) 
+            ])
         ]);
     }
 
