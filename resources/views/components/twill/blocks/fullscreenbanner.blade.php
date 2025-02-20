@@ -16,7 +16,7 @@
             "media" => "(min-width: 1024px)"
         ],
     ];
-    
+
     if (!function_exists('setUpPicture')) {
         function setUpPicture($block, &$arr, $setMediaNull = false, $i = 0) {
             if ($i > array_key_last($arr)) {
@@ -34,24 +34,27 @@
         }
     }
     $picture_hierarchy = setUpPicture($block, $picture_hierarchy);
-    
+
 @endphp
-<div class="onlyimage">
-  <picture>
-    @for($i = array_key_last($picture_hierarchy); $i >= 0; $i--)
-        @php
-            $item = $picture_hierarchy[$i] ?? null;
-            if (!$item) {
-                break;
-            }
-        @endphp
+<section>
+    <div class="container full-1440 onlyimage">
 
-        @if($item['media'])
-            <source srcset="{{ $item['src'] }}" media="{{ $item['media'] }}">
-        @else
-            <img src="{{ $item['src'] }}" alt="{{$block->imagesAsArrays($item['key'])[0]['alt']}}">
-        @endif
+      <picture>
+        @for($i = array_key_last($picture_hierarchy); $i >= 0; $i--)
+            @php
+                $item = $picture_hierarchy[$i] ?? null;
+                if (!$item) {
+                    break;
+                }
+            @endphp
 
-    @endfor
-</picture>
-</div>
+            @if($item['media'])
+                <source srcset="{{ $item['src'] }}" media="{{ $item['media'] }}">
+            @else
+                <img src="{{ $item['src'] }}" alt="{{$block->imagesAsArrays($item['key'])[0]['alt']}}">
+            @endif
+
+        @endfor
+    </picture>
+    </div>
+</section>

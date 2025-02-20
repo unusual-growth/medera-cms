@@ -1,19 +1,23 @@
 .double-crossed-colums-with-content{
     margin-bottom:90px;
+
     @include media('>large'){
         padding-bottom: 96px;
     }
     .left-bubble{
+        padding: 36px 56px;
+        min-height: 200px;
         background: linear-gradient(270deg, #F6ECE9 0%, #D8E2E0 100%);
         border-radius: 20px;
         text-align: center;
         z-index:1;
         h4{
             // max-width:37.5rem;
-            padding:32px 52px;
+            // padding:32px 52px;
         }
     }
     .right-bubble{
+        min-height: 200px;
         &.col-md-7{
             max-width:54.8%;
             @include media('<large'){
@@ -26,15 +30,20 @@
         border-radius: 20px;
         right: 0;
         top:32%;
+        padding: 36px 56px;
         @include media('<large'){
             max-width:100%;
             position:unset;
         }
         h4{
-            padding:44px 62px 44px 100px;
-            @include media('<large'){
-                padding:32px 52px;
-            }
+            // padding:44px 62px 44px 100px;
+            // @include media('<large'){
+            //     padding:32px 52px;
+            // }
         }
+    }
+    p {
+        color: $primary;
+        font-size: 24px;
     }
 }

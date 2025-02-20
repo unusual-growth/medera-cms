@@ -1,9 +1,9 @@
 @php
     $has_image = $block->hasImage('col_image');
     if ($has_image) {
-        $image = TwillImage::make($block, 'col_image');
+        $image = $block->imageObject('col_image');
+        $rawImageUrl = ImageService::getRawUrl($image->uuid);
     }
-
     $image_right = $input('image_right');
     $reverse_order_mobile = $input('reverse_order_mobile');
     $color_scheme = $input('color_scheme');
@@ -14,7 +14,7 @@
             <div class="row {{ $reverse_order_mobile ? 'mob-rev' : '' }} {{ $image_right ? 'reverse' : '' }}">
                 <div class="col-md-6 bg-coating">
                     @if($has_image)
-                        {!! TwillImage::render($image, []) !!}
+                        <img src="{{ ImageService::getRawUrl($image->uuid) }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="" />
                     @else
                         <div style="width: 100%; height: 100%; color: white; display: flex; justify-content: center; align-items: center; background: #427277; font-size: 32px;">
                             Please add an image.
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-sm-6">
                     @if($has_image)
-                        {!! TwillImage::render($image, []) !!}
+                        <img src="{{ ImageService::getRawUrl($image->uuid) }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="" />
                     @else
                         <div style="width: 100%; height: 100%; color: white; display: flex; justify-content: center; align-items: center; background: #427277; font-size: 32px;">
                             Please add an image.
