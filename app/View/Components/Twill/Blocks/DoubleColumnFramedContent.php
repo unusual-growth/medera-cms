@@ -31,6 +31,7 @@ class Doublecolumnframedcontent extends TwillBlockComponent
                 ->label('Reverse Order on Mobile'),
             Radios::make()
                 ->name('color_mode')
+                ->label('Background Gradient of the Text Box')
                 ->inline()
                 ->border()
                 ->options(
@@ -39,16 +40,17 @@ class Doublecolumnframedcontent extends TwillBlockComponent
                         Option::make('light', 'Light'),
                     ])
                 )->default('light'),
-            Radios::make()
-                ->name('color_scheme')
-                ->inline()
-                ->border()
-                ->options(
-                    Options::make([
-                        Option::make('green', 'Green'),
-                        Option::make('peach', 'Peach'),
-                    ])
-                )->default('green'),
+            // Radios::make()
+            //     ->name('color_scheme')
+            //     ->label('Color Schema of Texts')
+            //     ->inline()
+            //     ->border()
+            //     ->options(
+            //         Options::make([
+            //             Option::make('green', 'Green'),
+            //             Option::make('peach', 'Peach'),
+            //         ])
+            //     )->default('green'),
             Wysiwyg::make()->name('text')->label('Content')->required()->translatable()
                 ->toolbarOptions([
                     ['header' => [2, 3, false]],

@@ -21,28 +21,31 @@ $colors: (
         }
     }
     .cards {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         align-items: center;
         flex-wrap: wrap;
+        gap: 54px 32px;
         padding-bottom: rem(32px);
-        @include media('<cont-xlarge'){
-            row-gap: 54px;
-        }
-        @include media('<large'){
+        @include media('<desktop'){
+            grid-template-columns: repeat(2, 1fr);
             justify-content: space-around;
-
+        }
+        @include media('<550px'){
+            grid-template-columns: repeat(1, minmax(0, 280px));
         }
         .card {
             display: flex;
             flex-flow: column;
             align-items: center;
             justify-content: start;
-            width:280px;
             border-radius: 20px;
             position:relative;
             height:316px;
             padding-top:20px;
+            p {
+                font-size: rem(18px) !important;
+            }
             img {
                 max-width: 232px;
                 border-radius:100%;

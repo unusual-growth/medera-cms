@@ -7,10 +7,10 @@
     $image_right = $input('image_right');
     $color_mode = $input('color_mode');
     $reverse_order_mobile = $input('reverse_order_mobile');
-    $color_scheme = $input('color_scheme');
+    // $color_scheme = $input('color_scheme');
 @endphp
 
-<section class="journey-section {{ $color_scheme == 'peach' ? 'preset-color-peach' : '' }}">
+<section class="journey-section">
   <div class="container xlarge journey-container">
     <div class="row {{ $reverse_order_mobile ? 'mob-rev' : '' }} {{ $image_right ? 'reverse' : '' }}">
       <div class="journey-image col-sm-5 d-flex">

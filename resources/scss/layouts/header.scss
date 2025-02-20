@@ -62,10 +62,10 @@ header {
         a {
           color: $primary;
           text-decoration: none !important;
-          transition: font-weight 0.2s ease;
+        //   transition: font-weight 0.2s ease;
           cursor: pointer;
           &:hover {
-            font-weight: 700;
+            // font-weight: 700;
             transform: translateX(0);
           }
         }
@@ -103,7 +103,8 @@ header {
           width: 100%;
           padding: 18px 24px;
           display: block;
-
+          transition: 0.4s all ease;
+          border-radius: 0px;
           &:hover {
             background-color: $primary_tone_4;
             border-radius: 20px 0 20px 20px;
@@ -112,6 +113,7 @@ header {
       }
       &:hover .dropdown-content {
         background-color: #f9f9f9;
+        overflow: hidden;
         grid-template-rows: 1fr;
         opacity: 1;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);

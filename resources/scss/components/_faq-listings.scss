@@ -4,6 +4,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 32px 24px;
     padding-top: 32px;
+    @include media('<=tablet') {
+        grid-template-columns: 1fr;
+    }
     .item {
         border: 1px solid $artichoke;
         background-color: $white;

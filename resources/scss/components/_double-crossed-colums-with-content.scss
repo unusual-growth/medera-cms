@@ -1,8 +1,10 @@
 .double-crossed-colums-with-content{
     margin-bottom:90px;
-
     @include media('>large'){
         padding-bottom: 96px;
+    }
+    h2, h3, h4, h5, h6 {
+        color: $primary;
     }
     .left-bubble{
         padding: 36px 56px;

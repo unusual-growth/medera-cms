@@ -14,7 +14,7 @@
             <div class="row {{ $reverse_order_mobile ? 'mob-rev' : '' }} {{ $image_right ? 'reverse' : '' }}">
                 <div class="col-md-6 bg-coating">
                     @if($has_image)
-                        <img src="{{ ImageService::getRawUrl($image->uuid) }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="" />
+                        <img src="{{ ImageService::getRawUrl($image->uuid) }}" alt="{{$image->alt}}" />
                     @else
                         <div style="width: 100%; height: 100%; color: white; display: flex; justify-content: center; align-items: center; background: #427277; font-size: 32px;">
                             Please add an image.

@@ -60,7 +60,7 @@
                             @php
                                 $arr = $block->imagesAsArrays($item['key'])[0];
                             @endphp
-                            <img src="{{ $item['src'] }}" alt="{{$arr['alt']}}" width="{{$arr['width']}}" height="{{$arr['height']}}">
+                            <img src="{{ $item['src'] }}" alt="{{$arr['alt']}}">
                         @endif
 
                     @endfor

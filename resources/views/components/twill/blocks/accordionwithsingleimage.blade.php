@@ -13,7 +13,9 @@
                     <source srcset="{{ asset('/dummy-img/accordion1.png') }}" media="(min-width: 768px)">
                     </picture> --}}
 
-                    <img width="{{$img["width"]}}" height="{{$img["height"]}}" src="{{ $img["src"] }}" alt="{{$img["alt"]}}" />
+                    <img
+                        {{-- width="{{$img["width"]}}" height="{{$img["height"]}}" --}}
+                        src="{{ $img["src"] }}" alt="{{$img["alt"]}}" />
             </div>
             <div class="col-md-6">
                 @foreach ($repeater('accordion-items') as $key => $item)

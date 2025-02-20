@@ -6,7 +6,7 @@
     <div class="container xlarge">
         <div class="row gap-30">
             <div class="col-md-7">
-                <div id="{{ $id }}" class="swiper accordion-image-slider">
+                <div id="{{ $id }}" class="swiper accordion-image-slider height-100 border-radius-oval">
 
                     <div class="swiper-wrapper">
                         @foreach ($repeater('items') as $key => $item)

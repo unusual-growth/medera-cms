@@ -199,6 +199,7 @@ img {
 
 .iti {
     z-index: 4 !important;
+    width: 100%;
 }
 
 @include constructContainer($containerWidths);
