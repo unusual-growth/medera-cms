@@ -385,7 +385,12 @@
             min-height: 400px;
         }
         & + .request-section {
-            background-color: red;
+            @include media('>large') {
+                margin-top: -160px;
+            }
+            @include media('>tablet') {
+                margin-top: -120px;
+            }
         }
     }
 

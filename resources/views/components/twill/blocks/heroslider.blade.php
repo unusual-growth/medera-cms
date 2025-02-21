@@ -2,7 +2,7 @@
 @php
     $id = uniqid('slider-');
     $fid = uniqid();
-
+    $form_id = uniqid();
     $picture_hierarchy = [
         [
             'key' => 'mobile_image',
@@ -100,7 +100,11 @@
 
 
             <div class="form-col md-5 col-sm-6">
-                @unusualForm(['formData' => config('forms.request-form')])
+                @php
+                    $conf = config('forms.request-form');
+                    $conf["id"] = $form_id
+                @endphp
+                @unusualForm(['formData' => $conf])
                 {{--  @include('unusual_form::layouts._form',[
                 'formData' => config($config->form)
             ]) --}}
@@ -119,6 +123,7 @@
 
 @push('custom-last-script')
     <script>
+        // window.forms["{{ $form_id }}"]
         function initializeSwiper{{ $fid }}(selector) {
             new _swiper(selector, {
                     modules: [

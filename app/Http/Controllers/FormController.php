@@ -17,9 +17,9 @@ class FormController extends Controller
         'name' => ['required', 'string', 'max:255'],
         'surname' => ['required', 'string', 'max:255'],
         'email' => ['required', 'string', 'lowercase', 'email', 'max:255'],
+        'phone' => ['required', 'string'],
     ]);
     $audienceId = "3a6dfd14df";
-
     if ($audienceId) {
         $lists = Lists::createFromConfig(array_merge_recursive_preserve(config('newsletter'), [
             'default_list_name' => 'subscribers',
@@ -38,12 +38,15 @@ class FormController extends Controller
                 $request->email,
                 [
                     'FNAME' => $request->name ?? '-',
-                    'TITLE' => 'Newsletter Request',
+                    'LNAME' => $request->surname ?? '-',
+                    'PHONE' => $request->phone,
+                    'ADDRESS' => $request->address ?? '-',
+                    'COMPANY' => $request->company ?? '-',
                 ]
             );
         }
     }
 
-    return response()->json(['code' => "SUCCESS", 'redirect_url' => route('success') . '?type=newsletter', 'message' => __('util.subscribed')]);
+    return response()->json(['code' => "SUCCESS", 'redirect_url' => route('success') . '?type=request-form', 'message' => __('util.subscribed')]);
   }
 }

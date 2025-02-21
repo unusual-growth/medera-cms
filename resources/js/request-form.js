@@ -1,46 +1,55 @@
+import { data } from "jquery";
 
 $(document).ready(function () {
-    let heroValidator = new ValidateForm($('.create-request'), null, validationMsg, true);
+    $('.create-request').each(function (index) {
+        window.forms[$(this).attr('id')] = new ValidateForm($(this), null, validationMsg, true);
+
+    });
     $('.create-request button.custom-submit').on('click', function (e) {
-        e.preventDefault();
+        console.log('submit');
         let $form = $(this).closest('form');
-        if (heroValidator.validate(heroValidator.phones)) {
+        let validator = window.forms[$form.attr('id')];
+        e.preventDefault();
+        if (validator.validate(validator.phones)) {
             $form.find('.loading-container').addClass('show');
-
             //AJAX CALL FOR FORM SUBMIT ZOHO
-            let value = $(this).closest('form').serializeArray();
-            var data = {};
-            $(value).each(function (index, obj) {
-                data[obj.name] = obj.value;
-            });
-            data = JSON.stringify(data);
-            $.ajax({
-                type: "POST",
-                url: '/submit-request',
-                datatype: "application/json",
-                contentType: "application/json",
-                beforeSend: function (request) {
-                    request.setRequestHeader("X-CSRF-TOKEN", $('meta[name="csrf-token"]').attr('content'));
-                },
-                data: data,
-                success: function (response) {
-                    // console.log(response);
-                    if (response.code == 'SUCCESS') {
-                        $form.find('.loading-container').addClass('success');
-                        setTimeout(function () {
-                            window.location.href = "/success?for=" + response.redirect_url;
-                        }, 2000);
-                        return true;
-                    }
-                    //if request if made successfully then the response represent the data
+            let data = prepareFormData($form);
+            submitForm(data);
 
-                    $("#result").empty().append(response);
-                }
-            });
         }
     });
 
 });
+
+function prepareFormData($form) {
+    let value = $form.serializeArray();
+    let data = {};
+    $(value).each(function (index, obj) {
+        data[obj.name] = obj.value;
+    });
+    return JSON.stringify(data);
+}
+
+async function submitForm(data) {
+    $.ajax({
+        type: "POST",
+        url: '/submit-request',
+        datatype: "application/json",
+        contentType: "application/json",
+        beforeSend: function (request) {
+            request.setRequestHeader("X-CSRF-TOKEN", $('meta[name="csrf-token"]').attr('content'));
+        },
+        data: data,
+        success: function (response) {
+            if (response.code == 'SUCCESS') {
+                setTimeout(function () {
+                    window.location =  response.redirect_url;
+                }, 2000);
+                return true;
+            }
+        }
+    });
+}
 
 
 

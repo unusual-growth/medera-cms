@@ -32,7 +32,11 @@
         </div>
         <div class="formcontainer active">
             <div>
-                @unusualForm(['formData' => config('forms.request-form')])
+                @php
+                    $form = config('forms.request-form');
+                    $form["id"] = uniqid();
+                @endphp
+                {{-- @unusualForm(['formData' => $form]) --}}
                 {{-- @include('unusual_form::layouts._form',[
                     'formData' => config('content.forms.hero-mobile'),
                 ]) --}}

@@ -121,7 +121,8 @@ return [
     ],
     [
       'type' => 'checkbox',
-      'input_name' => 'privacy_policy_request',
+      'input_name' => "privacy_policy",
+        'input_id' => uniqid(),
       'label' => 'util.form.labels.privacy_policy',
       // 'model' => '',
       'class' => 'unusual-checkbox',

@@ -26,6 +26,7 @@ class Inlinebanner extends TwillBlockComponent
     public function getForm(): Form
     {
         return Form::make([
+
             Select::make()
                 ->name('background')
                 ->label('Background')

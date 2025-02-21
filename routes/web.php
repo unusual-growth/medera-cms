@@ -61,7 +61,7 @@ Route::group([
 
     Route::get(LaravelLocalization::transRoute('routes.home'), [PageHomeDisplayController::class, 'show'])->name('home');
     // Route::get('/', [\App\Http\Controllers\PageHomeDisplayController::class, 'show'])->name('frontend.home');
-    // Route::get(LaravelLocalization::transRoute('routes.success'), [PageDisplayController::class, 'success'])->name('success');
+    Route::get(LaravelLocalization::transRoute('routes.success'), [PageDisplayController::class, 'success'])->name('success');
     Route::get(LaravelLocalization::transRoute('routes.articles'), [ArticleDisplayController::class, 'index'])->name('articles');
     Route::get(LaravelLocalization::transRoute('routes.blog_category'), [ArticleDisplayController::class, 'index'])->name('blog_category');
     Route::get(LaravelLocalization::transRoute('routes.article'), [ArticleDisplayController::class, 'show'])->name('article');
@@ -76,25 +76,20 @@ Route::group([
 });
 
 
-Route::get('/library/article', function () {
-    return view('article');
-});
-Route::get('/footer', function () {
-    return view('footer');
-});
-Route::get('/header', function () {
-    return view('header');
-});
+// Route::get('/library/article', function () {
+//     return view('article');
+// });
+// Route::get('/footer', function () {
+//     return view('footer');
+// });
+// Route::get('/header', function () {
+//     return view('header');
+// });
 
-Route::get('/success', function () {
-    return view('success');
-});
-Route::get('/404', function () {
-    return view('404');
-});
-
-
-Route::get('/responsive', function () {
-    return view('responsive');
-});
+// Route::get('/404', function () {
+//     return view('404');
+// });
+// Route::get('/responsive', function () {
+//     return view('responsive');
+// });
 

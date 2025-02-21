@@ -32,7 +32,7 @@ class PageDisplayController extends Controller
     }
     public function success() {
 
-        $contents = FacadesView::make(env('APP_TEMPLATE').'.page.success');
+        $contents = FacadesView::make('success');
         $response = Response::make($contents, 200);
         $response->header('X-Robots-Tag', 'noindex, nofollow');
         return $response;
