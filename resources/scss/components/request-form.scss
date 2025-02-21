@@ -79,7 +79,7 @@ form {
         p {
             color: $white;
             font-size: 24px;
-            line-height: 24px;
+            line-height: 1;
             margin-top: 2.25em;
             padding-right: 8em;
             @include media('<large') {

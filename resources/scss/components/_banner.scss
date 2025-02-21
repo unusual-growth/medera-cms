@@ -57,6 +57,7 @@
 .pills-banner {
     position: relative;
     padding: 32px 0;
+    overflow: hidden;
     @include media(">full-1440") {
         max-width: 1440px;
         margin: auto;
@@ -100,7 +101,7 @@
         align-items: center;
         justify-content: center;
         width: 15.125rem;
-        line-height: 28.2px;
+        // line-height: 28.2px;
         text-align: center;
         font-size: rem(24px);
         color: $primary;
@@ -135,7 +136,7 @@
             }
 
             h4 {
-                line-height: 28.2px;
+                // line-height: 28.2px;
                 max-width: 510px;
                 margin-bottom: 24px;
             }
@@ -198,7 +199,7 @@
                     span {
                         font-weight: 400;
                         font-size: 20px;
-                        line-height: 23.5px;
+                        line-height: 1.175;
                         letter-spacing: 0;
                     }
                     h2,

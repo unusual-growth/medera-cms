@@ -1,7 +1,9 @@
 
 
 .gut-health-section {
-    padding-bottom:200px !important;
+    @include media('>=large') {
+        padding-bottom:200px !important;
+    }
     .text-content {
         h2 {
             margin-bottom: 1.5rem;
@@ -22,12 +24,12 @@
             text-align: center;
             max-width:30.5rem;
             @include media('<large'){
-                margin: 0;
+                margin: auto;
                 padding:30px 20px;
             }
         }
         @include media('<large'){
-            left:unset;
+            position: initial;
             width: 100%;
         }
     }
@@ -62,7 +64,7 @@
         }
     }
 
- 
+
 
     @media (max-width: 768px) {
         .info-box {

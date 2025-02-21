@@ -12,7 +12,7 @@
     <section class="flex6 {{ $color_scheme == 'peach' ? 'preset-color-peach' : '' }}">
         <div class="container xlarge">
             <div class="row {{ $reverse_order_mobile ? 'mob-rev' : '' }} {{ $image_right ? 'reverse' : '' }}">
-                <div class="col-md-6 bg-coating">
+                <div class="col-xs-5 col-md-6 bg-coating">
                     @if($has_image)
                         <img src="{{ ImageService::getRawUrl($image->uuid) }}" alt="{{$image->alt}}" />
                     @else
@@ -21,7 +21,7 @@
                         </div>
                     @endif
                 </div>
-                <div class="col-md-6 ">
+                <div class="col-xs-7 col-md-6 ">
                     {!! $translatedInput('text') !!}
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-sm-6">
                     @if($has_image)
-                        <img src="{{ ImageService::getRawUrl($image->uuid) }}" width="{{ $image->width }}" height="{{ $image->height }}" alt="" />
+                        <img src="{{ ImageService::getRawUrl($image->uuid) }}" alt="" />
                     @else
                         <div style="width: 100%; height: 100%; color: white; display: flex; justify-content: center; align-items: center; background: #427277; font-size: 32px;">
                             Please add an image.
