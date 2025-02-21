@@ -81,11 +81,11 @@
             </li>
         @endisset
     @endforeach
-    @if (isset($location) && $location == 'header')
+    {{-- @if (isset($location) && $location == 'header') --}}
 
-        <li>
+        {{-- <li>
             <a href="{{ LaravelLocalization::getURLFromRouteNameTranslated(App::currentLocale(), 'routes.articles') }}"
                 class="secondary-cta active">{{ __('frontend.Library') }}</a>
-        </li>
-    @endif
+        </li> --}}
+    {{-- @endif --}}
 </ul>

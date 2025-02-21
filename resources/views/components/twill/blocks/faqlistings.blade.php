@@ -27,9 +27,7 @@
             @endforeach
         </div>
         @if($input('show_link'))
-            <p>
-                If you couldn't find the answer you were looking for, check out our <a href="/faq">Frequently Asked Questions</a> page.
-            </p>
+            <a class="primary-cta" href="/faq">Visit FAQ Page</a>
         @endif
     </div>
 </section>
