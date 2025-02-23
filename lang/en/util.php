@@ -34,5 +34,7 @@ return [
         ],
     ],
     "subscribed" => "subscribed",
-    'Page' => 'Page'
+    'Page' => 'Page',
+    'request-form-title' => 'Request Form',
+    'subscribed-user' => "This email is already subscribed.",
 ];

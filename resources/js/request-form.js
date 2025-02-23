@@ -11,11 +11,10 @@ $(document).ready(function () {
         let validator = window.forms[$form.attr('id')];
         e.preventDefault();
         if (validator.validate(validator.phones)) {
-            $form.find('.loading-container').addClass('show');
+            $form.find('button').addClass('loading').prop('disabled', true);
             //AJAX CALL FOR FORM SUBMIT ZOHO
             let data = prepareFormData($form);
-            submitForm(data);
-
+            submitForm(data, $form);
         }
     });
 
@@ -30,7 +29,7 @@ function prepareFormData($form) {
     return JSON.stringify(data);
 }
 
-async function submitForm(data) {
+async function submitForm(data, $form) {
     $.ajax({
         type: "POST",
         url: '/submit-request',
@@ -47,6 +46,17 @@ async function submitForm(data) {
                 }, 2000);
                 return true;
             }
+            console.log(response);
+            $form.find('.response-pop-up .message').html(response.message);
+            $form.find('.response-pop-up').addClass('show');
+            $form.find('button').removeClass('loading').prop('disabled', false);
+            setTimeout(function () {
+                $form.find('.response-pop-up').removeClass('show');
+                setTimeout(function () {
+                    $form.find('.response-pop-up .message').html('');
+                }, 250);
+            }, 2500);
+            return false;
         }
     });
 }

@@ -32,7 +32,7 @@ class FormController extends Controller
         $mailchimpDriver = MailChimpDriver::make(config('newsletter.driver_arguments'), $lists);
 
         if ($mailchimpDriver->isSubscribed($request->email)) {
-            return response()->json(['code' => 'ERROR', 'message' => 'Kullanıcı bilgileri daha önce kullanılmıştır.']);
+            return response()->json(['code' => 'ERROR', 'message' => __('util.subscribed-user')]);
         } else {
             $mailchimpDriver->subscribe(
                 $request->email,
