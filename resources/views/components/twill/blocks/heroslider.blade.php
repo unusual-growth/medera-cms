@@ -123,9 +123,8 @@
 
 @push('custom-last-script')
     <script>
-        // window.forms["{{ $form_id }}"]
-        function initializeSwiper{{ $fid }}(selector) {
-            new _swiper(selector, {
+        document.addEventListener('DOMContentLoaded', function() {
+            window.swipers["{{ $fid }}"] = new _swiper(selector, {
                     modules: [
                         _swiperController,
                         _swiperPagination,
@@ -176,12 +175,12 @@
                         renderCustom: renderBulletsWithFraction,
                     },
                 }
-
+                window.swipers["{{$fid}}"].autoplay.stop();
             );
-        }
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeSwiper{{ $fid }}('#{{ $id }}');
         });
+        window.addEventListener('load', function () {
+            window.swipers["{{$fid}}"].autoplay.start();
+        })
     </script>
 @endpush
 @if($inEditor)

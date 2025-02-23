@@ -27,7 +27,7 @@ window._swiperKeyboard = Keyboard;
 window._swiperCreativeEffect= EffectCreative;
 window._swiperEffectFade= EffectFade;
 window._swiperFreeMode = FreeMode;
-window.swipers = {};
+window.swipers = [];
 window.forms = [];
 $(document).ready(function(){
     $('.faq-listing .item h4').on('click',function(){

@@ -442,7 +442,6 @@ form {
         border-radius: 8px;
         background-color: $white;
         color: $detailcolor;
-        -webkit-box-shadow: 0 0 0px 1000px $white inset !important;
         &:focus,
         &:focus-within {
             outline: 1px solid $primary;

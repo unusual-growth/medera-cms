@@ -23,7 +23,7 @@
         <div class="flex-column justify-content-center align-items-center">
             {!! $block->translatedInput('content') !!}
             @if($block->input('has_link'))
-                <a href="{{$block->translatedInput('link_url')}}" class="button">{{$block->translatedInput('link_text')}}</a>
+                <a href="{{$block->translatedInput('link_url')}}" class="primary-cta">{{$block->translatedInput('link_text')}}</a>
             @endif
         </div>
     </div>
