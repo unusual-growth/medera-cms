@@ -167,7 +167,9 @@ a {
     border: 1px solid $forest_lighten_1;
     border-radius: 20px;
     padding: 14px 22px;
-    text-decoration: none;
+    text-decoration: none !important;
+    line-height: 1;
+    display: block;
     transition: all 0.5s;
     &:hover {
         color: $white;

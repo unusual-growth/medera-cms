@@ -122,6 +122,17 @@ section.hero-slider-sect {
     @include media('<large') {
         display: flex;
         min-height: min(80vh, 600px);
+        padding: 48px 0;
+    }
+    @include media('<tablet') {
+        .container {
+            margin: 0;
+            align-self: stretch;
+           > .row {
+                align-items: center;
+                height: 100%;
+            }
+        }
     }
     @include media('<mobile') {
         min-height: min(80vh, 500px);
@@ -246,15 +257,22 @@ section.hero-slider-sect {
     position: absolute;
     color: $white;
     align-items: center;
-    bottom: 5%;
-    left: 50%;
+    bottom: 0%;
+    left: 0%;
 
+    // @include media('<tablet') {
+    //     bottom: unset;
+    //     top: calc(100% + 32px);
+    //     @include media('height<720px') {
+    //         top: calc(100%);
+    //     }
+    // }
+    @include media('<cont-xlarge') {
+        left: 2.5%;
+    }
     @include media('<tablet') {
-        bottom: unset;
-        top: calc(100% + 32px);
-        @include media('height<720px') {
-            top: calc(100%);
-        }
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     > .row {
@@ -318,14 +336,6 @@ section.hero-slider-sect {
                 translate: -50% -50%;
                 background-color: $white;
                 z-index: 1;
-            }
-            @include media('<tablet') {
-                width: 28px;
-                height: 28px;
-            }
-            @include media('<=mobile') {
-                width: 20px;
-                height: 20px;
             }
         }
     }

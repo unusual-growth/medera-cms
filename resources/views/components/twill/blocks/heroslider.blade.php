@@ -110,8 +110,8 @@
             ]) --}}
             </div>
         </div>
+        <div class="hero-pagination swiper-pagination  swiper-pagination-custom"></div>
     </div>
-    <div class="hero-pagination swiper-pagination  swiper-pagination-custom"></div>
     <div class="autoplay-progress">
         <svg viewBox="0 0 48 48">
             <circle cx="24" cy="24" r="20"></circle>
@@ -124,6 +124,7 @@
 @push('custom-last-script')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            let selector =  "#{{$id}}";
             window.swipers["{{ $fid }}"] = new _swiper(selector, {
                     modules: [
                         _swiperController,
@@ -175,8 +176,8 @@
                         renderCustom: renderBulletsWithFraction,
                     },
                 }
-                window.swipers["{{$fid}}"].autoplay.stop();
             );
+            window.swipers["{{$fid}}"].autoplay.stop();
         });
         window.addEventListener('load', function () {
             window.swipers["{{$fid}}"].autoplay.start();
