@@ -1,8 +1,7 @@
-{{-- //TODO: HTML CSS missing --}}
 @php
     $id = uniqid('slider-');
     $fid = uniqid();
-    $form_id = uniqid();
+    $form_id = uniqid('form-');
     $picture_hierarchy = [
         [
             'key' => 'mobile_image',
@@ -20,9 +19,8 @@
             'media' => '(min-width: 1024px)',
         ],
     ];
-
-    if (!function_exists('setUpPicture')) {
-        function setUpPicture($block, $arr, $setMediaNull = false, $i = 0)
+    if (!function_exists('setUpPictureForSlide')) {
+        function setUpPictureForSlide($slide, $arr, $setMediaNull = false, $i = 0)
         {
             if ($i > array_key_last($arr)) {
                 return $arr;
@@ -30,38 +28,48 @@
             if ($setMediaNull) {
                 $arr[$i]['media'] = null;
             }
-            if (!$block->hasImage($arr[$i]['key'])) {
+
+            if (!$slide->hasImage($arr[$i]['key'])) {
                 unset($arr[$i]);
-                return setUpPicture($block, $arr, true, $i + 1);
+                return setUpPictureForSlide($slide, $arr, true, $i + 1);
             }
-            $arr[$i]['src'] = $block->image($arr[$i]['key']);
-            return setUpPicture($block, $arr, false, $i + 1);
+            $arr[$i]['src'] = ImageService::getRawUrl($slide->imageObject($arr[$i]['key'])->uuid);
+            // dd($slide->imageObject($arr[$i]['key']));
+            return setUpPictureForSlide($slide, $arr, false, $i + 1);
         }
     }
+    $all_slide_images = collect([]);
+    foreach($repeater('slides') as $key => $slide){
+        $all_slide_images[$key] = setUpPictureForSlide($slide->renderData->block, $picture_hierarchy);
+    }
+    // dd($all_slide_images);
 @endphp
+@push('preload')
+    @php
+        $slide = $all_slide_images->first();
+    @endphp
+    @foreach ($slide as $media )
+        <link rel="preload" href="{{ $media['src'] }}" as="image" media="{{ $media['media'] }}">
+    @endforeach
+@endpush
+
 <section @class(['hero-slider-sect', 'formed'])>
     <div class="slide-backgrounds">
-        @foreach ($repeater('slides') as $key => $repeaterItem)
-            @php
-                $_renderData = $repeaterItem->renderData;
-                $slide_block = $_renderData->block;
-                $_picture_hierarchy = setUpPicture($slide_block, $picture_hierarchy);
-            @endphp
+        @foreach ($all_slide_images as $slide)
             <picture @class([
                 'active' => $loop->first
             ]) data-id="{{$loop->index}}" >
-                @for ($i = array_key_last($_picture_hierarchy); $i >= 0; $i--)
+                @for ($i = array_key_last($slide); $i >= 0; $i--)
                     @php
-                        $item = $_picture_hierarchy[$i] ?? null;
+                        $item = $slide[$i] ?? null;
                         if (!$item) {
                             break;
                         }
                     @endphp
-
                     @if ($item['media'])
                         <source srcset="{{ $item['src'] }}" media="{{ $item['media'] }}">
                     @else
-                        <img src="{{ $item['src'] }}" alt="{{ $slide_block->imagesAsArrays($item['key'])[0]['alt'] }}">
+                        <img src="{{ $item['src'] }}">
                     @endif
                 @endfor
             </picture>
