@@ -18,7 +18,15 @@ class Text extends TwillBlockComponent
     public function getForm(): Form
     {
         return Form::make([
-            Wysiwyg::make()->name('text')
+            Wysiwyg::make()->name('text')->allowSource()
+            ->toolbarOptions([
+                ['header' => [1,2,3,4,5,6, true]],
+                'bold',
+                'italic',
+                'underline',
+                'link',
+                'clean'
+            ])
         ]);
     }
 }
