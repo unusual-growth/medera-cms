@@ -207,7 +207,9 @@ img {
     z-index: 4 !important;
     width: 100%;
 }
-
+.plain-text * {
+    color: $detailcolor;
+}
 @include constructContainer($containerWidths);
 @include constructResponsiveColumns($breakpoints, $breakpoints-short);
 @include createPropertyClasses($properties);
