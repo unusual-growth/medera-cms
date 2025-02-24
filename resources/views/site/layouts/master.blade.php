@@ -2,7 +2,7 @@
 <html lang="{{LaravelLocalization::getCurrentLocale()}}">
 @include('site.meta.head')
 <body>
-    {{-- {!! TwillAppSettings::get('custom-scripts.gtm.bodyscript') !!} --}}
+    {!! TwillAppSettings::get('custom-scripts.gtm.bodyscript') !!}
     @include('site.layouts.header')
     <main>
         @yield('content')
