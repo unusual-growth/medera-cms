@@ -63,7 +63,7 @@
                 </div>
                 <div class="swiper-pagination-container">
                     <div class="swiper-pagination-custom"></div>
-                    <div class="swiper-button-next custom-next-button">→</div>
+                    <div class="swiper-button-next custom-next-button"><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m8 1 4 4m0 0L8 9m4-4H1" stroke="#D0A092" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                 </div>
 
             </div>

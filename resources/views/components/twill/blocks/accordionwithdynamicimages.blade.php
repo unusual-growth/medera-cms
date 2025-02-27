@@ -4,10 +4,9 @@
 @endphp
 <section class="accordion-slider-section" data-swiper-id="{{ $fid }}">
     <div class="container xlarge">
-        <div class="row gap-30">
+        <div class="row gap-30 background">
             <div class="col-md-7">
                 <div id="{{ $id }}" class="swiper accordion-image-slider height-100 border-radius-oval">
-
                     <div class="swiper-wrapper">
                         @foreach ($repeater('items') as $key => $item)
                             @php
@@ -22,12 +21,6 @@
                         @endforeach
                     </div>
                 </div>
-                    {{-- <picture>
-                    <source srcset="{{ asset('/dummy-img/accordion1.png') }}" media="(min-width: 1024px)">
-                    <source srcset="{{ asset('/dummy-img/accordion1.png') }}" media="(min-width: 768px)">
-                    </picture> --}}
-
-                    {{-- <img width="{{$img["width"]}}" height="{{$img["height"]}}" src="{{ $img["src"] }}" alt="{{$img["alt"]}}" /> --}}
             </div>
             <div class="col-md-5 ">
                 @foreach ($repeater('items') as $key => $item)

@@ -93,6 +93,7 @@ section.hero-slider-sect {
     margin-bottom: 0;
     background-color: $primary;
     overflow: hidden;
+    padding: rem(52px) 0;
     .slide-backgrounds {
         position: absolute;
         top: 0;
@@ -168,13 +169,7 @@ section.hero-slider-sect {
         background-color: $white;
         box-shadow: 4px 4px 49px 0px rgba(0, 0, 0, 0.33);
         border-radius: 24px;
-        max-width: 475px;
-        // h2{
-        //   color: $primary;
-        //   font-size: 24px;
-        //   font-weight: 500;
-        //   margin: 0 0 24px 0;
-        // }
+        max-width: 384px;
         button[type="submit"]{
           border: 1px solid $primary;
         }
@@ -223,42 +218,43 @@ section.hero-slider-sect {
         }
       }
 }
-.autoplay-progress {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-    z-index: 10;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $white;
-}
+// .autoplay-progress {
+//     position: absolute;
+//     right: 16px;
+//     bottom: 16px;
+//     z-index: 10;
+//     width: 48px;
+//     height: 48px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     color: $white;
+// }
 
-  .autoplay-progress svg {
-    --progress: 0;
-    position: absolute;
-    left: 0;
-    top: 0px;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    stroke-width: 4px;
-    // stroke: var(--swiper-theme-color);
-    stroke:$white;
-    fill: none;
-    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-    stroke-dasharray: 125.6;
-    transform: rotate(-90deg);
-  }
+//   .autoplay-progress svg {
+//     --progress: 0;
+//     position: absolute;
+//     left: 0;
+//     top: 0px;
+//     z-index: 10;
+//     width: 100%;
+//     height: 100%;
+//     stroke-width: 4px;
+//     // stroke: var(--swiper-theme-color);
+//     stroke:$white;
+//     fill: none;
+//     stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+//     stroke-dasharray: 125.6;
+//     transform: rotate(-90deg);
+//   }
 
 .hero-pagination {
     position: absolute;
     color: $white;
     align-items: center;
-    bottom: 0%;
-    left: 0%;
+    bottom: -7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     // @include media('<tablet') {
     //     bottom: unset;
@@ -267,13 +263,6 @@ section.hero-slider-sect {
     //         top: calc(100%);
     //     }
     // }
-    @include media('<cont-xlarge') {
-        left: 2.5%;
-    }
-    @include media('<tablet') {
-        left: 50%;
-        transform: translateX(-50%);
-    }
 
     > .row {
         gap: 8px;

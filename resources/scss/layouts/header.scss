@@ -26,6 +26,7 @@ header {
       z-index: 10;
     }
     .menu {
+      align-self: center;
       @include media("<large") {
         padding: 20px 0;
       }
@@ -42,7 +43,7 @@ header {
       display: flex;
       padding: 0;
       margin: 0;
-      column-gap: 32px;
+      column-gap: 62px;
       height: 10vh;
       align-items: center;
 
@@ -71,7 +72,7 @@ header {
         }
         &:last-child {
           a {
-            border-radius: 20px;
+            border-radius: 24px;
             background-color: $primary;
             color: $white;
             padding: 16px;
@@ -147,7 +148,7 @@ header {
       display: none;
     }
 
-    @include media("<tablet") {
+    @include media("<large") {
       padding-top: 92px;
     }
 

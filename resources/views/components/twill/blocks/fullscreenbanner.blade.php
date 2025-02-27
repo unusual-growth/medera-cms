@@ -37,7 +37,7 @@
 
 @endphp
 <section>
-    <div class="container full-1440 onlyimage">
+    <div class="container onlyimage">
 
       <picture>
         @for($i = array_key_last($picture_hierarchy); $i >= 0; $i--)

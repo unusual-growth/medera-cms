@@ -17,7 +17,7 @@
     "
     >
     <div class="container xlarge">
-        <div class="flex-column justify-content-center align-items-center">
+        <div class="flex-column justify-content-center align-items-center elevation">
             <div class="window">
                 {!! $block->translatedInput('content') !!}
                 <a href="{{$block->translatedInput('link_url')}}" class="primary-cta">{{$block->translatedInput('link_text')}}</a>

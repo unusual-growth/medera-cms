@@ -1,6 +1,9 @@
 .accordion-slider-section {
-    border-radius: 20px;
-    background: linear-gradient(270deg, $peach_lighten_3 0%, $forest_lighten_3 100%);
+    .background{
+        background: linear-gradient(270deg, $peach_lighten_3 0%, $forest_lighten_3 100%);
+        border-radius: 20px;
+        padding:32px;
+    }
     picture {
         height: 100%;
         overflow: hidden;

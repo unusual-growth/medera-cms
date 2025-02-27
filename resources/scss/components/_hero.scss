@@ -324,17 +324,30 @@
 
 .hero {
     padding:0 !important;
-    @include media('<tablet') {
-        .container {
-            padding: 0;
+    display: flex;
+    justify-content: end;
+    .container{
+        max-width: 83rem;
+        margin: unset;
+        @include media('<x-large'){
+            padding: 0 0 0 2.5%;
+        }
+        @include media('<tablet'){
+            padding:0;
         }
     }
+
+    @include media('>full-1440'){
+        justify-content: center;
+    }
+    // @include media('<tablet') {
+    //     .container {
+    //         padding:0;
+    //     }
+    // }
     .content{
-        @include media('<large') {
-            padding: 0 0 0 24px;
-        }
         @include media('<tablet') {
-            padding: 53px 24px 32px ;
+            padding: 24px;
         }
     }
     @include media('>large') {

@@ -120,12 +120,12 @@
         </div>
         <div class="hero-pagination swiper-pagination  swiper-pagination-custom"></div>
     </div>
-    <div class="autoplay-progress">
+    {{-- <div class="autoplay-progress">
         <svg viewBox="0 0 48 48">
             <circle cx="24" cy="24" r="20"></circle>
         </svg>
         <span></span>
-    </div>
+    </div> --}}
 </section>
 
 

@@ -38,7 +38,7 @@ form {
 
     .custom-control.custom-switch {
         display: grid !important;
-        gap: 16px;
+        column-gap: 16px;
         grid-template-columns: 12px 1fr;
         input {
             grid-column: 1 / 2;
@@ -126,6 +126,7 @@ form {
     }
 }
 .request-section {
+    padding:1rem 0;
     .bg-col {
         position: relative;
         padding: 32px;

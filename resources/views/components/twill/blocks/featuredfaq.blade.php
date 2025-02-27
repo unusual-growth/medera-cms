@@ -32,11 +32,14 @@
                         <a href="#" target="_blank">{{ $type['link'] }}</a>
                     </div>
                 @endforeach --}}
-                @foreach ( $block->getRelated('faqs') as $item )
+                @foreach ($block->getRelated('faqs') as $item)
                     <div class="card">
-                        <h3> {{ $item->title }} </h3>
-                        <p> {{ $item->excerpt }} </p>
-                        <a class="primary-cta" href="{{ $translatedInput('link') }}" target="_blank">{{ __('util.read-more') }}</a>
+                        <div>
+                            <h3> {{ $item->title }} </h3>
+                            <p> {{ $item->excerpt }} </p>
+                        </div>
+                        <a class="primary-cta" href="{{ $translatedInput('link') }}"
+                            target="_blank">{{ __('util.read-more') }}</a>
                     </div>
                 @endforeach
             </div>

@@ -15,6 +15,12 @@
         border: 1px solid $forest_lighten_1;
         border-radius: 24px;
         padding: 32px;
+        div{
+            display: flex;
+            flex-flow: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
         h3 {
             color: $primary;
             font-weight: 400;

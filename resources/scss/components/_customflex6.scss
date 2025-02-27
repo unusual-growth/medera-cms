@@ -7,7 +7,19 @@
             padding: 0;
         }
     }
-
+    .reverse{
+        .journey-image {
+            picture{
+                @include media(">=tablet") {
+                    transform-origin: right center;
+                    transform: scale(1.1);
+                }
+                @include media("<tablet") {
+                    padding: 0px 24px;
+                }
+            }
+    }
+    }
     .journey-image {
         position: relative;
         picture {
@@ -17,22 +29,6 @@
                 }
                 @include media("<tablet") {
                     padding: 0px 24px;
-                }
-                &.transform-left-center {
-                    transform-origin: left center;
-                    @include media("<tablet") {
-                        transform: scale(1.1);
-                        transform-origin: top center;
-                        margin:auto;
-                    }
-                }
-                &.transform-right-center {
-                    transform-origin: right center;
-                    @include media("<tablet") {
-                        transform: scale(1.1);
-                        transform-origin: bottom center;
-                        margin:auto;
-                    }
                 }
         }
     }

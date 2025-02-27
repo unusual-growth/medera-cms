@@ -37,7 +37,7 @@
 @endphp
 <section class="hero {{ $block->input('background') }}" >
     <div class="container xlarge">
-        <div class="row gap-30 justify-space-between">
+        <div class="row gap-30 justify-space-between subpage">
             <div class="col-sm-6 flex-center">
                 <div class="content">
                     {!! $block->translatedInput('content') !!}

@@ -28,10 +28,16 @@
         font-weight: 400;
         letter-spacing: inherit;
         font-size: inherit;
+        margin:0;
+    }
+    h4{
+        font-size: 24px;
+    }
+    p{
+        font-size: 24px;
     }
     a {
         margin: 24px auto 0;
-        font-size: inherit;
     }
     // !!TODO mobile
     .container {
@@ -53,9 +59,12 @@
     }
     &.glass {
         font-size: 20px;
+        .elevation{
+            max-height:200px;
+        }
         .window {
             min-width: 50%;
-            padding: 32px 24px;
+            padding: 20px;
             border-radius: 20px;
             border: 1px solid white;
             backdrop-filter: blur(7px);

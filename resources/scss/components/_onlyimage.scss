@@ -2,8 +2,8 @@
     img{
         margin:auto;
         width:100%;
-        @include media('>full-1440'){
-            max-width:90rem;
+        @include media('>=1920px'){
+            max-width:120rem;
             max-height:752px;
         }
     }

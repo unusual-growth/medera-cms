@@ -14,6 +14,7 @@
                     <div class="item" data-id="{{ $loop->index }}">
                         <h4>
                             {{ $item->title }}
+                            <svg width="15" height="8" viewBox="0 0 15 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m1.751 1 5.871 6 5.871-6" stroke="#434A57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </h4>
                         <div>
                             <div>
