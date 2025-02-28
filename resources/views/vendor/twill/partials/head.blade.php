@@ -42,6 +42,12 @@
         min-height:100vh;
     }
 
+
+    @media screen and (min-width: 1540px) {
+        .col--primary{
+            flex:1;
+        }}
+
     .twill-layout {
         display: flex;
         min-height: 100vh;
