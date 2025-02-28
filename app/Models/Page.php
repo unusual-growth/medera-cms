@@ -13,7 +13,7 @@ use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use App\Models\Behaviours\HasLocalizedRoute;
 use A17\Twill\Models\Behaviors\HasTranslation;
-use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
+use App\Models\Behaviours\HasMetadata;
 use App\Models\Behaviours\HasTemplate;
 
 class Page extends Model implements Sortable

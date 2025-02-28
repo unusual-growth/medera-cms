@@ -13,13 +13,13 @@ use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Behaviors\HasTranslation;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
+use App\Models\Behaviours\HasMetadata;
 use Mcamara\LaravelLocalization\Interfaces\LocalizedUrlRoutable;
 
 class Article extends Model implements LocalizedUrlRoutable
 {
     use HasBlocks, HasTranslation, HasSlug, HasMedias, HasFiles, HasRevisions, HasPosition, HasFactory, HasRelated, HasMetadata;
-    public \Illuminate\Contracts\Foundation\Application|array|\Illuminate\Config\Repository|\Illuminate\Foundation\Application $metadataFallbacks = [];           
+    public \Illuminate\Contracts\Foundation\Application|array|\Illuminate\Config\Repository|\Illuminate\Foundation\Application $metadataFallbacks = [];
 
     protected $fillable = [
         'published',
@@ -34,16 +34,16 @@ class Article extends Model implements LocalizedUrlRoutable
         'publish_start_date' => 'datetime',
         'publish_end_date' => 'datetime'
     ];
-    
+
     public $translatedAttributes = [
         'title',
         'description',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
     public $mediasParams = [
         'library-image' => [
             'default' => [
@@ -69,7 +69,7 @@ class Article extends Model implements LocalizedUrlRoutable
 
         return $article;
     }
- 
+
     // #region routekey
     public function getLocalizedRouteKey($locale)
     {
