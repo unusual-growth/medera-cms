@@ -42,6 +42,19 @@
         min-height:100vh;
     }
 
+
+
+    @media screen and (min-width: 600px) {
+        .input__note[data-v-0d108f70] {
+            position:unset;
+            display: flex;
+        }}
+
+    @media screen and (min-width: 1540px) {
+        .col--primary{
+            flex:1;
+        }}
+
     .twill-layout {
         display: flex;
         min-height: 100vh;
