@@ -14,7 +14,7 @@ use A17\Twill\Models\Model;
 use App\Models\Behaviours\HasLocalizedRoute;
 use App\Models\Behaviours\HasTemplate;
 use App\Repositories\HowWeWorkRepository;
-use CwsDigital\TwillMetadata\Models\Behaviours\HasMetadata;
+use App\Models\Behaviours\HasMetadata;
 
 class HowWeWork extends Model
 {

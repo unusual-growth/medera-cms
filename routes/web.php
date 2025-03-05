@@ -46,7 +46,9 @@ Route::get('/shipping', function () {
 //     Route::post('/submit-newsletter', 'newsletter')->name('submit-newsletter');
 
 // });
-// Route::get('sitemap.xml', [SitemapController::class, 'sitemap']);
+
+Route::get('sitemap.xml', [SitemapController::class, 'sitemap']);
+
 Route::controller(FormController::class)->group(function () {
     Route::post('/submit-request', 'submitRequestForm')->name('submit-request');
     Route::post('/submit-newsletter', 'newsletter')->name('submit-newsletter');
