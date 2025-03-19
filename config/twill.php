@@ -145,7 +145,7 @@ return [
             ],
         ],
     ],
-    
+
     'media_library' => [
         'disk' => 'twill_media_library',
         'endpoint_type' => env('MEDIA_LIBRARY_ENDPOINT_TYPE', 's3'),
@@ -160,13 +160,17 @@ return [
         'translated_form_fields' => false,
 
     ],
+    'file_library' => [
+        'filesize_limit' => env('FILE_LIBRARY_FILESIZE_LIMIT', 50),
+        'allowed_extensions' => ['pdf', 'mov', 'mp4', 'webm', 'xml', 'xlsx'],
+    ],
     'available_user_locales'    => [
         'en'
     ],
     'dashboard' => [
         'modules' => [
-          
-          
+
+
         ],
     ],
 ];
