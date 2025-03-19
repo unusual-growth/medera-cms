@@ -330,4 +330,7 @@
     .login__copyright {
         display: none;
     }
+    .ham__line {
+        background: #fff !important;
+    }
 </style>
