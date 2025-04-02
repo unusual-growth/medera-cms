@@ -18,9 +18,7 @@
                         </h4>
                         <div>
                             <div>
-                                <p>
-                                    {{ $item->answer }}
-                                </p>
+                                    {!! $item->answer !!}
                             </div>
                         </div>
                     </div>
