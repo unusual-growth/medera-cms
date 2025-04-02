@@ -8,6 +8,7 @@ use A17\Twill\Services\Listings\TableColumns;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
+use A17\Twill\Services\Forms\Fields\Wysiwyg;
 
 class FaqController extends BaseModuleController
 {
@@ -28,7 +29,14 @@ class FaqController extends BaseModuleController
         return new Form([
             Input::make()->name('title')->label('Question')->translatable(),
             Input::make()->name('excerpt')->label('Excerpt')->note('Short summary used in featured places.')->translatable(),
-            Input::make()->name('answer')->label('Answer')->translatable()
+            Wysiwyg::make()->name('answer')->label('Answer')->translatable()->toolbarOptions([
+                'bold',
+                'italic',
+                'underline',
+                'link',
+                'unlink',
+                'bullet'
+            ])
         ]);
     }
 
