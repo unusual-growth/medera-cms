@@ -18,3 +18,11 @@
     hint="Meta description of the Library page"
     :translated="true"
 />
+
+<x-twill::input
+    type="textarea"
+    name="hero_description"
+    label="Hero Description"
+    placeholder="Hero Description"
+    :translated="true"
+/>

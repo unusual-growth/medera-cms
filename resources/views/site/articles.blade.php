@@ -1,9 +1,9 @@
 @php
     $category_id = $category ? $category->id : null;
     $meta = null;
+    $setting_block = TwillAppSettings::getGroupDataForSectionAndName('static-pages', 'library');
     if(!$category){
-        $setting_block = TwillAppSettings::getGroupDataForSectionAndName('static-pages', 'library');
-        $meta = arrayToObject([
+                $meta = arrayToObject([
             'title' => $setting_block->translatedInput('title'),
             'description' => $setting_block->translatedInput('description'),
         ]);
@@ -17,42 +17,44 @@
                 {{ __('frontend.Library')   }}
             </h1>
             <p>
-                {{ __('frontend.library-desc') }}
+                {{ $setting_block->translatedInput('hero_description') }}
             </p>
         </div>
     </div>
 
     <div class="container xlarge">
         <div class="library-tabbed-list">
-            <a href="{{ route('articles') }}" class="primary-cta __tabbed {{ !$category_id ? 'active' : '' }}" data-tab-id="0">
+            <a href="{{ route('articles') }}" class="primary-cta __tabbed {{ !$category_id ? 'active' : '' }}"
+               data-tab-id="0">
                 {{ __('frontend.All') }}
             </a>
             @foreach($categories as $key => $c)
-                <a href="{{ route('blog_category', $c->slug) }}" class="primary-cta __tabbed {{ $c->id === $category_id ? 'active' : '' }}" data-tab-id="{{ $key }}">
+                <a href="{{ route('blog_category', $c->slug) }}"
+                   class="primary-cta __tabbed {{ $c->id === $category_id ? 'active' : '' }}" data-tab-id="{{ $key }}">
                     {{ $c->title }}
                 </a>
             @endforeach
         </div>
         <div class="library-search-bar">
             <form action="{{ route('articles') }}" method="GET" class="search-form">
-                <input 
-                    type="text" 
-                    name="search" 
+                <input
+                    type="text"
+                    name="search"
                     value="{{ $searchQuery ?? '' }}"
                     placeholder="{{ __('Search articles...') }}"
                 >
                 <button type="submit">{{ __('Search') }}</button>
             </form>
             @if(isset($searchQuery))
-            <div class="search-results">
-                <h2>{{ __('Search results for:') }} "{{ $searchQuery }}"</h2>
-                <p>{{ $list->total() }} {{ __('results found') }}</p>
-            </div>
-        @endif
+                <div class="search-results">
+                    <h2>{{ __('Search results for:') }} "{{ $searchQuery }}"</h2>
+                    <p>{{ $list->total() }} {{ __('results found') }}</p>
+                </div>
+            @endif
         </div>
     </div>
 
-  
+
 
 
 

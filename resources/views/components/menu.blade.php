@@ -3,6 +3,7 @@
     if (isset($type) && $type == 'mobile') {
         // dd($links);
     }
+
 @endphp
 <ul>
     @foreach ($links as $link)
@@ -11,7 +12,9 @@
             if ($page) {
                 $linkSlug = $page->slug;
                 $isActive = isset($item) && $page instanceof $item && $page->id == $item->id ? 'active' : '';
-            } else {
+            } else if ($link->custom_url != null) {
+                $linkSlug = $link->custom_url;
+                $isActive = $linkSlug == request()->path() || $linkSlug == '/'.request()->path() ? 'active' : '';
             }
         @endphp
         @php
@@ -40,7 +43,7 @@
                                                 : '';
                                     @endphp
                                     <a href="{{ $subitem->getRelated('page')->first()->getLocalizedUriWithRoute(LaravelLocalization::getCurrentLocale()) }}"
-                                        class="{{ $isActive }}">{{ $subitem->title }}</a>
+                                       class="{{ $isActive }}">{{ $subitem->title }}</a>
                                 @endforeach
                             </div>
                         </div>
@@ -51,9 +54,9 @@
                     <div class="flex-center justify-space-between width-95">
                         <span>{{ $link->title }}</span>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                             xmlns="http://www.w3.org/2000/svg">
                             <path d="m17.613 15-5.87-6-5.872 6" stroke="#427277" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
+                                  stroke-linejoin="round" />
                         </svg>
                     </div>
                     <ul class="submenu">
@@ -64,7 +67,7 @@
                             @endphp
                             <li>
                                 <a href="{{ $subitem->getRelated('page')->first()->getLocalizedUriWithRoute(LaravelLocalization::getCurrentLocale()) }}"
-                                    class="{{ $isActive }}">{{ $subitem->title }}</a>
+                                   class="{{ $isActive }}">{{ $subitem->title }}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -74,7 +77,11 @@
             <li>
                 @if ($page)
                     <a href="{{ $page->getLocalizedUriWithRoute(LaravelLocalization::getCurrentLocale()) }}"
-                        class="{{ $isActive }}">{{ $link->title }}</a>
+                       class="{{ $isActive }}">{{ $link->title }}</a>
+                @elseif($link->custom_url != null)
+                    <a href="{{$linkSlug}}" class="{{ $isActive }}">
+                        {{ $link->title  }}
+                    </a>
                 @else
                     <span>{{ $link->title }}</span>
                 @endif
@@ -83,9 +90,9 @@
     @endforeach
     {{-- @if (isset($location) && $location == 'header') --}}
 
-        {{-- <li>
-            <a href="{{ LaravelLocalization::getURLFromRouteNameTranslated(App::currentLocale(), 'routes.articles') }}"
-                class="secondary-cta active">{{ __('frontend.Library') }}</a>
-        </li> --}}
+    {{-- <li>
+        <a href="{{ LaravelLocalization::getURLFromRouteNameTranslated(App::currentLocale(), 'routes.articles') }}"
+            class="secondary-cta active">{{ __('frontend.Library') }}</a>
+    </li> --}}
     {{-- @endif --}}
 </ul>

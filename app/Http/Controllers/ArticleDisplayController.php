@@ -9,14 +9,42 @@ use App\Repositories\BlogCategoryRepository;
 use CwsDigital\TwillMetadata\Traits\SetsMetadata;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\View as FacadesView;
 
 class ArticleDisplayController extends Controller
 {
     use SetsMetadata;
+
     protected $perPage = 9;
+
+    public function index(ArticleRepository $articleRepository, BlogCategoryRepository $categoryRepository, ?BlogCategory $category = null): View
+    {
+        $categories = $categoryRepository->published()->whereNull('parent_id')->get();
+        $searchQuery = $this->getSearchQuery();
+
+        if ($category) {
+            $redirectResponse = $this->handleCategory($category);
+            if ($redirectResponse) {
+                return $redirectResponse;
+            }
+
+            $articles = $this->getCategoryArticles($category, $searchQuery);
+            $this->setMetadata($category);
+            FacadesView::share('item', $category);
+        } else {
+            $articles = $this->getAllArticles($articleRepository, $searchQuery);
+        }
+        
+        return view('site.articles', [
+            'categories' => $categories,
+            'category' => $category,
+            'list' => $articles,
+            'canonical' => Request::url(),
+            'pageNumber' => Request::query('page', 0),
+            'searchQuery' => $searchQuery
+        ]);
+    }
 
     protected function getSearchQuery()
     {
@@ -61,34 +89,6 @@ class ArticleDisplayController extends Controller
             })
             ->orderBy('publish_start_date', 'desc')
             ->paginate($this->perPage);
-    }
-
-    public function index(ArticleRepository $articleRepository, BlogCategoryRepository $categoryRepository, ?BlogCategory $category = null): View
-    {
-        $categories = $categoryRepository->published()->whereNull('parent_id')->get();
-        $searchQuery = $this->getSearchQuery();
-
-        if ($category) {
-            $redirectResponse = $this->handleCategory($category);
-            if ($redirectResponse) {
-                return $redirectResponse;
-            }
-
-            $articles = $this->getCategoryArticles($category, $searchQuery);
-            $this->setMetadata($category);
-            FacadesView::share('item', $category);
-        } else {
-            $articles = $this->getAllArticles($articleRepository, $searchQuery);
-        }
-
-        return view('site.articles', [
-            'categories' => $categories,
-            'category' => $category,
-            'list' => $articles,
-            'canonical' => Request::url(),
-            'pageNumber' => Request::query('page', 0),
-            'searchQuery' => $searchQuery
-        ]);
     }
 
     public function show(Article $article): View|RedirectResponse  // Updated return type

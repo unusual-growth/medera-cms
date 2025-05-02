@@ -1,19 +1,22 @@
-{{-- @php
+@php
     $setting_block = TwillAppSettings::getGroupDataForSectionAndName('static-pages', 'library');
     $meta = arrayToObject([
         'title' => $setting_block->translatedInput('title'),
         'description' => $setting_block->translatedInput('description'),
     ]);
-@endphp --}}
+    dd(TwillAppSettings::getGroupDataForSectionAndName('static-ages', 'library'))
+
+@endphp
 @extends('site.layouts.master')
 @section('content')
     <div class="container">
         <div class="library-content">
             <h1>
-                Library
+                {{ TwillAppSettings::getGroupDataForSectionAndName('static-pages', 'library')->translatedInput('hero_title') }}
             </h1>
-            <p>Lorem ipsum Medera Nutrition, established in the Netherlands in 2024, specializes in the production of
-                high-quality butyrate supplements.....</p>
+            <p>
+                {{ TwillAppSettings::getGroupDataForSectionAndName('static-pages', 'library')->translatedInput('hero_description') }}
+            </p>
         </div>
     </div>
 
@@ -41,7 +44,7 @@
         <div class="library-tabbed-list">
             @foreach ($categories as $index => $category)
                 <a href="#" class=" primary-cta __tabbed {{ $index == 0 ? 'active' : '' }}"
-                    data-tab-id="{{ $index }}">{{ $category['title'] }}</a>
+                   data-tab-id="{{ $index }}">{{ $category['title'] }}</a>
             @endforeach
         </div>
     </div>
@@ -66,7 +69,8 @@
                     </h2>
                     <div class="desc">
                         <p>
-                            An atmosphere of greenery can increase productivity in the workplace. Studies show that plants
+                            An atmosphere of greenery can increase productivity in the workplace. Studies show that
+                            plants
                             improve air quality and decrease stress...
                         </p>
                     </div>
@@ -86,30 +90,8 @@
                     </h2>
                     <div class="desc">
                         <p>
-                            An atmosphere of greenery can increase productivity in the workplace. Studies show that plants
-                            improve air quality and decrease stress...
-                        </p>
-                    </div>
-                    <div class="bottom-line">
-                        {{-- <span class="date">
-                            {{ \Carbon\Carbon::parse($article->publish_start_date)->translatedFormat('d M Y') }}
-                        </span> --}}
-                        <p class="date"> January 20,2025</p>
-                        <a class="library-cta" href="#">
-                            Read More
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="library-card">
-                <img src="/dummy-img/library-pic.png" />
-                <div>
-                    <h2 class="heading">
-                        More productive with an atmosphere of greenery
-                    </h2>
-                    <div class="desc">
-                        <p>
-                            An atmosphere of greenery can increase productivity in the workplace. Studies show that plants
+                            An atmosphere of greenery can increase productivity in the workplace. Studies show that
+                            plants
                             improve air quality and decrease stress...
                         </p>
                     </div>
@@ -132,7 +114,8 @@
                     </h2>
                     <div class="desc">
                         <p>
-                            An atmosphere of greenery can increase productivity in the workplace. Studies show that plants
+                            An atmosphere of greenery can increase productivity in the workplace. Studies show that
+                            plants
                             improve air quality and decrease stress...
                         </p>
                     </div>
@@ -155,7 +138,8 @@
                     </h2>
                     <div class="desc">
                         <p>
-                            An atmosphere of greenery can increase productivity in the workplace. Studies show that plants
+                            An atmosphere of greenery can increase productivity in the workplace. Studies show that
+                            plants
                             improve air quality and decrease stress...
                         </p>
                     </div>
@@ -178,7 +162,8 @@
                     </h2>
                     <div class="desc">
                         <p>
-                            An atmosphere of greenery can increase productivity in the workplace. Studies show that plants
+                            An atmosphere of greenery can increase productivity in the workplace. Studies show that
+                            plants
                             improve air quality and decrease stress...
                         </p>
                     </div>
@@ -201,7 +186,8 @@
                     </h2>
                     <div class="desc">
                         <p>
-                            An atmosphere of greenery can increase productivity in the workplace. Studies show that plants
+                            An atmosphere of greenery can increase productivity in the workplace. Studies show that
+                            plants
                             improve air quality and decrease stress...
                         </p>
                     </div>
@@ -224,7 +210,32 @@
                     </h2>
                     <div class="desc">
                         <p>
-                            An atmosphere of greenery can increase productivity in the workplace. Studies show that plants
+                            An atmosphere of greenery can increase productivity in the workplace. Studies show that
+                            plants
+                            improve air quality and decrease stress...
+                        </p>
+                    </div>
+                    <div class="bottom-line">
+                        {{-- <span class="date">
+                            {{ \Carbon\Carbon::parse($article->publish_start_date)->translatedFormat('d M Y') }}
+                        </span> --}}
+                        <p class="date"> January 20,2025</p>
+                        <a class="library-cta" href="#">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="library-card">
+                <img src="/dummy-img/library-pic.png" />
+                <div>
+                    <h2 class="heading">
+                        More productive with an atmosphere of greenery
+                    </h2>
+                    <div class="desc">
+                        <p>
+                            An atmosphere of greenery can increase productivity in the workplace. Studies show that
+                            plants
                             improve air quality and decrease stress...
                         </p>
                     </div>
