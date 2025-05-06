@@ -72,13 +72,14 @@ header {
             }
 
             a {
-                color: $primary;
+                color: $teritary;
                 text-decoration: none !important;
                 //   transition: font-weight 0.2s ease;
                 cursor: pointer;
 
                 &:hover {
                     // font-weight: 700;
+                    color: $primary;
                     transform: translateX(0);
                 }
             }
@@ -99,6 +100,7 @@ header {
         height: 100%;
         display: flex;
         align-items: center;
+        color: #434a57;
 
         .dropdown-content {
             display: grid;
@@ -123,6 +125,7 @@ header {
                 display: block;
                 transition: 0.4s all ease;
                 border-radius: 0px;
+                color: $primary;
 
                 &:hover {
                     background-color: $primary_tone_4;

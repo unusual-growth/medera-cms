@@ -122,16 +122,21 @@
 }
 
 .library-content {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
     h1 {
-        //font-weight: 700;
-        ////font-size: 48px;
-        //line-height: 1.15;
-        //letter-spacing: -1%;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 1.15;
+        letter-spacing: -1%;
     }
 
     p {
-        //color: $white;
-        //max-width: 25rem;
+        color: $white;
+        max-width: 25rem;
     }
 }
 

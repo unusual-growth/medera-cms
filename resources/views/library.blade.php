@@ -4,21 +4,9 @@
         'title' => $setting_block->translatedInput('title'),
         'description' => $setting_block->translatedInput('description'),
     ]);
-    dd(TwillAppSettings::getGroupDataForSectionAndName('static-ages', 'library'))
-
 @endphp
 @extends('site.layouts.master')
 @section('content')
-    <div class="container">
-        <div class="library-content">
-            <h1>
-                {{ TwillAppSettings::getGroupDataForSectionAndName('static-pages', 'library')->translatedInput('hero_title') }}
-            </h1>
-            <p>
-                {{ TwillAppSettings::getGroupDataForSectionAndName('static-pages', 'library')->translatedInput('hero_description') }}
-            </p>
-        </div>
-    </div>
 
     {{-- TABBED  --}}
     @php
