@@ -48,6 +48,14 @@ return [
                     ],
                 ],
             ],
+            'banner-image' => [
+                'default' => [
+                    [
+                        'name' => 'default',
+                        'ratio' => 0,
+                    ],
+                ],
+            ],
         ]
     ],
     'glide' => [
@@ -56,38 +64,38 @@ return [
         'default_params' => [],
     ],
     'crops' => [
-            'highlight' => [
-                'desktop' => [
-                    [
-                        'name' => 'desktop',
-                        'ratio' => 16 / 9,
-                    ],
-                ],
-                'mobile' => [
-                    [
-                        'name' => 'mobile',
-                        'ratio' => 1,
-                    ],
+        'highlight' => [
+            'desktop' => [
+                [
+                    'name' => 'desktop',
+                    'ratio' => 16 / 9,
                 ],
             ],
-
-            'social-media-icon' => [
-                'default' => [
-                    [
-                        'name' => 'default',
-                        'ratio' => 1,
-                    ],
-                ],
-            ],
-            'social-media-icon-dark' => [
-                'default' => [
-                    [
-                        'name' => 'default',
-                        'ratio' => 1,
-                    ],
+            'mobile' => [
+                [
+                    'name' => 'mobile',
+                    'ratio' => 1,
                 ],
             ],
         ],
+
+        'social-media-icon' => [
+            'default' => [
+                [
+                    'name' => 'default',
+                    'ratio' => 1,
+                ],
+            ],
+        ],
+        'social-media-icon-dark' => [
+            'default' => [
+                [
+                    'name' => 'default',
+                    'ratio' => 1,
+                ],
+            ],
+        ],
+    ],
     'settings' => [
         'files' => ['file', 'video'],
         'crops' => [
@@ -100,6 +108,14 @@ return [
                 ],
             ],
             'favicon' => [
+                'default' => [
+                    [
+                        'name' => 'default',
+                        'ratio' => 0,
+                    ],
+                ],
+            ],
+            'banner-image' => [
                 'default' => [
                     [
                         'name' => 'default',
@@ -164,7 +180,7 @@ return [
         'filesize_limit' => env('FILE_LIBRARY_FILESIZE_LIMIT', 50),
         'allowed_extensions' => ['pdf', 'mov', 'mp4', 'webm', 'xml', 'xlsx'],
     ],
-    'available_user_locales'    => [
+    'available_user_locales' => [
         'en'
     ],
     'dashboard' => [

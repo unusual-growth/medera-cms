@@ -11,16 +11,31 @@
 @endphp
 @extends('site.master', ['meta' => $meta])
 @section('content')
-    <div class="container">
-        <div class="library-content">
-            <h1>
-                {{ __('frontend.Library')   }}
-            </h1>
-            <p>
-                {{ $setting_block->translatedInput('hero_description') }}
-            </p>
+    <section class="hero forest-to-gray">
+        <div class="container xlarge">
+            <div class="row gap-30 justify-space-between subpage">
+                <div class="col-sm-6 flex-center">
+                    <div class="content library-content">
+                        <h1>
+                            {{ __('frontend.Library')   }}
+
+                            {{ $setting_block->translatedInput('hero_title') }}
+                        </h1>
+                        <p>
+                            {{ $setting_block->translatedInput('hero_description') }}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-6 image">
+
+                    <picture class="width-100 height-100">
+                        <img
+                            src="{{ImageService::getRawUrl($setting_block->imageObject('banner-image')->uuid)}}" />
+                    </picture>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <div class="container xlarge">
         <div class="library-tabbed-list">

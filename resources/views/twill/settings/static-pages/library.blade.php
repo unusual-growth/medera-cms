@@ -26,3 +26,9 @@
     placeholder="Hero Description"
     :translated="true"
 />
+
+<x-twill::medias
+    name="banner-image"
+    label="Banner Image"
+    :render-for-blocks="false"
+/>
