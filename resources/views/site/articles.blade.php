@@ -17,8 +17,6 @@
                 <div class="col-sm-6 flex-center">
                     <div class="content library-content">
                         <h1>
-                            {{ __('frontend.Library')   }}
-
                             {{ $setting_block->translatedInput('hero_title') }}
                         </h1>
                         <p>

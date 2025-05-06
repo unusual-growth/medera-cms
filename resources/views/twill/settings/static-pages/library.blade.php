@@ -9,13 +9,22 @@
     placeholder="Title"
     hint="Meta title of the Library page"
     :translated="true"
-/>
 <x-twill::input
     type="textarea"
     name="description"
     label="Description"
     placeholder="Meta description for the Library page"
     hint="Meta description of the Library page"
+    :translated="true"
+/>
+
+/>
+<x-twill::input
+    type="text"
+    name="hero_title"
+    label="Hero Title"
+    placeholder="Title"
+    hint="Hero Title of the Library page"
     :translated="true"
 />
 
